@@ -921,10 +921,26 @@ body{padding:24px;max-width:1280px;margin:0 auto}
       rows.push({ agent: a.agent, sl: s.sl, total, hari, jam });
     }));
     rows.sort((x, y) => y.total - x.total || x.agent.localeCompare(y.agent));
+    const bsel = buckets(pst.g).filter((b) => pst.periods.has(b.key)).sort((a, b) => a.start - b.start);
+    const hasCmp = bsel.length === 2;
+    const cmpLbl = (b) => (pst.g === 'week' ? 'W' + b.key : b.label);
+    const sumP = (agent, b) => { let n = 0; for (let t = b.start; t <= b.end; t += DAY) n += cnt.get(agent + '|' + dIdx(t)) || 0; return n; };
+    rows.forEach((r) => {
+      if (!hasCmp) { r.gap = null; r.pct = null; return; }
+      const e = sumP(r.agent, bsel[0]), l = sumP(r.agent, bsel[1]);
+      r.gap = l - e; r.pct = e ? (l - e) / e * 100 : null;
+    });
+    const cmpCells = (r) => {
+      if (r.gap === null) return '<td>–</td><td>–</td>';
+      const cls = r.gap > 0 ? 'ok' : r.gap < 0 ? 'no' : '';
+      const arrow = r.gap > 0 ? '▲ ' : r.gap < 0 ? '▼ ' : '';
+      return '<td class="' + cls + '">' + (r.gap > 0 ? '+' : '') + fmt(r.gap) + '</td>' +
+        '<td class="' + cls + '">' + (r.pct === null ? '–' : arrow + (r.pct > 0 ? '+' : '') + r.pct.toFixed(1) + '%') + '</td>';
+    };
     const tbl = $('#p-rank');
     if (!rows.length) { tbl.innerHTML = ''; return; }
-    tbl.innerHTML = '<thead><tr><th>#</th><th class="l">Agent</th><th class="l">Shiftlead</th><th>Total kasus</th><th>Hari aktif</th><th>Rata-rata/hari</th><th>Jam aktif</th><th>Rata-rata/jam</th></tr></thead><tbody>' +
-      rows.map((r, i) => '<tr><td>' + (i + 1) + '</td><th class="l">' + esc(r.agent) + segTag(r.agent) + '</th><td class="l">' + esc(r.sl) + '</td><td>' + fmt(r.total) + '</td><td>' + fmt(r.hari) + '</td><td>' + (r.hari ? fmt(Math.round(r.total / r.hari * 10) / 10) : '–') + '</td><td>' + fmt(r.jam) + '</td><td>' + (r.jam ? fmt1(r.total / r.jam) : '–') + '</td></tr>').join('') +
+    tbl.innerHTML = '<thead><tr><th>#</th><th class="l">Agent</th><th class="l">Shiftlead</th><th>Total kasus</th><th>' + (hasCmp ? 'Gap ' + esc(cmpLbl(bsel[1])) + ' vs ' + esc(cmpLbl(bsel[0])) : 'Gap') + '</th><th>%</th><th>Hari aktif</th><th>Rata-rata/hari</th><th>Jam aktif</th><th>Rata-rata/jam</th></tr></thead><tbody>' +
+      rows.map((r, i) => '<tr><td>' + (i + 1) + '</td><th class="l">' + esc(r.agent) + segTag(r.agent) + '</th><td class="l">' + esc(r.sl) + '</td><td>' + fmt(r.total) + '</td>' + cmpCells(r) + '<td>' + fmt(r.hari) + '</td><td>' + (r.hari ? fmt(Math.round(r.total / r.hari * 10) / 10) : '–') + '</td><td>' + fmt(r.jam) + '</td><td>' + (r.jam ? fmt1(r.total / r.jam) : '–') + '</td></tr>').join('') +
       '</tbody>';
   }
 
