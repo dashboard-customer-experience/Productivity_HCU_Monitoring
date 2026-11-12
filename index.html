@@ -353,6 +353,14 @@ body{padding:24px;max-width:1280px;margin:0 auto}
   <div class="tw"><table id="tg-tbl"></table></div>
 </section>
 
+<section class="card">
+  <h2>HCU Analisa Ticketing</h2>
+  <p class="note">Data ticket HCU per bulan dan per minggu dari raw ticketing: Januari–Oktober 2026 penuh, November sampai 8 Nov. Minggu mengikuti dashboard (W1 mulai 29 Des 2025, jadi W1 juga memuat 29–31 Des). Persentase dihitung dari semua ticket per segmen yang punya nilai FCR (dan resolution untuk resolved). Senior: FCR maks 20 dtk, resolved maks 1 mnt. Junior &amp; New Joiner: FCR maks 30 dtk, resolved maks 2 mnt. Tabel ini tidak ikut filter di atas. Angka dalam kurung adalah jumlah ticket.</p>
+  <div class="tw"><table id="ana-tbl"></table></div>
+  <p class="note" style="margin-top:12px">Per minggu:</p>
+  <div class="tw"><table id="ana-wk-tbl"></table></div>
+</section>
+
 <p class="foot" id="tk-foot"></p>
 </div>
 
@@ -365,9 +373,9 @@ body{padding:24px;max-width:1280px;margin:0 auto}
 <section class="card">
   <h2>Daftar tab</h2>
   <ul style="margin:8px 0 0;padding-left:18px;line-height:1.6">
-    <li><b>Prod HCU</b>: jumlah kasus per channel, dengan topic name sebagai sub reason. Bisa dilihat per minggu atau per bulan, dengan filter periode, nama agent, source, dan rentang tanggal.</li>
-    <li><b>Performance Agent / Shiftlead</b>: kasus per agent, dikelompokkan per shiftlead. Mode minggu memecah tiap minggu per hari. Klik nama agent untuk melihat rincian per source dan rata-rata per jam. Ranking agent ada di bawah tabel.</li>
-    <li><b>Ticketing HCU</b>: jumlah ticket yang dikerjakan per shiftlead dan agent, dengan rata-rata FCR dan resolution dalam format HH:MM:SS.</li>
+    <li><b>Prod HCU</b>: jumlah kasus per channel, dengan topic name sebagai sub reason. Bisa dilihat per minggu atau per bulan, dengan filter periode, nama agent, source, dan rentang tanggal. Nama agent diberi label segmen (Senior / Junior).</li>
+    <li><b>Performance Agent / Shiftlead</b>: kasus per agent, dikelompokkan per shiftlead. Mode minggu memecah tiap minggu per hari. Klik nama agent untuk melihat rincian per source dan rata-rata per jam. Ranking agent ada di bawah tabel, dengan kolom gap dan % perubahan kalau dipilih tepat 2 periode (misalnya W44 dan W45).</li>
+    <li><b>Ticketing HCU</b>: jumlah ticket yang dikerjakan per shiftlead dan agent, dengan rata-rata FCR dan resolution dalam format HH:MM:SS. Ada KPI agent tercepat dan terlama per segmen, panel Target FCR &amp; resolution per agent (bisa difilter Achieve / Tidak achieve), dan HCU Analisa Ticketing per bulan.</li>
     <li><b>Index</b>: halaman ini.</li>
   </ul>
 </section>
@@ -384,6 +392,9 @@ body{padding:24px;max-width:1280px;margin:0 auto}
     <li><b>Source</b>: Amaze, Manual Tracker, dan Ticketing.</li>
     <li><b>Avg FCR</b>: rata-rata First Response Time (kolom AD) per ticket. <b>Avg resolution</b>: rata-rata Resolution Time (kolom AE) per ticket. Keduanya ditampilkan HH:MM:SS.</li>
     <li>Tab Performance dan Ticketing hanya menghitung 31 agent HCU dari daftar schedule.</li>
+    <li><b>Segmen</b>: Senior atau Junior, dari Assessment Schedule CX. Shiftlead diberi label tersendiri.</li>
+    <li><b>Target FCR &amp; resolution</b> (default): Senior FCR maks 20 dtk (target 90%), resolved maks 1 mnt (target 85% dan 90%). Junior &amp; New Joiner FCR maks 30 dtk (target 85%), resolved maks 2 mnt (target 80%). % = ticket yang memenuhi batas dibagi total ticket. Achieve berarti semua target terpenuhi.</li>
+    <li><b>Gap dan %</b>: selisih total kasus dan persentasenya antara dua periode yang dipilih (periode kedua dikurangi periode pertama).</li>
   </ul>
 </section>
 
@@ -393,6 +404,7 @@ body{padding:24px;max-width:1280px;margin:0 auto}
     <li>Prod dan performance: 29 Des 2025 sampai 8 Nov 2026, dari file H1 (Des–Mei) dan file H2 (Jun–8 Nov).</li>
     <li>Ticketing: 29 Des 2025 sampai 8 Nov 2026.</li>
     <li>Shiftlead: dari file Weekly Huddle.</li>
+    <li>Segmen: dari Assessment Schedule CX.</li>
   </ul>
 </section>
 </div>
@@ -1194,6 +1206,38 @@ body{padding:24px;max-width:1280px;margin:0 auto}
     return { groups, cols, slRows, agentsN: agents.length };
   }
 
+  const monA = new Map();
+  const ANA_MONTHS = [['2026-01', 'Januari'], ['2026-02', 'Februari'], ['2026-03', 'Maret'], ['2026-04', 'April'], ['2026-05', 'Mei'], ['2026-06', 'Juni'], ['2026-07', 'Juli'], ['2026-08', 'Agustus'], ['2026-09', 'September'], ['2026-10', 'Oktober'], ['2026-11', 'November (s/d 8 Nov)']];
+  const addAna = (x, g) => {
+    const wk = Math.floor((Date.parse(String(x.date).slice(0, 10) + 'T00:00:00Z') - BASE) / DAY / 7) + 1;
+    for (const k of [String(x.date).slice(0, 7) + '|' + g, 'W' + wk + '|' + g]) {
+      const o = monA.get(k) || { fn: 0, f20: 0, f30: 0, rn: 0, r60: 0, r120: 0 };
+      o.fn += Number(x.fcr_n) || 0; o.f20 += Number(x.fcr_ok20) || 0; o.f30 += Number(x.fcr_ok30) || 0;
+      o.rn += Number(x.res_n) || 0; o.r60 += Number(x.rs_ok60) || 0; o.r120 += Number(x.rs_ok120) || 0;
+      monA.set(k, o);
+    }
+  };
+  function drawAnalysis() {
+    const g = (m, s) => monA.get(m + '|' + s) || { fn: 0, f20: 0, f30: 0, rn: 0, r60: 0, r120: 0 };
+    const cell = (ok, n) => (n ? ((ok / n) * 100).toFixed(1) + '% <span class="z">(' + fmt(n) + ')</span>' : '–');
+    const specs = [
+      ['Senior · FCR ≤ 0:00:20', (m) => { const o = g(m, 'S'); return cell(o.f20, o.fn); }],
+      ['Senior · FCR > 0:00:20', (m) => { const o = g(m, 'S'); return cell(o.fn - o.f20, o.fn); }],
+      ['Junior & New · FCR ≤ 0:00:30', (m) => { const o = g(m, 'J'); return cell(o.f30, o.fn); }],
+      ['Junior & New · FCR > 0:00:30', (m) => { const o = g(m, 'J'); return cell(o.fn - o.f30, o.fn); }],
+      ['Senior · Resolved ≤ 0:01:00', (m) => { const o = g(m, 'S'); return cell(o.r60, o.rn); }],
+      ['Senior · Resolved > 0:01:00', (m) => { const o = g(m, 'S'); return cell(o.rn - o.r60, o.rn); }],
+      ['Junior & New · Resolved ≤ 0:02:00', (m) => { const o = g(m, 'J'); return cell(o.r120, o.rn); }],
+      ['Junior & New · Resolved > 0:02:00', (m) => { const o = g(m, 'J'); return cell(o.rn - o.r120, o.rn); }],
+    ];
+    const tblOf = (cols) => '<thead><tr><th class="l">Metrik</th>' + cols.map((c) => '<th>' + c[1] + '</th>').join('') + '</tr></thead><tbody>' +
+      specs.map(([label, f]) => '<tr><th class="l">' + label + '</th>' + cols.map((c) => '<td>' + f(c[0]) + '</td>').join('') + '</tr>').join('') + '</tbody>';
+    $('#ana-tbl').innerHTML = tblOf(ANA_MONTHS);
+    const maxW = Math.floor((dMax - BASE) / DAY / 7) + 1;
+    const weekCols = Array.from({ length: maxW }, (_, i) => ['W' + (i + 1), 'W' + (i + 1)]);
+    $('#ana-wk-tbl').innerHTML = tblOf(weekCols);
+  }
+
   let tgFilter = 'all';
   function drawTarget(ags) {
     const num = (id) => { const v = parseFloat($('#' + id).value); return isNaN(v) ? 0 : v; };
@@ -1364,6 +1408,7 @@ body{padding:24px;max-width:1280px;margin:0 auto}
       srcT = t.data; srcR = r.data;
       roster = r.data.map((x) => ({ agent: String(x.agent), sl: String(x.shiftlead), seg: String(x.segment || '') })).sort((a, b) => a.agent.localeCompare(b.agent));
       segBy.clear(); roster.forEach((x) => segBy.set(x.agent, x.seg));
+      monA.clear();
       cnt = new Map();
       [...new Set(roster.map((x) => x.sl))].forEach((s) => closedSl.add(s));
       let mx = -Infinity;
@@ -1374,6 +1419,7 @@ body{padding:24px;max-width:1280px;margin:0 auto}
         const o = cnt.get(k) || zero();
         o.n += Number(x.tickets) || 0; o.fs += Number(x.fcr_sum) || 0; o.rs += Number(x.res_sum) || 0; o.rn += Number(x.res_n) || 0; o.fn += Number(x.fcr_n) || 0; o.f20 += Number(x.fcr_ok20) || 0; o.f30 += Number(x.fcr_ok30) || 0; o.r60 += Number(x.rs_ok60) || 0; o.r120 += Number(x.rs_ok120) || 0;
         cnt.set(k, o);
+        { const sg = segBy.get(String(x.agent)); if (sg === 'Senior') addAna(x, 'S'); else if (sg === 'Junior' || sg === 'New Joiner') addAna(x, 'J'); }
         if (tt > mx) mx = tt;
       }
       dMin = BASE; dMax = mx;
@@ -1383,6 +1429,7 @@ body{padding:24px;max-width:1280px;margin:0 auto}
       populatePeriods();
       tmsItems('tk-sl', [...new Set(roster.map((x) => x.sl))].sort((a, b) => a.localeCompare(b)).map((s) => ({ key: s, label: s })));
       tmsItems('tk-agent', roster.map((x) => ({ key: x.agent, label: x.agent + (x.seg ? ' · ' + x.seg : '') + ' · ' + x.sl })));
+      drawAnalysis();
       $('#tk-foot').textContent = 'Ticket dihitung dari Nama Agent yang ada di daftar schedule HCU (31 orang). FCR = First Response Time, resolution = Resolution Time (ditampilkan HH:MM:SS). Tanggal dari Date Key.';
     }
     tRender();
