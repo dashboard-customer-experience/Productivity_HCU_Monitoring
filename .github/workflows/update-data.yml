@@ -13,9 +13,9 @@ concurrency:
   cancel-in-progress: false
 
 env:
-  H1_CSV: "https://docs.google.com/spreadsheets/d/e/2PACX-1vQzkLrHjd5RzXS2qC0X--IV2mft_gClCf7G1bDFwCH6wkm5NueQQFEGTBJ48kbqL0-mObRPh0EM8zKy/pub?output=csv"
-  H2_CSV: "https://docs.google.com/spreadsheets/d/e/2PACX-1vTiTSvKF0kJKtCZoZzAjPw82a3rUWVKylnSOvqQOoKuZH36Rn4pRxerhZ3pWv9fJNNqU0En-Okh6Knv/pub?output=csv"
-  TICKET_CSV: "https://docs.google.com/spreadsheets/d/e/2PACX-1vQoCpQN4sZlEACdqexHXyCe2z-06apTWwI6e3qKf13tgMXoqJmEPr7eeMt1E-r7x57u_nfLXeppghpd/pub?output=csv"
+  H1_CSV: "https://docs.google.com/spreadsheets/d/e/2PACX-1vQzkLrHjd5RzXS2qC0X--IV2mft_gClCf7G1bDFwCH6wkm5NueQQFEGTBJ48kbqL0-mObRPh0EM8zKy/pub?gid=0&single=true&output=csv"
+  H2_CSV: "https://docs.google.com/spreadsheets/d/e/2PACX-1vTiTSvKF0kJKtCZoZzAjPw82a3rUWVKylnSOvqQOoKuZH36Rn4pRxerhZ3pWv9fJNNqU0En-Okh6Knv/pub?gid=0&single=true&output=csv"
+  TICKET_CSV: "https://docs.google.com/spreadsheets/d/e/2PACX-1vQoCpQN4sZlEACdqexHXyCe2z-06apTWwI6e3qKf13tgMXoqJmEPr7eeMt1E-r7x57u_nfLXeppghpd/pub?gid=0&single=true&output=csv"
 
 jobs:
   build:
