@@ -1,0 +1,76 @@
+name: Update dashboard data
+
+on:
+  schedule:
+    - cron: '0 5 * * 1'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-data
+  cancel-in-progress: false
+
+env:
+  H1_CSV: "https://docs.google.com/spreadsheets/d/e/2PACX-1vQzkLrHjd5RzXS2qC0X--IV2mft_gClCf7G1bDFwCH6wkm5NueQQFEGTBJ48kbqL0-mObRPh0EM8zKy/pub?output=csv"
+  H2_CSV: "https://docs.google.com/spreadsheets/d/e/2PACX-1vTiTSvKF0kJKtCZoZzAjPw82a3rUWVKylnSOvqQOoKuZH36Rn4pRxerhZ3pWv9fJNNqU0En-Okh6Knv/pub?output=csv"
+  TICKET_CSV: "https://docs.google.com/spreadsheets/d/e/2PACX-1vQoCpQN4sZlEACdqexHXyCe2z-06apTWwI6e3qKf13tgMXoqJmEPr7eeMt1E-r7x57u_nfLXeppghpd/pub?output=csv"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install -r build/requirements.txt
+
+      - name: Download source CSVs from Google Sheets
+        run: |
+          set -e
+          mkdir -p raw
+          curl -sSL --fail --retry 3 --retry-delay 5 "$H1_CSV" -o raw/H1.csv
+          curl -sSL --fail --retry 3 --retry-delay 5 "$H2_CSV" -o raw/H2.csv
+          curl -sSL --fail --retry 3 --retry-delay 5 "$TICKET_CSV" -o raw/ticket.csv
+          ls -lh raw/
+          echo "--- header H1 ---"; head -n 1 raw/H1.csv
+          echo "--- header H2 ---"; head -n 1 raw/H2.csv
+          echo "--- header ticket ---"; head -n 1 raw/ticket.csv
+
+      - name: Sanity check
+        run: |
+          set -e
+          for f in raw/H1.csv raw/H2.csv raw/ticket.csv; do
+            if [ ! -s "$f" ]; then echo "ERROR: $f kosong"; exit 1; fi
+            if head -c 200 "$f" | grep -qi "<html"; then
+              echo "ERROR: $f sepertinya HTML, bukan CSV"; exit 1
+            fi
+          done
+          echo "OK semua file CSV valid."
+
+      - name: Aggregate
+        run: |
+          python build/aggregate.py \
+            --h1 raw/H1.csv --h2 raw/H2.csv \
+            --ticket raw/ticket.csv \
+            --roster data/hcu_roster.csv \
+            --out data/
+
+      - name: Commit updated data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/hcu_agg.csv data/hcu_perf.csv data/hcu_lookup.csv data/hcu_ticket.csv
+          if git diff --cached --quiet; then
+            echo "Tidak ada perubahan data."
+          else
+            git commit -m "chore(data): auto-update dashboard data [skip ci]"
+            git push
+          fi
