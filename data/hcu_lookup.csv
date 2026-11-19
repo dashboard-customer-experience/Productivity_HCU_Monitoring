@@ -1,0 +1,376 @@
+kind,id,name
+ch,0,Astro
+ch,1,Batalkan Pesanan
+ch,2,Bypass Geofencing
+ch,3,Call CS Grabmart
+ch,4,Call Customer
+ch,5,Call Customer Grabmart
+ch,6,Cancel 3PL
+ch,7,Cancelled Order
+ch,8,Complete Order
+ch,9,DROP_OFF
+ch,10,Lewati Verifikasi Drop Off
+ch,11,Lewati Verifikasi Lokasi
+ch,12,Lewati Verifikasi Paket
+ch,13,On Hold
+ch,14,RETURN
+ch,15,Redelivery In Transit
+ch,16,Redelivery On Delivery
+ch,17,Request 3PL
+ch,18,Request 3PL Lalamove
+ch,19,Request On Hold (Konfirmasi Redelivery)
+ch,20,Request Pengembalian Galon/Gas
+ch,21,Selesaikan Pengembalian Galon / Gas
+ch,22,Selesaikan Pesanan
+ch,23,Waiting Confirmation
+tp,0,(Tanpa Topic)
+tp,1,1|Canceled by Sender
+tp,2,2025_beda_gramasi_ml_varian
+tp,3,2025_beda_kemasan
+tp,4,2|Canceled by Driver: fake sender/order
+tp,5,5|Canceled by Grab Operator
+tp,6,9|Package returned
+tp,7,APPROVED
+tp,8,Cancel by GrabMart CS
+tp,9,Cancel karena produk OOS
+tp,10,Cancel semua pesanan karena Customer tidak memiliki Galon/Gas pengganti
+tp,11,Chat Customer
+tp,12,Customer Menunggu Terlalu Lama
+tp,13,Customer berubah pikiran
+tp,14,Customer ingin cancel order karena harga ditoko lain lebih murah
+tp,15,Customer ingin mengubah pesanan karena berubah pikiran
+tp,16,Customer menunggu terlalu lama
+tp,17,Customer salah pilih SKU
+tp,18,Customer sudah tidak dilokasi
+tp,19,Customer sulit / tidak bisa di hubungi
+tp,20,Customer tidak memiliki Galon  atau Tabung Gas Pengganti
+tp,21,Customer tidak memiliki Galon atau Tabung Gas Pengganti
+tp,22,Customer tidak memiliki galon/gas kosong
+tp,23,Customer tidak memiliki gas/galon pengganti
+tp,24,Customer tidak merasa order (tidak merasa pesan)
+tp,25,Customer tidak merasa pesan
+tp,26,Customer tinggal di apartement/gedung dan driver tidak dizinkan masuk ke gedung
+tp,27,Device / Handphone Driver Error
+tp,28,"Dibatalkan Karena Alamat Customer Tidak Sesuai, Titik Tidak Ditemukan Dalam Maps/Peta"
+tp,29,Dibatalkan pelanggan karena keterlambatan
+tp,30,Dicancel driver karena order sudah kembali di hub
+tp,31,Driver Sudah Tiba / Customer Sulit Dihubungi
+tp,32,Driver ajukan pembatalan karena sudah tlp/chat/ menunggu customer selama 5 menit
+tp,33,Driver astro sudah dialokasikan ke order lain
+tp,34,Driver lupa scan/paket sudah dibawa oleh customer
+tp,35,Driver minta order dibatalkan
+tp,36,Driver selesaikan pesanan diluar radius customer
+tp,37,Driver sudah tiba / Customer sulit dihubungi
+tp,38,Driver tidak bisa dihubungi
+tp,39,Force Majure (Dibatalkan karena banjir atau kondisi darurat)
+tp,40,Force Majure (Driver Insident)
+tp,41,Foto Halaman Buram
+tp,42,Foto Salah
+tp,43,Foto salah
+tp,44,Full Return
+tp,45,IN_REVIEW
+tp,46,Jarak terlalu jauh
+tp,47,Kamera Driver Error
+tp,48,Kamera driver rusak
+tp,49,KembanganCS
+tp,50,Kendala Aplikasi (Apps / Maps Error) / Tidak Bisa Scan
+tp,51,Kendala Aplikasi (Apps / Maps Error) / Tidak Bisa Scan)
+tp,52,Kendala Aplikasi (Apps / Maps Error) / Tidak bisa scan
+tp,53,Kendala Aplikasi - Error saat swipe completed
+tp,54,Kendala Aplikasi - Orderan Grab Mart tidak bisa diselesaikan
+tp,55,Kendala Aplikasi - Tidak Bisa Buka Kamera
+tp,56,Kendala Aplikasi - Tidak bisa buka halaman order detail
+tp,57,Kendala Aplikasi - Tidak bisa buka kamera
+tp,58,"Kendala Signal (Titik Dalam Basement / Gedung / Apartemen, Tidak Ada Signal)"
+tp,59,"Kendala Signal (Titik dalam Basement / Gedung / Apartemen, Tidak ada Signal)"
+tp,60,"Kendala Signal (Titik dalam Basement / Gedung / Apartment, Tidak ada Signal)"
+tp,61,Kendala Sistem - Sistem Error
+tp,62,Kendala signal
+tp,63,Kesalahan Create Order Kitchen
+tp,64,Lainnya
+tp,65,Lokasi Tidak Sesuai
+tp,66,Lokasi Tidak sesuai
+tp,67,Order dalam Proses In Transit ( Pooling)
+tp,68,Orderan Grabmart OOS
+tp,69,Orderan Grabmart Tidak Masuk Sistem Astro
+tp,70,Orderan Grabmart tidak masuk sistem Astro
+tp,71,Partial Return
+tp,72,Pengantaran hanya dapat diantarkan sampai lobby gedung
+tp,73,Penutupan Jalan / Akses Cluster Di Portal (Dititipkan Security)
+tp,74,Penutupan Jalan / Akses cluster di portal (dititipkan security)
+tp,75,Pesanan dialokasikan ke driver Astro
+tp,76,Pesanan dikirimkan dengan mitra pengiriman Astro (Lalamove)
+tp,77,Pesanan diselesaikan dan akan dilakukan pengantaran ulang (Super)
+tp,78,Proses Scan bermasalah
+tp,79,Qty pesanan melebihi kapasitas driver motor
+tp,80,REJECTED
+tp,81,Salah Alamat Driver - Titik ditempatkan user di app jauh dari titik pengantaran yang diminta
+tp,82,Salah alamat - Customer lupa mengganti alamat (Bukan ke posisi saat ini)
+tp,83,Salah alamat - Customer lupa mengganti alamat (Ingin ke posisi saat ini)
+tp,84,Salah alamat - Customer tidak bisa menemukan alamatnya secara tepat di peta
+tp,85,Salah alamat - Lainnya
+tp,86,Salah alamat driver - Alamat customer tidak jelas (tidak ada detail alamat/ instruksi driver)
+tp,87,Salah cocol
+tp,88,Saya sudah menunggu teralu lama
+tp,89,Sistem Error
+tp,90,"Status Intransit, driver mengantarkan tidak sesuai pooling"
+tp,91,"Status Intransit, driver salah pilih pengantaran"
+tp,92,"Status Intransit, driver tidak bisa scan orderan"
+tp,93,TITIK TIDAK SESUAI
+tp,94,Tidak ada driver tersedia di hub
+tp,95,Tidak bisa cetak QR
+tp,96,Titik Lokasi Tidak Sesuai / Titik Berbeda
+tp,97,Titik lokasi tidak sesuai
+tp,98,Titik lokasi tidak sesuai / titik berbeda
+tp,99,Titik lokasi tidak sesuai / titik berbeda -> digunakan jika titik lokasi berbeda dari titik invoice (under 1KM)
+tp,100,Titik lokasi tidak sesuai / titik berbedaa
+tp,101,Titik lokasi tidak sesuai / titik berbedaz
+tp,102,Titik lokasi tidak sesuai/titik berbeda
+tp,103,Titik tidak sesuai
+tp,104,Tititk tidak sesuai
+tp,105,Ubah Detail Pesanan
+tp,106,Ubah Metode Pembayaran
+tp,107,aps error
+tp,108,arrived_customer_sulit_di_hubungi_2026
+tp,109,arrived_customer_sulit_dihubungi_
+tp,110,arrived_customer_sulit_dihubungi_1
+tp,111,astrocare@astronauts.id
+tp,112,cancel_customer_sulit_dihubungi_
+tp,113,cancel_customer_sulit_dihubungi_1
+tp,114,cancel_force_majeure_1
+tp,115,cancel_force_majure_
+tp,116,cancel_order_tidak_ada_reffil_pengganti_
+tp,117,cancel_order_tidak_ada_reffil_pengganti_1
+tp,118,canceled by 3pl
+tp,119,case_attitude_
+tp,120,case_attitude_1
+tp,121,coca_colaa_
+tp,122,compliment_hc_
+tp,123,confirmation_
+tp,124,confirmation_1
+tp,125,db_healthy_
+tp,126,detail_alamat_unit_tower_nomor_
+tp,127,detail_alamat_unit_tower_nomor_1
+tp,128,edukasi_lobby_jauh_
+tp,129,edukasi_lobby_jauh_1
+tp,130,esla_1_
+tp,131,esla_2026
+tp,132,fyi_
+tp,133,fyi_1
+tp,134,general_
+tp,135,general_1
+tp,136,kendala aplikasi (apps/mapps error) tidak bisa scan
+tp,137,kendala signal
+tp,138,konfirmasi_keterlambatan_supermarket_
+tp,139,konfirmasi_sudah_terima_
+tp,140,konfirmasi_sudah_terima_2026
+tp,141,lalamove_delivery_
+tp,142,lalamove_delivery_1
+tp,143,out_of_stock_
+tp,144,out_of_stock_1
+tp,145,out_of_stock_2
+tp,146,pengantaran_lantai_2_
+tp,147,pengantaran_lantai_2_2026
+tp,148,pengembalian_sebagian_tidak_ada_reffil_
+tp,149,pengembalian_sebagian_tidak_ada_reffil_1
+tp,150,penutupan Jalan / Akses cluster di portal (dititipkan security)
+tp,151,penutupan jalan
+tp,152,probing_issue_
+tp,153,probing_issue_1
+tp,154,probing_issuee_
+tp,155,produk_tertinggal_di_hub_1
+tp,156,produk_tertinggal_dihub_
+tp,157,recovery_delivery_
+tp,158,revisi_disburse_
+tp,159,revisi_disburse_1
+tp,160,salah titik
+tp,161,salah_alamat_lebih_1km
+tp,162,salah_alamat_lebih_1km_
+tp,163,sepak_bola_
+tp,164,terlambat_ditutup_portal_insiden_macet_
+tp,165,terlambat_ditutup_portal_insiden_macet_1
+tp,166,tidak bisa scan
+tp,167,tidak sesuai titik
+tp,168,titik lokasi berbeda
+tp,169,titik lokasi tidak sesuai/
+tp,170,titik lokasi tidak sesuai/ titik berbeda
+tp,171,titik lokasi tidak sesuai/titik berbeda
+tp,172,titik tidak sesuai
+tp,173,tititk tidak sesuai lokasi
+tp,174,updated by system
+tp,175,updated manual by user
+tp,176,⁠Aplikasi / Handphone Error / Blank / Mati
+tp,177,⁠Aplikasi / Handphone error / blank / Mati
+tp,178,⁠Barcode Rusak (Basah / Robek / Kehujanan)
+tp,179,⁠Barcode hilang / terbang diperjalanan
+tp,180,⁠Barcode rusak (Lecek / Kelipat / Buram)
+tp,181,⁠Customer menunggu terlalu lama
+tp,182,⁠Customer salah alamat
+tp,183,⁠Customer sulit / tidak bisa di hubungi
+tp,184,⁠Customer tidak memiliki gas/galon pengganti
+tp,185,⁠Driver lupa scan/paket sudah dibawa oleh customer
+tp,186,⁠Kamera driver tidak bisa scan barcode
+tp,187,⁠Titik lokasi tidak sesuai -> lebih dari 200meter
+ag,0,(Tanpa Agent)
+ag,1,Abdul Munzir Ulwan
+ag,2,Adi Saputra
+ag,3,Adinda Ma’mun
+ag,4,Ahgia Nola
+ag,5,Ahmad Ali Hasbi
+ag,6,Ahmad Ali hasbi
+ag,7,Ahmad Faib
+ag,8,Akmal Fauzan
+ag,9,Aldannisa Patsyanov
+ag,10,Alfia Nur Rahma
+ag,11,Alicia Zahraini Setiawati
+ag,12,Alvian Salam Arsyad
+ag,13,Alyssa Renata Zahra
+ag,14,Amelia Wilnanda
+ag,15,Andi Muhammad Daffa
+ag,16,Andreas Marbun
+ag,17,Andrian
+ag,18,Andro Samwa
+ag,19,Angel Lorenca Sarmaf
+ag,20,Anggel Elgi Afrilianis Kuswiandani
+ag,21,Anggita Karunia
+ag,22,Anisa Attahira
+ag,23,Anisa Fatimah Zahra
+ag,24,Anisa Septiani Larasati
+ag,25,Annas Darmadji
+ag,26,Annissa Haque Juliani
+ag,27,Arda Aditya Santosa Putri
+ag,28,Ayu Dini Amelia
+ag,29,Ayu Nurwanti
+ag,30,Bella Oktaviani Fauto
+ag,31,Bima Prayoga
+ag,32,Bintang Ilham Gymnastiar
+ag,33,Canthas Febri Chantika
+ag,34,Chelsya
+ag,35,Cindy Putri Wijaya
+ag,36,Customer
+ag,37,Dafa Wibitono
+ag,38,Daud Abdurohman
+ag,39,David Octavyanto
+ag,40,Devita Rizki Ramdani
+ag,41,Devy Apriyanty
+ag,42,Dimas Gusti Riyanto
+ag,43,Dimas Prasetyanto Wicaksono
+ag,44,Dimas Prasetyo
+ag,45,Dimas Prasetyo Wibisono
+ag,46,Dinassa Ovi Lestari
+ag,47,Dinda Azzahra
+ag,48,Ditya Dara Agustin
+ag,49,Elena Rahmawati
+ag,50,Endang Ana Winarsih
+ag,51,Erika Fakhira Rismansyah
+ag,52,Eva Lestari Dolok Saribu
+ag,53,Fachri Fazrinsyah
+ag,54,Fadhilah Akbar
+ag,55,Fadhillah Diah Hidayah
+ag,56,Faisal Akbar
+ag,57,Faqih Ilhamsyah
+ag,58,Fauzan Athalah
+ag,59,Febrian Abraham Kaluku
+ag,60,Fikri Zailani
+ag,61,Fillah Laili Rahmah
+ag,62,Fiska Dwi Ayu Larasati
+ag,63,Fitri Novitasari
+ag,64,Garda Jayeng Brana
+ag,65,Ghiska Maharani
+ag,66,Hady Hermanto
+ag,67,Hafidh Maulana Gustiansyach
+ag,68,Hani Auliya Rahmah
+ag,69,Harry Setiadi
+ag,70,Haryo Gandrung Marhendra
+ag,71,Heksa Tri Leksono
+ag,72,Herbert Perangin Angin
+ag,73,Ibadurrahman Robbani
+ag,74,Ikhwan Mulyadi
+ag,75,Indah Dwi Inayah
+ag,76,Ira Prabandari
+ag,77,Irdy Aridh Azzahri
+ag,78,Islahuddin Akbar
+ag,79,Jazka
+ag,80,Junia Inka Putria
+ag,81,Justira Wirawan
+ag,82,Kana Syifa Fauziyah
+ag,83,Khasna Qurotul Aini
+ag,84,Lia Nuraini
+ag,85,Lutfiah Kurnia Silah
+ag,86,Lutfiah Mursimah
+ag,87,Lutvia Nur Aini
+ag,88,Lyan Dwi Aprilia
+ag,89,M Ragil Syam Arasy
+ag,90,M Robi Anggara
+ag,91,Marchsanino Ridlotllah
+ag,92,Maulia Dina
+ag,93,Miftahul Jannah
+ag,94,Milhatur Rustak
+ag,95,Mochamad Bayu Aji Widodo
+ag,96,Mochamad Haikal Alfarisi
+ag,97,Muh Revi Sulistyansyah
+ag,98,Muhamad Bastiar
+ag,99,Muhamad Farhan Rizaldi
+ag,100,Muhamad Zidan
+ag,101,Muhammad Faishal Rahman
+ag,102,Muttaqin Ahmad
+ag,103,Nabilah Ulfah
+ag,104,Nadya Sapitri
+ag,105,Najwa Athifa Rianja
+ag,106,Narisha Dwi Nova
+ag,107,Neisya Niza
+ag,108,Nova Ocharina
+ag,109,Nova Ocharina Girsang
+ag,110,Novi Pratama Sari
+ag,111,Nur Ihda Qistiya
+ag,112,Nur Jihan Fauziah
+ag,113,Nurlela Sari
+ag,114,Nurul Djahroh Utami
+ag,115,Nurul Latiffah
+ag,116,Olivia Anele
+ag,117,Patmala Sari
+ag,118,Pita Roma Rumiris Situmorang
+ag,119,Prayoga Pramusti Setiawan
+ag,120,Putri Wulan Sari
+ag,121,Rafiq Aufa Shodiq
+ag,122,Rahma Hendriyani
+ag,123,Rakyan Dwi Ratna Pertiwi
+ag,124,Randi
+ag,125,Rania Alhady
+ag,126,Revalia
+ag,127,Rima Dhiniyah
+ag,128,Rinaldo Maharditama
+ag,129,Rinka Sari
+ag,130,Risty Wahyudi
+ag,131,Rizki Ramdan Pradana
+ag,132,Rizky Priya Pratama
+ag,133,Rizky Rahmadi Septian Wicaksono
+ag,134,Rofiqoh Istikomah
+ag,135,Safitri
+ag,136,Salma Aulia Hanifah
+ag,137,Saskia Nabilah
+ag,138,Sebastian Reira
+ag,139,Sebastian Reira Kustedi
+ag,140,Sefty Artamevia
+ag,141,Shiftlead
+ag,142,Shiha fadlillah
+ag,143,Sri Astuti Wulandari
+ag,144,Sri Trisnawati Djayusman
+ag,145,Suhelvani Febriyanti
+ag,146,Suherna
+ag,147,Syifa Fauziah
+ag,148,Syukra Rahima Suhada
+ag,149,Syukur Rahmat Eli Hia
+ag,150,Theresia Novalina Siburian
+ag,151,Tio Intan Meilani Butar-Butar
+ag,152,Wahyu Febby Setiawan
+ag,153,Wardah Aziizah
+ag,154,Wira Candra Dinanta
+ag,155,Yashiva Sandwinaty
+ag,156,Yosia Magdalena
+ag,157,Zahraini Setiawati
+ag,158,lham Mahdani
+ag,159,system
+sr,0,Amaze
+sr,1,Manual Tracker
+sr,2,Ticketing
