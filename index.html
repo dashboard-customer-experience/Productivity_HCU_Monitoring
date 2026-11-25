@@ -381,6 +381,8 @@ body{padding:24px;font-family:var(--font-anthropic-sans)}
   <div class="kpi"><div class="lbl">Junior &amp; New Joiner achieve</div><div class="val" id="ac-k-j">—</div><div class="note" id="ac-k-j-n"></div></div>
   <div class="kpi"><div class="lbl">Total ticket resolved</div><div class="val" id="ac-k-res">—</div><div class="note" id="ac-k-res-n"></div></div>
   <div class="kpi"><div class="lbl">% resolved &lt; 1 menit</div><div class="val" id="ac-k-pct">—</div><div class="note" id="ac-k-pct-n"></div></div>
+  <div class="kpi"><div class="lbl">% resolved &lt; 5 menit</div><div class="val" id="ac-k-pct5">—</div><div class="note" id="ac-k-pct5-n"></div></div>
+  <div class="kpi"><div class="lbl">% resolved &lt; 10 menit</div><div class="val" id="ac-k-pct10">—</div><div class="note" id="ac-k-pct10-n"></div></div>
 </div>
 
 <section class="card">
@@ -391,7 +393,7 @@ body{padding:24px;font-family:var(--font-anthropic-sans)}
 
 <section class="card">
   <h2>Detail per agent</h2>
-  <p class="note">Achieve = % resolved &lt; 1 menit mencapai target segmen (Senior 95%, Junior &amp; New Joiner 90%). Kolom terakhir menunjukkan hasil di versi satunya, untuk melihat selisihnya. Agent dengan kurang dari 10 hari aktif di bulan itu tidak dihitung.</p>
+  <p class="note">Achieve = % resolved &lt; 1 menit mencapai target segmen (Senior 95%, Junior &amp; New Joiner 90%). % &lt; 5 menit dan % &lt; 10 menit ditampilkan sebagai informasi tambahan dan tidak mengubah status achieve. Kolom terakhir menunjukkan hasil di versi satunya, untuk melihat selisihnya. Agent dengan kurang dari 10 hari aktif di bulan itu tidak dihitung.</p>
   <div class="tw"><table id="ac-det" data-source="achieve"></table></div>
 </section>
 
@@ -416,7 +418,7 @@ body{padding:24px;font-family:var(--font-anthropic-sans)}
     <li><b>Prod HCU</b>: jumlah kasus per channel, dengan topic name sebagai sub reason. Bisa dilihat per minggu atau per bulan, dengan filter periode, nama agent, source, dan rentang tanggal. Nama agent diberi label segmen (Senior / Junior).</li>
     <li><b>Performance Agent / Shiftlead</b>: kasus per agent, dikelompokkan per shiftlead. Mode minggu memecah tiap minggu per hari. Klik nama agent untuk melihat rincian per source dan rata-rata per jam. Ranking agent ada di bawah tabel, dengan kolom gap dan % perubahan kalau dipilih tepat 2 periode (misalnya W44 dan W45).</li>
     <li><b>Ticketing HCU</b>: jumlah ticket yang dikerjakan per shiftlead dan agent, dengan rata-rata FCR dan resolution dalam format HH:MM:SS. Ada KPI agent tercepat dan terlama per segmen, panel Target FCR &amp; resolution per agent (bisa difilter Achieve / Tidak achieve), dan HCU Analisa Ticketing per bulan.</li>
-    <li><b>Achivment resolved ticket per month</b>: tiket resolved &lt; 1 menit per agent per bulan (Januari–November 2026). Pilih bulan di filter untuk melihat siapa yang achieve, detail per agent, dan resume achieve tiap bulan. Senior target 95%, Junior &amp; New Joiner target 90%. Ada 2 versi: Semua kategori (Request On Hold dihitung 5 menit) dan Tanpa Request On Hold.</li>
+    <li><b>Achivment resolved ticket per month</b>: tiket resolved &lt; 1 menit per agent per bulan (Januari–November 2026), dengan tambahan % resolved &lt; 5 menit dan &lt; 10 menit. Pilih bulan di filter untuk melihat siapa yang achieve, detail per agent, dan resume achieve tiap bulan. Senior target 95%, Junior &amp; New Joiner target 90%. Ada 2 versi: Semua kategori (Request On Hold dihitung 5 menit) dan Tanpa Request On Hold.</li>
     <li><b>Index</b>: halaman ini.</li>
   </ul>
 </section>
@@ -306450,496 +306452,496 @@ Sri Astuti Wulandari,Shiha Fadlillah,Junior
 2026-11-22,Suherna,46,4.3333,17.1500,46,46,45,45,44,46
 2026-11-22,Syukur Rahmat Eli Hia,17,0.9000,4.0000,17,17,17,17,17,17
 </script>
-<script type="text/plain" id="csv-achieve">bulan,versi,agent,segmen,hari_aktif,resolved,under_1,over_1_menit,pct,target,status,shiftlead
-2026-01,Semua kategori,Adi Saputra,Senior,30,1544,1077,467,69.8,95,Tidak achieve,Endang Ana Winarsih
-2026-01,Semua kategori,Anggita Karunia,Senior,30,2347,1833,514,78.1,95,Tidak achieve,Tidak ada di huddle
-2026-01,Semua kategori,Devita Rizki Ramdani,Senior,29,2110,1579,531,74.8,95,Tidak achieve,Tidak ada di huddle
-2026-01,Semua kategori,Fitri Novitasari,Senior,30,2292,1722,570,75.1,95,Tidak achieve,Elena Rahmawati
-2026-01,Semua kategori,Islahuddin Akbar,Senior,30,901,415,486,46.1,95,Tidak achieve,Elena Rahmawati
-2026-01,Semua kategori,Narisha Dwi Nova,Senior,27,1305,934,371,71.6,95,Tidak achieve,Shiftlead
-2026-01,Semua kategori,Neisya Niza,Senior,30,2162,1486,676,68.7,95,Tidak achieve,Andrian
-2026-01,Semua kategori,Pita Roma Rumiris Situmorang,Senior,26,2548,1924,624,75.5,95,Tidak achieve,Shiftlead
-2026-01,Semua kategori,Rizky Priya Pratama,Senior,31,1392,757,635,54.4,95,Tidak achieve,Andrian
-2026-01,Semua kategori,Adinda Ma’mun,Junior,15,225,115,110,51.1,90,Tidak achieve,Khasna Qurotul Aini
-2026-01,Semua kategori,Fauzan Athalah,Junior,14,207,87,120,42.0,90,Tidak achieve,Theresia Novalina Siburian
-2026-01,Semua kategori,Indah Dwi Inayah,Junior,17,508,308,200,60.6,90,Tidak achieve,Endang Ana Winarsih
-2026-01,Semua kategori,Nur Jihan Fauziah,Junior,27,2732,2201,531,80.6,90,Tidak achieve,Andrian
-2026-01,Semua kategori,Randi,Junior,26,1010,777,233,76.9,90,Tidak achieve,Irdy Aridh Azzahri
-2026-01,Tanpa Request On Hold,Adi Saputra,Senior,30,1374,1077,297,78.4,95,Tidak achieve,Endang Ana Winarsih
-2026-01,Tanpa Request On Hold,Anggita Karunia,Senior,30,2084,1833,251,88.0,95,Tidak achieve,Tidak ada di huddle
-2026-01,Tanpa Request On Hold,Devita Rizki Ramdani,Senior,29,1871,1579,292,84.4,95,Tidak achieve,Tidak ada di huddle
-2026-01,Tanpa Request On Hold,Fitri Novitasari,Senior,30,2064,1722,342,83.4,95,Tidak achieve,Elena Rahmawati
-2026-01,Tanpa Request On Hold,Islahuddin Akbar,Senior,30,808,415,393,51.4,95,Tidak achieve,Elena Rahmawati
-2026-01,Tanpa Request On Hold,Narisha Dwi Nova,Senior,27,1160,934,226,80.5,95,Tidak achieve,Shiftlead
-2026-01,Tanpa Request On Hold,Neisya Niza,Senior,30,1934,1486,448,76.8,95,Tidak achieve,Andrian
-2026-01,Tanpa Request On Hold,Pita Roma Rumiris Situmorang,Senior,26,2339,1924,415,82.3,95,Tidak achieve,Shiftlead
-2026-01,Tanpa Request On Hold,Rizky Priya Pratama,Senior,31,1229,757,472,61.6,95,Tidak achieve,Andrian
-2026-01,Tanpa Request On Hold,Adinda Ma’mun,Junior,14,208,115,93,55.3,90,Tidak achieve,Khasna Qurotul Aini
-2026-01,Tanpa Request On Hold,Fauzan Athalah,Junior,14,189,87,102,46.0,90,Tidak achieve,Theresia Novalina Siburian
-2026-01,Tanpa Request On Hold,Indah Dwi Inayah,Junior,17,435,308,127,70.8,90,Tidak achieve,Endang Ana Winarsih
-2026-01,Tanpa Request On Hold,Nur Jihan Fauziah,Junior,27,2455,2201,254,89.7,90,Tidak achieve,Andrian
-2026-01,Tanpa Request On Hold,Randi,Junior,26,897,777,120,86.6,90,Tidak achieve,Irdy Aridh Azzahri
-2026-02,Semua kategori,Adi Saputra,Senior,28,1476,1071,405,72.6,95,Tidak achieve,Endang Ana Winarsih
-2026-02,Semua kategori,Anggita Karunia,Senior,26,1602,1297,305,81.0,95,Tidak achieve,Tidak ada di huddle
-2026-02,Semua kategori,Devita Rizki Ramdani,Senior,26,1937,1499,438,77.4,95,Tidak achieve,Tidak ada di huddle
-2026-02,Semua kategori,Fitri Novitasari,Senior,26,1874,1509,365,80.5,95,Tidak achieve,Elena Rahmawati
-2026-02,Semua kategori,Islahuddin Akbar,Senior,26,881,612,269,69.5,95,Tidak achieve,Elena Rahmawati
-2026-02,Semua kategori,Narisha Dwi Nova,Senior,28,2029,1649,380,81.3,95,Tidak achieve,Shiftlead
-2026-02,Semua kategori,Neisya Niza,Senior,27,1741,1204,537,69.2,95,Tidak achieve,Andrian
-2026-02,Semua kategori,Rizky Priya Pratama,Senior,27,1468,869,599,59.2,95,Tidak achieve,Andrian
-2026-02,Semua kategori,Adinda Ma’mun,Junior,26,1537,1102,435,71.7,90,Tidak achieve,Khasna Qurotul Aini
-2026-02,Semua kategori,Fauzan Athalah,Junior,26,498,304,194,61.0,90,Tidak achieve,Theresia Novalina Siburian
-2026-02,Semua kategori,Indah Dwi Inayah,Junior,26,1020,724,296,71.0,90,Tidak achieve,Endang Ana Winarsih
-2026-02,Semua kategori,Nur Jihan Fauziah,Junior,24,2308,1780,528,77.1,90,Tidak achieve,Andrian
-2026-02,Semua kategori,Rafiq Aufa Shodiq,Junior,19,770,556,214,72.2,90,Tidak achieve,Pita Roma Rumiris Situmorang
-2026-02,Semua kategori,Randi,Junior,25,859,691,168,80.4,90,Tidak achieve,Irdy Aridh Azzahri
-2026-02,Tanpa Request On Hold,Adi Saputra,Senior,28,1300,1071,229,82.4,95,Tidak achieve,Endang Ana Winarsih
-2026-02,Tanpa Request On Hold,Anggita Karunia,Senior,26,1412,1297,115,91.9,95,Tidak achieve,Tidak ada di huddle
-2026-02,Tanpa Request On Hold,Devita Rizki Ramdani,Senior,26,1696,1499,197,88.4,95,Tidak achieve,Tidak ada di huddle
-2026-02,Tanpa Request On Hold,Fitri Novitasari,Senior,26,1646,1509,137,91.7,95,Tidak achieve,Elena Rahmawati
-2026-02,Tanpa Request On Hold,Islahuddin Akbar,Senior,26,793,612,181,77.2,95,Tidak achieve,Elena Rahmawati
-2026-02,Tanpa Request On Hold,Narisha Dwi Nova,Senior,28,1814,1649,165,90.9,95,Tidak achieve,Shiftlead
-2026-02,Tanpa Request On Hold,Neisya Niza,Senior,27,1548,1204,344,77.8,95,Tidak achieve,Andrian
-2026-02,Tanpa Request On Hold,Rizky Priya Pratama,Senior,27,1284,869,415,67.7,95,Tidak achieve,Andrian
-2026-02,Tanpa Request On Hold,Adinda Ma’mun,Junior,26,1348,1102,246,81.8,90,Tidak achieve,Khasna Qurotul Aini
-2026-02,Tanpa Request On Hold,Fauzan Athalah,Junior,26,436,304,132,69.7,90,Tidak achieve,Theresia Novalina Siburian
-2026-02,Tanpa Request On Hold,Indah Dwi Inayah,Junior,26,911,724,187,79.5,90,Tidak achieve,Endang Ana Winarsih
-2026-02,Tanpa Request On Hold,Nur Jihan Fauziah,Junior,24,2030,1780,250,87.7,90,Tidak achieve,Andrian
-2026-02,Tanpa Request On Hold,Rafiq Aufa Shodiq,Junior,19,697,556,141,79.8,90,Tidak achieve,Pita Roma Rumiris Situmorang
-2026-02,Tanpa Request On Hold,Randi,Junior,25,785,691,94,88.0,90,Tidak achieve,Irdy Aridh Azzahri
-2026-03,Semua kategori,Adi Saputra,Senior,27,1149,782,367,68.1,95,Tidak achieve,Endang Ana Winarsih
-2026-03,Semua kategori,Anggita Karunia,Senior,30,2384,1659,725,69.6,95,Tidak achieve,Tidak ada di huddle
-2026-03,Semua kategori,Devita Rizki Ramdani,Senior,28,2541,1768,773,69.6,95,Tidak achieve,Tidak ada di huddle
-2026-03,Semua kategori,Fitri Novitasari,Senior,28,2173,1489,684,68.5,95,Tidak achieve,Elena Rahmawati
-2026-03,Semua kategori,Islahuddin Akbar,Senior,26,1138,622,516,54.7,95,Tidak achieve,Elena Rahmawati
-2026-03,Semua kategori,Narisha Dwi Nova,Senior,31,2176,1480,696,68.0,95,Tidak achieve,Shiftlead
-2026-03,Semua kategori,Neisya Niza,Senior,29,2038,1193,845,58.5,95,Tidak achieve,Andrian
-2026-03,Semua kategori,Rizky Priya Pratama,Senior,30,1257,666,591,53.0,95,Tidak achieve,Andrian
-2026-03,Semua kategori,Adinda Ma’mun,Junior,31,1675,1124,551,67.1,90,Tidak achieve,Khasna Qurotul Aini
-2026-03,Semua kategori,Anisa Fatimah Zahra,Junior,12,766,412,354,53.8,90,Tidak achieve,Narisha Dwi Nova
-2026-03,Semua kategori,Eva Lestari Dolok Saribu,Junior,13,595,386,209,64.9,90,Tidak achieve,Tidak ada di huddle
-2026-03,Semua kategori,Fauzan Athalah,Junior,30,1124,707,417,62.9,90,Tidak achieve,Theresia Novalina Siburian
-2026-03,Semua kategori,Indah Dwi Inayah,Junior,29,1305,859,446,65.8,90,Tidak achieve,Endang Ana Winarsih
-2026-03,Semua kategori,Nur Jihan Fauziah,Junior,25,2472,1723,749,69.7,90,Tidak achieve,Andrian
-2026-03,Semua kategori,Rafiq Aufa Shodiq,Junior,28,790,446,344,56.5,90,Tidak achieve,Pita Roma Rumiris Situmorang
-2026-03,Semua kategori,Randi,Junior,27,1208,825,383,68.3,90,Tidak achieve,Irdy Aridh Azzahri
-2026-03,Semua kategori,Salma Aulia Hanifah,Junior,13,516,400,116,77.5,90,Tidak achieve,Shiha Fadlillah
-2026-03,Tanpa Request On Hold,Adi Saputra,Senior,27,942,782,160,83.0,95,Tidak achieve,Endang Ana Winarsih
-2026-03,Tanpa Request On Hold,Anggita Karunia,Senior,30,1947,1659,288,85.2,95,Tidak achieve,Tidak ada di huddle
-2026-03,Tanpa Request On Hold,Devita Rizki Ramdani,Senior,28,2062,1768,294,85.7,95,Tidak achieve,Tidak ada di huddle
-2026-03,Tanpa Request On Hold,Fitri Novitasari,Senior,28,1747,1489,258,85.2,95,Tidak achieve,Elena Rahmawati
-2026-03,Tanpa Request On Hold,Islahuddin Akbar,Senior,26,946,622,324,65.8,95,Tidak achieve,Elena Rahmawati
-2026-03,Tanpa Request On Hold,Narisha Dwi Nova,Senior,31,1736,1480,256,85.3,95,Tidak achieve,Shiftlead
-2026-03,Tanpa Request On Hold,Neisya Niza,Senior,29,1664,1193,471,71.7,95,Tidak achieve,Andrian
-2026-03,Tanpa Request On Hold,Rizky Priya Pratama,Senior,30,1001,666,335,66.5,95,Tidak achieve,Andrian
-2026-03,Tanpa Request On Hold,Adinda Ma’mun,Junior,31,1329,1124,205,84.6,90,Tidak achieve,Khasna Qurotul Aini
-2026-03,Tanpa Request On Hold,Anisa Fatimah Zahra,Junior,12,540,412,128,76.3,90,Tidak achieve,Narisha Dwi Nova
-2026-03,Tanpa Request On Hold,Eva Lestari Dolok Saribu,Junior,13,544,386,158,71.0,90,Tidak achieve,Tidak ada di huddle
-2026-03,Tanpa Request On Hold,Fauzan Athalah,Junior,30,961,707,254,73.6,90,Tidak achieve,Theresia Novalina Siburian
-2026-03,Tanpa Request On Hold,Indah Dwi Inayah,Junior,29,1120,859,261,76.7,90,Tidak achieve,Endang Ana Winarsih
-2026-03,Tanpa Request On Hold,Nur Jihan Fauziah,Junior,25,2030,1723,307,84.9,90,Tidak achieve,Andrian
-2026-03,Tanpa Request On Hold,Rafiq Aufa Shodiq,Junior,28,607,446,161,73.5,90,Tidak achieve,Pita Roma Rumiris Situmorang
-2026-03,Tanpa Request On Hold,Randi,Junior,27,1012,825,187,81.5,90,Tidak achieve,Irdy Aridh Azzahri
-2026-03,Tanpa Request On Hold,Salma Aulia Hanifah,Junior,13,485,400,85,82.5,90,Tidak achieve,Shiha Fadlillah
-2026-04,Semua kategori,Adi Saputra,Senior,29,706,571,135,80.9,95,Tidak achieve,Endang Ana Winarsih
-2026-04,Semua kategori,Anggita Karunia,Senior,30,1969,1599,370,81.2,95,Tidak achieve,Tidak ada di huddle
-2026-04,Semua kategori,Devita Rizki Ramdani,Senior,26,1687,1475,212,87.4,95,Tidak achieve,Tidak ada di huddle
-2026-04,Semua kategori,Fitri Novitasari,Senior,28,1872,1663,209,88.8,95,Tidak achieve,Elena Rahmawati
-2026-04,Semua kategori,Islahuddin Akbar,Senior,25,725,521,204,71.9,95,Tidak achieve,Elena Rahmawati
-2026-04,Semua kategori,Narisha Dwi Nova,Senior,25,1295,1116,179,86.2,95,Tidak achieve,Shiftlead
-2026-04,Semua kategori,Neisya Niza,Senior,26,1315,1041,274,79.2,95,Tidak achieve,Andrian
-2026-04,Semua kategori,Adinda Ma’mun,Junior,28,1360,1035,325,76.1,90,Tidak achieve,Khasna Qurotul Aini
-2026-04,Semua kategori,Anisa Fatimah Zahra,Junior,23,860,699,161,81.3,90,Tidak achieve,Narisha Dwi Nova
-2026-04,Semua kategori,Eva Lestari Dolok Saribu,Junior,24,919,769,150,83.7,90,Tidak achieve,Tidak ada di huddle
-2026-04,Semua kategori,Fauzan Athalah,Junior,30,747,642,105,85.9,90,Tidak achieve,Theresia Novalina Siburian
-2026-04,Semua kategori,Febrian Abraham Kaluku,Junior,23,689,524,165,76.1,90,Tidak achieve,Tidak ada di huddle
-2026-04,Semua kategori,Nur Jihan Fauziah,Junior,30,2263,1944,319,85.9,90,Tidak achieve,Andrian
-2026-04,Semua kategori,Olivia Anele,Junior,18,753,643,110,85.4,90,Tidak achieve,Irdy Aridh Azzahri
-2026-04,Semua kategori,Rafiq Aufa Shodiq,Junior,29,1311,1037,274,79.1,90,Tidak achieve,Pita Roma Rumiris Situmorang
-2026-04,Semua kategori,Randi,Junior,27,945,719,226,76.1,90,Tidak achieve,Irdy Aridh Azzahri
-2026-04,Semua kategori,Salma Aulia Hanifah,Junior,22,731,596,135,81.5,90,Tidak achieve,Shiha Fadlillah
-2026-04,Tanpa Request On Hold,Adi Saputra,Senior,29,706,571,135,80.9,95,Tidak achieve,Endang Ana Winarsih
-2026-04,Tanpa Request On Hold,Anggita Karunia,Senior,30,1948,1599,349,82.1,95,Tidak achieve,Tidak ada di huddle
-2026-04,Tanpa Request On Hold,Devita Rizki Ramdani,Senior,26,1683,1475,208,87.6,95,Tidak achieve,Tidak ada di huddle
-2026-04,Tanpa Request On Hold,Fitri Novitasari,Senior,28,1871,1663,208,88.9,95,Tidak achieve,Elena Rahmawati
-2026-04,Tanpa Request On Hold,Islahuddin Akbar,Senior,25,723,521,202,72.1,95,Tidak achieve,Elena Rahmawati
-2026-04,Tanpa Request On Hold,Narisha Dwi Nova,Senior,25,1295,1116,179,86.2,95,Tidak achieve,Shiftlead
-2026-04,Tanpa Request On Hold,Neisya Niza,Senior,26,1312,1041,271,79.3,95,Tidak achieve,Andrian
-2026-04,Tanpa Request On Hold,Adinda Ma’mun,Junior,28,1338,1035,303,77.4,90,Tidak achieve,Khasna Qurotul Aini
-2026-04,Tanpa Request On Hold,Anisa Fatimah Zahra,Junior,23,852,699,153,82.0,90,Tidak achieve,Narisha Dwi Nova
-2026-04,Tanpa Request On Hold,Eva Lestari Dolok Saribu,Junior,24,918,769,149,83.8,90,Tidak achieve,Tidak ada di huddle
-2026-04,Tanpa Request On Hold,Fauzan Athalah,Junior,30,746,642,104,86.1,90,Tidak achieve,Theresia Novalina Siburian
-2026-04,Tanpa Request On Hold,Febrian Abraham Kaluku,Junior,23,684,524,160,76.6,90,Tidak achieve,Tidak ada di huddle
-2026-04,Tanpa Request On Hold,Nur Jihan Fauziah,Junior,30,2253,1944,309,86.3,90,Tidak achieve,Andrian
-2026-04,Tanpa Request On Hold,Olivia Anele,Junior,18,753,643,110,85.4,90,Tidak achieve,Irdy Aridh Azzahri
-2026-04,Tanpa Request On Hold,Rafiq Aufa Shodiq,Junior,29,1309,1037,272,79.2,90,Tidak achieve,Pita Roma Rumiris Situmorang
-2026-04,Tanpa Request On Hold,Randi,Junior,27,941,719,222,76.4,90,Tidak achieve,Irdy Aridh Azzahri
-2026-04,Tanpa Request On Hold,Salma Aulia Hanifah,Junior,22,731,596,135,81.5,90,Tidak achieve,Shiha Fadlillah
-2026-05,Semua kategori,Adi Saputra,Senior,30,1306,1174,132,89.9,95,Tidak achieve,Endang Ana Winarsih
-2026-05,Semua kategori,Anggita Karunia,Senior,30,1548,1417,131,91.5,95,Tidak achieve,Tidak ada di huddle
-2026-05,Semua kategori,Devita Rizki Ramdani,Senior,27,1491,1285,206,86.2,95,Tidak achieve,Tidak ada di huddle
-2026-05,Semua kategori,Fitri Novitasari,Senior,29,1511,1333,178,88.2,95,Tidak achieve,Elena Rahmawati
-2026-05,Semua kategori,Islahuddin Akbar,Senior,27,546,437,109,80.0,95,Tidak achieve,Elena Rahmawati
-2026-05,Semua kategori,Narisha Dwi Nova,Senior,28,1372,1236,136,90.1,95,Tidak achieve,Shiftlead
-2026-05,Semua kategori,Neisya Niza,Senior,30,1250,1105,145,88.4,95,Tidak achieve,Andrian
-2026-05,Semua kategori,Adinda Ma’mun,Junior,30,1094,931,163,85.1,90,Tidak achieve,Khasna Qurotul Aini
-2026-05,Semua kategori,Anisa Fatimah Zahra,Junior,29,1278,1154,124,90.3,90,Achieve,Narisha Dwi Nova
-2026-05,Semua kategori,Eva Lestari Dolok Saribu,Junior,31,1605,1396,209,87.0,90,Tidak achieve,Tidak ada di huddle
-2026-05,Semua kategori,Fauzan Athalah,Junior,28,843,744,99,88.3,90,Tidak achieve,Theresia Novalina Siburian
-2026-05,Semua kategori,Febrian Abraham Kaluku,Junior,24,583,485,98,83.2,90,Tidak achieve,Tidak ada di huddle
-2026-05,Semua kategori,Nur Jihan Fauziah,Junior,29,1878,1686,192,89.8,90,Tidak achieve,Andrian
-2026-05,Semua kategori,Olivia Anele,Junior,28,612,518,94,84.6,90,Tidak achieve,Irdy Aridh Azzahri
-2026-05,Semua kategori,Rafiq Aufa Shodiq,Junior,28,1177,1040,137,88.4,90,Tidak achieve,Pita Roma Rumiris Situmorang
-2026-05,Semua kategori,Randi,Junior,26,867,774,93,89.3,90,Tidak achieve,Irdy Aridh Azzahri
-2026-05,Semua kategori,Salma Aulia Hanifah,Junior,29,1371,1213,158,88.5,90,Tidak achieve,Shiha Fadlillah
-2026-05,Tanpa Request On Hold,Adi Saputra,Senior,30,1258,1174,84,93.3,95,Tidak achieve,Endang Ana Winarsih
-2026-05,Tanpa Request On Hold,Anggita Karunia,Senior,30,1478,1417,61,95.9,95,Achieve,Tidak ada di huddle
-2026-05,Tanpa Request On Hold,Devita Rizki Ramdani,Senior,27,1450,1285,165,88.6,95,Tidak achieve,Tidak ada di huddle
-2026-05,Tanpa Request On Hold,Fitri Novitasari,Senior,29,1452,1333,119,91.8,95,Tidak achieve,Elena Rahmawati
-2026-05,Tanpa Request On Hold,Islahuddin Akbar,Senior,27,528,437,91,82.8,95,Tidak achieve,Elena Rahmawati
-2026-05,Tanpa Request On Hold,Narisha Dwi Nova,Senior,28,1333,1236,97,92.7,95,Tidak achieve,Shiftlead
-2026-05,Tanpa Request On Hold,Neisya Niza,Senior,30,1194,1105,89,92.5,95,Tidak achieve,Andrian
-2026-05,Tanpa Request On Hold,Adinda Ma’mun,Junior,30,1060,931,129,87.8,90,Tidak achieve,Khasna Qurotul Aini
-2026-05,Tanpa Request On Hold,Anisa Fatimah Zahra,Junior,29,1225,1154,71,94.2,90,Achieve,Narisha Dwi Nova
-2026-05,Tanpa Request On Hold,Eva Lestari Dolok Saribu,Junior,31,1555,1396,159,89.8,90,Tidak achieve,Tidak ada di huddle
-2026-05,Tanpa Request On Hold,Fauzan Athalah,Junior,28,791,744,47,94.1,90,Achieve,Theresia Novalina Siburian
-2026-05,Tanpa Request On Hold,Febrian Abraham Kaluku,Junior,24,576,485,91,84.2,90,Tidak achieve,Tidak ada di huddle
-2026-05,Tanpa Request On Hold,Nur Jihan Fauziah,Junior,29,1832,1686,146,92.0,90,Achieve,Andrian
-2026-05,Tanpa Request On Hold,Olivia Anele,Junior,28,589,518,71,87.9,90,Tidak achieve,Irdy Aridh Azzahri
-2026-05,Tanpa Request On Hold,Rafiq Aufa Shodiq,Junior,28,1135,1040,95,91.6,90,Achieve,Pita Roma Rumiris Situmorang
-2026-05,Tanpa Request On Hold,Randi,Junior,26,839,774,65,92.3,90,Achieve,Irdy Aridh Azzahri
-2026-05,Tanpa Request On Hold,Salma Aulia Hanifah,Junior,29,1346,1213,133,90.1,90,Achieve,Shiha Fadlillah
-2026-06,Semua kategori,Adi Saputra,Senior,28,1411,981,430,69.5,95,Tidak achieve,Endang Ana Winarsih
-2026-06,Semua kategori,Anggita Karunia,Senior,24,1400,1009,391,72.1,95,Tidak achieve,Tidak ada di huddle
-2026-06,Semua kategori,Devita Rizki Ramdani,Senior,26,1730,1176,554,68.0,95,Tidak achieve,Tidak ada di huddle
-2026-06,Semua kategori,Fitri Novitasari,Senior,29,1961,1401,560,71.4,95,Tidak achieve,Elena Rahmawati
-2026-06,Semua kategori,Islahuddin Akbar,Senior,28,676,382,294,56.5,95,Tidak achieve,Elena Rahmawati
-2026-06,Semua kategori,Narisha Dwi Nova,Senior,27,1684,1162,522,69.0,95,Tidak achieve,Shiftlead
-2026-06,Semua kategori,Neisya Niza,Senior,27,1200,777,423,64.8,95,Tidak achieve,Andrian
-2026-06,Semua kategori,Adinda Ma’mun,Junior,29,1354,852,502,62.9,90,Tidak achieve,Khasna Qurotul Aini
-2026-06,Semua kategori,Anisa Fatimah Zahra,Junior,27,1535,1124,411,73.2,90,Tidak achieve,Narisha Dwi Nova
-2026-06,Semua kategori,Eva Lestari Dolok Saribu,Junior,26,1319,869,450,65.9,90,Tidak achieve,Tidak ada di huddle
-2026-06,Semua kategori,Fauzan Athalah,Junior,29,1460,1025,435,70.2,90,Tidak achieve,Theresia Novalina Siburian
-2026-06,Semua kategori,Febrian Abraham Kaluku,Junior,27,840,561,279,66.8,90,Tidak achieve,Tidak ada di huddle
-2026-06,Semua kategori,M Ragil Syam Arasy,Junior,25,754,462,292,61.3,90,Tidak achieve,Andrian
-2026-06,Semua kategori,Nur Jihan Fauziah,Junior,27,1926,1302,624,67.6,90,Tidak achieve,Andrian
-2026-06,Semua kategori,Olivia Anele,Junior,29,1070,668,402,62.4,90,Tidak achieve,Irdy Aridh Azzahri
-2026-06,Semua kategori,Rafiq Aufa Shodiq,Junior,28,1363,971,392,71.2,90,Tidak achieve,Pita Roma Rumiris Situmorang
-2026-06,Semua kategori,Randi,Junior,27,977,649,328,66.4,90,Tidak achieve,Irdy Aridh Azzahri
-2026-06,Semua kategori,Salma Aulia Hanifah,Junior,28,1288,908,380,70.5,90,Tidak achieve,Shiha Fadlillah
-2026-06,Semua kategori,Suherna,Junior,22,650,423,227,65.1,90,Tidak achieve,Elena Rahmawati
-2026-06,Semua kategori,Ghiska Maharani,New Joiner,10,44,10,34,22.7,90,Tidak achieve,Khasna Qurotul Aini
-2026-06,Semua kategori,Nabilah Ulfah,New Joiner,10,139,65,74,46.8,90,Tidak achieve,Tidak ada di huddle
-2026-06,Semua kategori,Putri Wulan Sari,New Joiner,11,223,154,69,69.1,90,Tidak achieve,Khasna Qurotul Aini
-2026-06,Semua kategori,Rizky Rahmadi Septian Wicaksono,New Joiner,12,396,228,168,57.6,90,Tidak achieve,Irdy Aridh Azzahri
-2026-06,Semua kategori,Syukur Rahmat Eli Hia,New Joiner,12,604,386,218,63.9,90,Tidak achieve,Pita Roma Rumiris Situmorang
-2026-06,Tanpa Request On Hold,Adi Saputra,Senior,28,1017,981,36,96.5,95,Achieve,Endang Ana Winarsih
-2026-06,Tanpa Request On Hold,Anggita Karunia,Senior,24,1074,1009,65,93.9,95,Tidak achieve,Tidak ada di huddle
-2026-06,Tanpa Request On Hold,Devita Rizki Ramdani,Senior,26,1305,1176,129,90.1,95,Tidak achieve,Tidak ada di huddle
-2026-06,Tanpa Request On Hold,Fitri Novitasari,Senior,29,1498,1401,97,93.5,95,Tidak achieve,Elena Rahmawati
-2026-06,Tanpa Request On Hold,Islahuddin Akbar,Senior,28,528,382,146,72.3,95,Tidak achieve,Elena Rahmawati
-2026-06,Tanpa Request On Hold,Narisha Dwi Nova,Senior,27,1275,1162,113,91.1,95,Tidak achieve,Shiftlead
-2026-06,Tanpa Request On Hold,Neisya Niza,Senior,27,932,777,155,83.4,95,Tidak achieve,Andrian
-2026-06,Tanpa Request On Hold,Adinda Ma’mun,Junior,29,1027,852,175,83.0,90,Tidak achieve,Khasna Qurotul Aini
-2026-06,Tanpa Request On Hold,Anisa Fatimah Zahra,Junior,27,1227,1124,103,91.6,90,Achieve,Narisha Dwi Nova
-2026-06,Tanpa Request On Hold,Eva Lestari Dolok Saribu,Junior,26,944,869,75,92.1,90,Achieve,Tidak ada di huddle
-2026-06,Tanpa Request On Hold,Fauzan Athalah,Junior,29,1126,1025,101,91.0,90,Achieve,Theresia Novalina Siburian
-2026-06,Tanpa Request On Hold,Febrian Abraham Kaluku,Junior,27,657,561,96,85.4,90,Tidak achieve,Tidak ada di huddle
-2026-06,Tanpa Request On Hold,M Ragil Syam Arasy,Junior,25,565,462,103,81.8,90,Tidak achieve,Andrian
-2026-06,Tanpa Request On Hold,Nur Jihan Fauziah,Junior,27,1426,1302,124,91.3,90,Achieve,Andrian
-2026-06,Tanpa Request On Hold,Olivia Anele,Junior,29,801,668,133,83.4,90,Tidak achieve,Irdy Aridh Azzahri
-2026-06,Tanpa Request On Hold,Rafiq Aufa Shodiq,Junior,28,1036,971,65,93.7,90,Achieve,Pita Roma Rumiris Situmorang
-2026-06,Tanpa Request On Hold,Randi,Junior,27,781,649,132,83.1,90,Tidak achieve,Irdy Aridh Azzahri
-2026-06,Tanpa Request On Hold,Salma Aulia Hanifah,Junior,28,1021,908,113,88.9,90,Tidak achieve,Shiha Fadlillah
-2026-06,Tanpa Request On Hold,Suherna,Junior,22,521,423,98,81.2,90,Tidak achieve,Elena Rahmawati
-2026-06,Tanpa Request On Hold,Nabilah Ulfah,New Joiner,10,106,65,41,61.3,90,Tidak achieve,Tidak ada di huddle
-2026-06,Tanpa Request On Hold,Putri Wulan Sari,New Joiner,11,180,154,26,85.6,90,Tidak achieve,Khasna Qurotul Aini
-2026-06,Tanpa Request On Hold,Rizky Rahmadi Septian Wicaksono,New Joiner,12,279,228,51,81.7,90,Tidak achieve,Irdy Aridh Azzahri
-2026-06,Tanpa Request On Hold,Syukur Rahmat Eli Hia,New Joiner,12,434,386,48,88.9,90,Tidak achieve,Pita Roma Rumiris Situmorang
-2026-07,Semua kategori,Adi Saputra,Senior,30,1041,813,228,78.1,95,Tidak achieve,Endang Ana Winarsih
-2026-07,Semua kategori,Anggita Karunia,Senior,31,1389,1043,346,75.1,95,Tidak achieve,Tidak ada di huddle
-2026-07,Semua kategori,Fitri Novitasari,Senior,28,1426,1078,348,75.6,95,Tidak achieve,Elena Rahmawati
-2026-07,Semua kategori,Islahuddin Akbar,Senior,28,891,594,297,66.7,95,Tidak achieve,Elena Rahmawati
-2026-07,Semua kategori,Narisha Dwi Nova,Senior,28,1375,1027,348,74.7,95,Tidak achieve,Shiftlead
-2026-07,Semua kategori,Rizky Priya Pratama,Senior,30,895,530,365,59.2,95,Tidak achieve,Andrian
-2026-07,Semua kategori,Adinda Ma’mun,Junior,31,1335,935,400,70.0,90,Tidak achieve,Khasna Qurotul Aini
-2026-07,Semua kategori,Anisa Fatimah Zahra,Junior,29,1177,901,276,76.6,90,Tidak achieve,Narisha Dwi Nova
-2026-07,Semua kategori,Eva Lestari Dolok Saribu,Junior,1,18,17,1,94.4,90,Achieve,Tidak ada di huddle
-2026-07,Semua kategori,Fauzan Athalah,Junior,30,1018,747,271,73.4,90,Tidak achieve,Theresia Novalina Siburian
-2026-07,Semua kategori,Febrian Abraham Kaluku,Junior,27,919,537,382,58.4,90,Tidak achieve,Tidak ada di huddle
-2026-07,Semua kategori,Indah Dwi Inayah,Junior,29,818,614,204,75.1,90,Tidak achieve,Endang Ana Winarsih
-2026-07,Semua kategori,M Ragil Syam Arasy,Junior,28,972,648,324,66.7,90,Tidak achieve,Andrian
-2026-07,Semua kategori,Nur Jihan Fauziah,Junior,28,1483,1113,370,75.1,90,Tidak achieve,Andrian
-2026-07,Semua kategori,Olivia Anele,Junior,30,881,633,248,71.9,90,Tidak achieve,Irdy Aridh Azzahri
-2026-07,Semua kategori,Rafiq Aufa Shodiq,Junior,29,1345,993,352,73.8,90,Tidak achieve,Pita Roma Rumiris Situmorang
-2026-07,Semua kategori,Randi,Junior,28,939,684,255,72.8,90,Tidak achieve,Irdy Aridh Azzahri
-2026-07,Semua kategori,Salma Aulia Hanifah,Junior,29,1550,1113,437,71.8,90,Tidak achieve,Shiha Fadlillah
-2026-07,Semua kategori,Suherna,Junior,31,1095,700,395,63.9,90,Tidak achieve,Elena Rahmawati
-2026-07,Semua kategori,Ahmad Ali hasbi,New Joiner,26,558,239,319,42.8,90,Tidak achieve,Narisha Dwi Nova
-2026-07,Semua kategori,Ghiska Maharani,New Joiner,25,486,246,240,50.6,90,Tidak achieve,Khasna Qurotul Aini
-2026-07,Semua kategori,Muhamad Farhan Rizaldi,New Joiner,26,701,393,308,56.1,90,Tidak achieve,Tidak ada di huddle
-2026-07,Semua kategori,Nabilah Ulfah,New Joiner,26,517,268,249,51.8,90,Tidak achieve,Tidak ada di huddle
-2026-07,Semua kategori,Putri Wulan Sari,New Joiner,26,885,645,240,72.9,90,Tidak achieve,Khasna Qurotul Aini
-2026-07,Semua kategori,Rizki Ramdan Pradana,New Joiner,25,1012,494,518,48.8,90,Tidak achieve,Narisha Dwi Nova
-2026-07,Semua kategori,Rizky Rahmadi Septian Wicaksono,New Joiner,26,1445,978,467,67.7,90,Tidak achieve,Irdy Aridh Azzahri
-2026-07,Semua kategori,Syukur Rahmat Eli Hia,New Joiner,27,1203,668,535,55.5,90,Tidak achieve,Pita Roma Rumiris Situmorang
-2026-07,Tanpa Request On Hold,Adi Saputra,Senior,30,853,813,40,95.3,95,Achieve,Endang Ana Winarsih
-2026-07,Tanpa Request On Hold,Anggita Karunia,Senior,31,1106,1043,63,94.3,95,Tidak achieve,Tidak ada di huddle
-2026-07,Tanpa Request On Hold,Fitri Novitasari,Senior,28,1126,1078,48,95.7,95,Achieve,Elena Rahmawati
-2026-07,Tanpa Request On Hold,Islahuddin Akbar,Senior,28,744,594,150,79.8,95,Tidak achieve,Elena Rahmawati
-2026-07,Tanpa Request On Hold,Narisha Dwi Nova,Senior,28,1111,1027,84,92.4,95,Tidak achieve,Shiftlead
-2026-07,Tanpa Request On Hold,Rizky Priya Pratama,Senior,30,699,530,169,75.8,95,Tidak achieve,Andrian
-2026-07,Tanpa Request On Hold,Adinda Ma’mun,Junior,31,1047,935,112,89.3,90,Tidak achieve,Khasna Qurotul Aini
-2026-07,Tanpa Request On Hold,Anisa Fatimah Zahra,Junior,29,962,901,61,93.7,90,Achieve,Narisha Dwi Nova
-2026-07,Tanpa Request On Hold,Eva Lestari Dolok Saribu,Junior,1,17,17,0,100.0,90,Achieve,Tidak ada di huddle
-2026-07,Tanpa Request On Hold,Fauzan Athalah,Junior,30,844,747,97,88.5,90,Tidak achieve,Theresia Novalina Siburian
-2026-07,Tanpa Request On Hold,Febrian Abraham Kaluku,Junior,27,738,537,201,72.8,90,Tidak achieve,Tidak ada di huddle
-2026-07,Tanpa Request On Hold,Indah Dwi Inayah,Junior,29,705,614,91,87.1,90,Tidak achieve,Endang Ana Winarsih
-2026-07,Tanpa Request On Hold,M Ragil Syam Arasy,Junior,28,775,648,127,83.6,90,Tidak achieve,Andrian
-2026-07,Tanpa Request On Hold,Nur Jihan Fauziah,Junior,28,1194,1113,81,93.2,90,Achieve,Andrian
-2026-07,Tanpa Request On Hold,Olivia Anele,Junior,30,706,633,73,89.7,90,Tidak achieve,Irdy Aridh Azzahri
-2026-07,Tanpa Request On Hold,Rafiq Aufa Shodiq,Junior,29,1074,993,81,92.5,90,Achieve,Pita Roma Rumiris Situmorang
-2026-07,Tanpa Request On Hold,Randi,Junior,28,792,684,108,86.4,90,Tidak achieve,Irdy Aridh Azzahri
-2026-07,Tanpa Request On Hold,Salma Aulia Hanifah,Junior,29,1241,1113,128,89.7,90,Tidak achieve,Shiha Fadlillah
-2026-07,Tanpa Request On Hold,Suherna,Junior,31,916,700,216,76.4,90,Tidak achieve,Elena Rahmawati
-2026-07,Tanpa Request On Hold,Ahmad Ali hasbi,New Joiner,26,449,239,210,53.2,90,Tidak achieve,Narisha Dwi Nova
-2026-07,Tanpa Request On Hold,Ghiska Maharani,New Joiner,25,386,246,140,63.7,90,Tidak achieve,Khasna Qurotul Aini
-2026-07,Tanpa Request On Hold,Muhamad Farhan Rizaldi,New Joiner,26,567,393,174,69.3,90,Tidak achieve,Tidak ada di huddle
-2026-07,Tanpa Request On Hold,Nabilah Ulfah,New Joiner,26,436,268,168,61.5,90,Tidak achieve,Tidak ada di huddle
-2026-07,Tanpa Request On Hold,Putri Wulan Sari,New Joiner,26,726,645,81,88.8,90,Tidak achieve,Khasna Qurotul Aini
-2026-07,Tanpa Request On Hold,Rizki Ramdan Pradana,New Joiner,25,791,494,297,62.5,90,Tidak achieve,Narisha Dwi Nova
-2026-07,Tanpa Request On Hold,Rizky Rahmadi Septian Wicaksono,New Joiner,26,1183,978,205,82.7,90,Tidak achieve,Irdy Aridh Azzahri
-2026-07,Tanpa Request On Hold,Syukur Rahmat Eli Hia,New Joiner,27,967,668,299,69.1,90,Tidak achieve,Pita Roma Rumiris Situmorang
-2026-08,Semua kategori,Adi Saputra,Senior,26,1015,775,240,76.4,95,Tidak achieve,Endang Ana Winarsih
-2026-08,Semua kategori,Adinda Ma’mun,Senior,29,2187,1795,392,82.1,95,Tidak achieve,Khasna Qurotul Aini
-2026-08,Semua kategori,Anggita Karunia,Senior,31,1681,1385,296,82.4,95,Tidak achieve,Tidak ada di huddle
-2026-08,Semua kategori,Febrian Abraham Kaluku,Senior,14,719,529,190,73.6,95,Tidak achieve,Tidak ada di huddle
-2026-08,Semua kategori,Islahuddin Akbar,Senior,25,1207,666,541,55.2,95,Tidak achieve,Elena Rahmawati
-2026-08,Semua kategori,Narisha Dwi Nova,Senior,27,1366,1105,261,80.9,95,Tidak achieve,Shiftlead
-2026-08,Semua kategori,Randi,Senior,23,942,699,243,74.2,95,Tidak achieve,Irdy Aridh Azzahri
-2026-08,Semua kategori,Rizky Priya Pratama,Senior,27,1008,615,393,61.0,95,Tidak achieve,Andrian
-2026-08,Semua kategori,Salma Aulia Hanifah,Senior,29,1295,1058,237,81.7,95,Tidak achieve,Shiha Fadlillah
-2026-08,Semua kategori,Ahmad Ali hasbi,Junior,27,894,406,488,45.4,90,Tidak achieve,Narisha Dwi Nova
-2026-08,Semua kategori,Anisa Fatimah Zahra,Junior,30,1426,1106,320,77.6,90,Tidak achieve,Narisha Dwi Nova
-2026-08,Semua kategori,Fauzan Athalah,Junior,31,1137,758,379,66.7,90,Tidak achieve,Theresia Novalina Siburian
-2026-08,Semua kategori,Ghiska Maharani,Junior,29,889,584,305,65.7,90,Tidak achieve,Khasna Qurotul Aini
-2026-08,Semua kategori,Indah Dwi Inayah,Junior,29,1258,812,446,64.5,90,Tidak achieve,Endang Ana Winarsih
-2026-08,Semua kategori,M Ragil Syam Arasy,Junior,28,1334,958,376,71.8,90,Tidak achieve,Andrian
-2026-08,Semua kategori,Muhamad Farhan Rizaldi,Junior,27,1015,711,304,70.0,90,Tidak achieve,Tidak ada di huddle
-2026-08,Semua kategori,Nabilah Ulfah,Junior,26,685,430,255,62.8,90,Tidak achieve,Tidak ada di huddle
-2026-08,Semua kategori,Nur Jihan Fauziah,Junior,30,1935,1541,394,79.6,90,Tidak achieve,Andrian
-2026-08,Semua kategori,Olivia Anele,Junior,29,1219,910,309,74.7,90,Tidak achieve,Irdy Aridh Azzahri
-2026-08,Semua kategori,Putri Wulan Sari,Junior,30,1490,1157,333,77.7,90,Tidak achieve,Khasna Qurotul Aini
-2026-08,Semua kategori,Rafiq Aufa Shodiq,Junior,25,1117,878,239,78.6,90,Tidak achieve,Pita Roma Rumiris Situmorang
-2026-08,Semua kategori,Rizki Ramdan Pradana,Junior,31,1063,644,419,60.6,90,Tidak achieve,Narisha Dwi Nova
-2026-08,Semua kategori,Rizky Rahmadi Septian Wicaksono,Junior,29,1447,1086,361,75.1,90,Tidak achieve,Irdy Aridh Azzahri
-2026-08,Semua kategori,Suherna,Junior,28,1066,674,392,63.2,90,Tidak achieve,Elena Rahmawati
-2026-08,Semua kategori,Syukur Rahmat Eli Hia,Junior,29,1334,855,479,64.1,90,Tidak achieve,Pita Roma Rumiris Situmorang
-2026-08,Tanpa Request On Hold,Adi Saputra,Senior,26,831,775,56,93.3,95,Tidak achieve,Endang Ana Winarsih
-2026-08,Tanpa Request On Hold,Adinda Ma’mun,Senior,29,1852,1795,57,96.9,95,Achieve,Khasna Qurotul Aini
-2026-08,Tanpa Request On Hold,Anggita Karunia,Senior,31,1396,1385,11,99.2,95,Achieve,Tidak ada di huddle
-2026-08,Tanpa Request On Hold,Febrian Abraham Kaluku,Senior,14,611,529,82,86.6,95,Tidak achieve,Tidak ada di huddle
-2026-08,Tanpa Request On Hold,Islahuddin Akbar,Senior,25,985,666,319,67.6,95,Tidak achieve,Elena Rahmawati
-2026-08,Tanpa Request On Hold,Narisha Dwi Nova,Senior,27,1148,1105,43,96.3,95,Achieve,Shiftlead
-2026-08,Tanpa Request On Hold,Randi,Senior,23,768,699,69,91.0,95,Tidak achieve,Irdy Aridh Azzahri
-2026-08,Tanpa Request On Hold,Rizky Priya Pratama,Senior,27,851,615,236,72.3,95,Tidak achieve,Andrian
-2026-08,Tanpa Request On Hold,Salma Aulia Hanifah,Senior,29,1090,1058,32,97.1,95,Achieve,Shiha Fadlillah
-2026-08,Tanpa Request On Hold,Ahmad Ali hasbi,Junior,25,738,406,332,55.0,90,Tidak achieve,Narisha Dwi Nova
-2026-08,Tanpa Request On Hold,Anisa Fatimah Zahra,Junior,30,1178,1106,72,93.9,90,Achieve,Narisha Dwi Nova
-2026-08,Tanpa Request On Hold,Fauzan Athalah,Junior,31,959,758,201,79.0,90,Tidak achieve,Theresia Novalina Siburian
-2026-08,Tanpa Request On Hold,Ghiska Maharani,Junior,29,727,584,143,80.3,90,Tidak achieve,Khasna Qurotul Aini
-2026-08,Tanpa Request On Hold,Indah Dwi Inayah,Junior,29,1102,812,290,73.7,90,Tidak achieve,Endang Ana Winarsih
-2026-08,Tanpa Request On Hold,M Ragil Syam Arasy,Junior,28,1097,958,139,87.3,90,Tidak achieve,Andrian
-2026-08,Tanpa Request On Hold,Muhamad Farhan Rizaldi,Junior,27,860,711,149,82.7,90,Tidak achieve,Tidak ada di huddle
-2026-08,Tanpa Request On Hold,Nabilah Ulfah,Junior,26,589,430,159,73.0,90,Tidak achieve,Tidak ada di huddle
-2026-08,Tanpa Request On Hold,Nur Jihan Fauziah,Junior,30,1622,1541,81,95.0,90,Achieve,Andrian
-2026-08,Tanpa Request On Hold,Olivia Anele,Junior,29,1007,910,97,90.4,90,Achieve,Irdy Aridh Azzahri
-2026-08,Tanpa Request On Hold,Putri Wulan Sari,Junior,30,1267,1157,110,91.3,90,Achieve,Khasna Qurotul Aini
-2026-08,Tanpa Request On Hold,Rafiq Aufa Shodiq,Junior,25,918,878,40,95.6,90,Achieve,Pita Roma Rumiris Situmorang
-2026-08,Tanpa Request On Hold,Rizki Ramdan Pradana,Junior,31,879,644,235,73.3,90,Tidak achieve,Narisha Dwi Nova
-2026-08,Tanpa Request On Hold,Rizky Rahmadi Septian Wicaksono,Junior,29,1191,1086,105,91.2,90,Achieve,Irdy Aridh Azzahri
-2026-08,Tanpa Request On Hold,Suherna,Junior,28,897,674,223,75.1,90,Tidak achieve,Elena Rahmawati
-2026-08,Tanpa Request On Hold,Syukur Rahmat Eli Hia,Junior,29,1102,855,247,77.6,90,Tidak achieve,Pita Roma Rumiris Situmorang
-2026-09,Semua kategori,Adi Saputra,Senior,23,913,709,204,77.7,95,Tidak achieve,Endang Ana Winarsih
-2026-09,Semua kategori,Adinda Ma’mun,Senior,28,2210,1825,385,82.6,95,Tidak achieve,Khasna Qurotul Aini
-2026-09,Semua kategori,Anggita Karunia,Senior,29,1604,1311,293,81.7,95,Tidak achieve,Tidak ada di huddle
-2026-09,Semua kategori,Islahuddin Akbar,Senior,24,954,657,297,68.9,95,Tidak achieve,Elena Rahmawati
-2026-09,Semua kategori,Narisha Dwi Nova,Senior,30,1531,1175,356,76.7,95,Tidak achieve,Shiftlead
-2026-09,Semua kategori,Randi,Senior,24,997,722,275,72.4,95,Tidak achieve,Irdy Aridh Azzahri
-2026-09,Semua kategori,Rizky Priya Pratama,Senior,25,675,470,205,69.6,95,Tidak achieve,Andrian
-2026-09,Semua kategori,Salma Aulia Hanifah,Senior,29,1866,1555,311,83.3,95,Tidak achieve,Shiha Fadlillah
-2026-09,Semua kategori,Ahmad Ali hasbi,Junior,28,607,303,304,49.9,90,Tidak achieve,Narisha Dwi Nova
-2026-09,Semua kategori,Anisa Fatimah Zahra,Junior,28,1348,1070,278,79.4,90,Tidak achieve,Narisha Dwi Nova
-2026-09,Semua kategori,Fauzan Athalah,Junior,27,1072,761,311,71.0,90,Tidak achieve,Theresia Novalina Siburian
-2026-09,Semua kategori,Ghiska Maharani,Junior,25,961,731,230,76.1,90,Tidak achieve,Khasna Qurotul Aini
-2026-09,Semua kategori,Indah Dwi Inayah,Junior,27,934,673,261,72.1,90,Tidak achieve,Endang Ana Winarsih
-2026-09,Semua kategori,M Ragil Syam Arasy,Junior,27,1081,793,288,73.4,90,Tidak achieve,Andrian
-2026-09,Semua kategori,Muhamad Farhan Rizaldi,Junior,24,772,541,231,70.1,90,Tidak achieve,Tidak ada di huddle
-2026-09,Semua kategori,Nabilah Ulfah,Junior,11,422,255,167,60.4,90,Tidak achieve,Tidak ada di huddle
-2026-09,Semua kategori,Nur Jihan Fauziah,Junior,28,1492,1167,325,78.2,90,Tidak achieve,Andrian
-2026-09,Semua kategori,Olivia Anele,Junior,29,1057,759,298,71.8,90,Tidak achieve,Irdy Aridh Azzahri
-2026-09,Semua kategori,Putri Wulan Sari,Junior,26,1260,1068,192,84.8,90,Tidak achieve,Khasna Qurotul Aini
-2026-09,Semua kategori,Rafiq Aufa Shodiq,Junior,28,1253,979,274,78.1,90,Tidak achieve,Pita Roma Rumiris Situmorang
-2026-09,Semua kategori,Rizki Ramdan Pradana,Junior,29,1165,853,312,73.2,90,Tidak achieve,Narisha Dwi Nova
-2026-09,Semua kategori,Rizky Rahmadi Septian Wicaksono,Junior,27,1452,1099,353,75.7,90,Tidak achieve,Irdy Aridh Azzahri
-2026-09,Semua kategori,Suherna,Junior,28,1050,698,352,66.5,90,Tidak achieve,Elena Rahmawati
-2026-09,Semua kategori,Syukur Rahmat Eli Hia,Junior,28,1155,793,362,68.7,90,Tidak achieve,Pita Roma Rumiris Situmorang
-2026-09,Semua kategori,Fadhilah Akbar,New Joiner,17,230,146,84,63.5,90,Tidak achieve,Theresia Novalina Siburian
-2026-09,Semua kategori,Faisal Akbar,New Joiner,23,975,496,479,50.9,90,Tidak achieve,Pita Roma Rumiris Situmorang
-2026-09,Semua kategori,Risty Wahyudi,New Joiner,17,491,320,171,65.2,90,Tidak achieve,Shiha Fadlillah
-2026-09,Semua kategori,Sri Astuti Wulandari,New Joiner,26,1231,780,451,63.4,90,Tidak achieve,Shiha Fadlillah
-2026-09,Tanpa Request On Hold,Adi Saputra,Senior,23,754,709,45,94.0,95,Tidak achieve,Endang Ana Winarsih
-2026-09,Tanpa Request On Hold,Adinda Ma’mun,Senior,28,1845,1825,20,98.9,95,Achieve,Khasna Qurotul Aini
-2026-09,Tanpa Request On Hold,Anggita Karunia,Senior,29,1315,1311,4,99.7,95,Achieve,Tidak ada di huddle
-2026-09,Tanpa Request On Hold,Islahuddin Akbar,Senior,24,778,657,121,84.4,95,Tidak achieve,Elena Rahmawati
-2026-09,Tanpa Request On Hold,Narisha Dwi Nova,Senior,30,1257,1175,82,93.5,95,Tidak achieve,Shiftlead
-2026-09,Tanpa Request On Hold,Randi,Senior,23,820,722,98,88.0,95,Tidak achieve,Irdy Aridh Azzahri
-2026-09,Tanpa Request On Hold,Rizky Priya Pratama,Senior,25,549,470,79,85.6,95,Tidak achieve,Andrian
-2026-09,Tanpa Request On Hold,Salma Aulia Hanifah,Senior,29,1574,1555,19,98.8,95,Achieve,Shiha Fadlillah
-2026-09,Tanpa Request On Hold,Ahmad Ali hasbi,Junior,28,505,303,202,60.0,90,Tidak achieve,Narisha Dwi Nova
-2026-09,Tanpa Request On Hold,Anisa Fatimah Zahra,Junior,28,1136,1070,66,94.2,90,Achieve,Narisha Dwi Nova
-2026-09,Tanpa Request On Hold,Fauzan Athalah,Junior,27,918,761,157,82.9,90,Tidak achieve,Theresia Novalina Siburian
-2026-09,Tanpa Request On Hold,Ghiska Maharani,Junior,25,798,731,67,91.6,90,Achieve,Khasna Qurotul Aini
-2026-09,Tanpa Request On Hold,Indah Dwi Inayah,Junior,27,769,673,96,87.5,90,Tidak achieve,Endang Ana Winarsih
-2026-09,Tanpa Request On Hold,M Ragil Syam Arasy,Junior,27,871,793,78,91.0,90,Achieve,Andrian
-2026-09,Tanpa Request On Hold,Muhamad Farhan Rizaldi,Junior,24,639,541,98,84.7,90,Tidak achieve,Tidak ada di huddle
-2026-09,Tanpa Request On Hold,Nabilah Ulfah,Junior,11,363,255,108,70.2,90,Tidak achieve,Tidak ada di huddle
-2026-09,Tanpa Request On Hold,Nur Jihan Fauziah,Junior,28,1222,1167,55,95.5,90,Achieve,Andrian
-2026-09,Tanpa Request On Hold,Olivia Anele,Junior,29,867,759,108,87.5,90,Tidak achieve,Irdy Aridh Azzahri
-2026-09,Tanpa Request On Hold,Putri Wulan Sari,Junior,26,1083,1068,15,98.6,90,Achieve,Khasna Qurotul Aini
-2026-09,Tanpa Request On Hold,Rafiq Aufa Shodiq,Junior,28,1046,979,67,93.6,90,Achieve,Pita Roma Rumiris Situmorang
-2026-09,Tanpa Request On Hold,Rizki Ramdan Pradana,Junior,28,962,853,109,88.7,90,Tidak achieve,Narisha Dwi Nova
-2026-09,Tanpa Request On Hold,Rizky Rahmadi Septian Wicaksono,Junior,27,1181,1099,82,93.1,90,Achieve,Irdy Aridh Azzahri
-2026-09,Tanpa Request On Hold,Suherna,Junior,28,891,698,193,78.3,90,Tidak achieve,Elena Rahmawati
-2026-09,Tanpa Request On Hold,Syukur Rahmat Eli Hia,Junior,28,962,793,169,82.4,90,Tidak achieve,Pita Roma Rumiris Situmorang
-2026-09,Tanpa Request On Hold,Fadhilah Akbar,New Joiner,17,204,146,58,71.6,90,Tidak achieve,Theresia Novalina Siburian
-2026-09,Tanpa Request On Hold,Faisal Akbar,New Joiner,23,816,496,320,60.8,90,Tidak achieve,Pita Roma Rumiris Situmorang
-2026-09,Tanpa Request On Hold,Risty Wahyudi,New Joiner,17,435,320,115,73.6,90,Tidak achieve,Shiha Fadlillah
-2026-09,Tanpa Request On Hold,Sri Astuti Wulandari,New Joiner,26,1046,780,266,74.6,90,Tidak achieve,Shiha Fadlillah
-2026-10,Semua kategori,Adi Saputra,Senior,29,1094,865,229,79.1,95,Tidak achieve,Endang Ana Winarsih
-2026-10,Semua kategori,Adinda Ma’mun,Senior,27,1748,1488,260,85.1,95,Tidak achieve,Khasna Qurotul Aini
-2026-10,Semua kategori,Anggita Karunia,Senior,28,1266,1053,213,83.2,95,Tidak achieve,Tidak ada di huddle
-2026-10,Semua kategori,Fauzan Athalah,Senior,30,1077,886,191,82.3,95,Tidak achieve,Theresia Novalina Siburian
-2026-10,Semua kategori,Islahuddin Akbar,Senior,24,772,615,157,79.7,95,Tidak achieve,Elena Rahmawati
-2026-10,Semua kategori,Narisha Dwi Nova,Senior,29,1345,1128,217,83.9,95,Tidak achieve,Shiftlead
-2026-10,Semua kategori,Rafiq Aufa Shodiq,Senior,30,1203,999,204,83.0,95,Tidak achieve,Pita Roma Rumiris Situmorang
-2026-10,Semua kategori,Randi,Senior,26,930,766,164,82.4,95,Tidak achieve,Irdy Aridh Azzahri
-2026-10,Semua kategori,Rizky Priya Pratama,Senior,31,1019,737,282,72.3,95,Tidak achieve,Andrian
-2026-10,Semua kategori,Salma Aulia Hanifah,Senior,29,1594,1373,221,86.1,95,Tidak achieve,Shiha Fadlillah
-2026-10,Semua kategori,Ahmad Ali hasbi,Junior,28,719,380,339,52.9,90,Tidak achieve,Narisha Dwi Nova
-2026-10,Semua kategori,Anisa Fatimah Zahra,Junior,31,1512,1295,217,85.6,90,Tidak achieve,Narisha Dwi Nova
-2026-10,Semua kategori,Ghiska Maharani,Junior,29,968,798,170,82.4,90,Tidak achieve,Khasna Qurotul Aini
-2026-10,Semua kategori,Indah Dwi Inayah,Junior,30,1116,891,225,79.8,90,Tidak achieve,Endang Ana Winarsih
-2026-10,Semua kategori,M Ragil Syam Arasy,Junior,27,1111,926,185,83.3,90,Tidak achieve,Andrian
-2026-10,Semua kategori,Nur Jihan Fauziah,Junior,27,1367,1114,253,81.5,90,Tidak achieve,Andrian
-2026-10,Semua kategori,Olivia Anele,Junior,29,1158,921,237,79.5,90,Tidak achieve,Irdy Aridh Azzahri
-2026-10,Semua kategori,Putri Wulan Sari,Junior,31,1617,1402,215,86.7,90,Tidak achieve,Khasna Qurotul Aini
-2026-10,Semua kategori,Rizki Ramdan Pradana,Junior,30,869,676,193,77.8,90,Tidak achieve,Narisha Dwi Nova
-2026-10,Semua kategori,Rizky Rahmadi Septian Wicaksono,Junior,27,1336,1097,239,82.1,90,Tidak achieve,Irdy Aridh Azzahri
-2026-10,Semua kategori,Suherna,Junior,26,1030,834,196,81.0,90,Tidak achieve,Elena Rahmawati
-2026-10,Semua kategori,Syukur Rahmat Eli Hia,Junior,27,1239,980,259,79.1,90,Tidak achieve,Pita Roma Rumiris Situmorang
-2026-10,Semua kategori,Amelia Wilnanda,New Joiner,13,469,248,221,52.9,90,Tidak achieve,Pita Roma Rumiris Situmorang
-2026-10,Semua kategori,Fadhilah Akbar,New Joiner,27,1092,818,274,74.9,90,Tidak achieve,Theresia Novalina Siburian
-2026-10,Semua kategori,Faisal Akbar,New Joiner,25,862,461,401,53.5,90,Tidak achieve,Pita Roma Rumiris Situmorang
-2026-10,Semua kategori,M Robi Anggara,New Joiner,17,311,212,99,68.2,90,Tidak achieve,Narisha Dwi Nova
-2026-10,Semua kategori,Marchsanino Ridlotllah,New Joiner,17,427,346,81,81.0,90,Tidak achieve,Khasna Qurotul Aini
-2026-10,Semua kategori,Muttaqin Ahmad,New Joiner,10,196,92,104,46.9,90,Tidak achieve,Tidak ada di huddle
-2026-10,Semua kategori,Risty Wahyudi,New Joiner,25,1181,918,263,77.7,90,Tidak achieve,Shiha Fadlillah
-2026-10,Semua kategori,Sri Astuti Wulandari,New Joiner,28,1253,978,275,78.1,90,Tidak achieve,Shiha Fadlillah
-2026-10,Semua kategori,Sri Trisnawati Djayusman,New Joiner,19,523,353,170,67.5,90,Tidak achieve,Endang Ana Winarsih
-2026-10,Tanpa Request On Hold,Adi Saputra,Senior,29,880,865,15,98.3,95,Achieve,Endang Ana Winarsih
-2026-10,Tanpa Request On Hold,Adinda Ma’mun,Senior,27,1496,1488,8,99.5,95,Achieve,Khasna Qurotul Aini
-2026-10,Tanpa Request On Hold,Anggita Karunia,Senior,28,1060,1053,7,99.3,95,Achieve,Tidak ada di huddle
-2026-10,Tanpa Request On Hold,Fauzan Athalah,Senior,29,920,886,34,96.3,95,Achieve,Theresia Novalina Siburian
-2026-10,Tanpa Request On Hold,Islahuddin Akbar,Senior,24,657,615,42,93.6,95,Tidak achieve,Elena Rahmawati
-2026-10,Tanpa Request On Hold,Narisha Dwi Nova,Senior,29,1145,1128,17,98.5,95,Achieve,Shiftlead
-2026-10,Tanpa Request On Hold,Rafiq Aufa Shodiq,Senior,30,1018,999,19,98.1,95,Achieve,Pita Roma Rumiris Situmorang
-2026-10,Tanpa Request On Hold,Randi,Senior,26,802,766,36,95.5,95,Achieve,Irdy Aridh Azzahri
-2026-10,Tanpa Request On Hold,Rizky Priya Pratama,Senior,31,844,737,107,87.3,95,Tidak achieve,Andrian
-2026-10,Tanpa Request On Hold,Salma Aulia Hanifah,Senior,29,1374,1373,1,99.9,95,Achieve,Shiha Fadlillah
-2026-10,Tanpa Request On Hold,Ahmad Ali hasbi,Junior,28,590,380,210,64.4,90,Tidak achieve,Narisha Dwi Nova
-2026-10,Tanpa Request On Hold,Anisa Fatimah Zahra,Junior,31,1313,1295,18,98.6,90,Achieve,Narisha Dwi Nova
-2026-10,Tanpa Request On Hold,Ghiska Maharani,Junior,29,829,798,31,96.3,90,Achieve,Khasna Qurotul Aini
-2026-10,Tanpa Request On Hold,Indah Dwi Inayah,Junior,30,949,891,58,93.9,90,Achieve,Endang Ana Winarsih
-2026-10,Tanpa Request On Hold,M Ragil Syam Arasy,Junior,27,955,926,29,97.0,90,Achieve,Andrian
-2026-10,Tanpa Request On Hold,Nur Jihan Fauziah,Junior,27,1136,1114,22,98.1,90,Achieve,Andrian
-2026-10,Tanpa Request On Hold,Olivia Anele,Junior,29,972,921,51,94.8,90,Achieve,Irdy Aridh Azzahri
-2026-10,Tanpa Request On Hold,Putri Wulan Sari,Junior,31,1410,1402,8,99.4,90,Achieve,Khasna Qurotul Aini
-2026-10,Tanpa Request On Hold,Rizki Ramdan Pradana,Junior,30,731,676,55,92.5,90,Achieve,Narisha Dwi Nova
-2026-10,Tanpa Request On Hold,Rizky Rahmadi Septian Wicaksono,Junior,27,1134,1097,37,96.7,90,Achieve,Irdy Aridh Azzahri
-2026-10,Tanpa Request On Hold,Suherna,Junior,26,870,834,36,95.9,90,Achieve,Elena Rahmawati
-2026-10,Tanpa Request On Hold,Syukur Rahmat Eli Hia,Junior,27,1058,980,78,92.6,90,Achieve,Pita Roma Rumiris Situmorang
-2026-10,Tanpa Request On Hold,Amelia Wilnanda,New Joiner,13,409,248,161,60.6,90,Tidak achieve,Pita Roma Rumiris Situmorang
-2026-10,Tanpa Request On Hold,Fadhilah Akbar,New Joiner,27,946,818,128,86.5,90,Tidak achieve,Theresia Novalina Siburian
-2026-10,Tanpa Request On Hold,Faisal Akbar,New Joiner,25,705,461,244,65.4,90,Tidak achieve,Pita Roma Rumiris Situmorang
-2026-10,Tanpa Request On Hold,M Robi Anggara,New Joiner,17,277,212,65,76.5,90,Tidak achieve,Narisha Dwi Nova
-2026-10,Tanpa Request On Hold,Marchsanino Ridlotllah,New Joiner,17,378,346,32,91.5,90,Achieve,Khasna Qurotul Aini
-2026-10,Tanpa Request On Hold,Muttaqin Ahmad,New Joiner,10,157,92,65,58.6,90,Tidak achieve,Tidak ada di huddle
-2026-10,Tanpa Request On Hold,Risty Wahyudi,New Joiner,25,1003,918,85,91.5,90,Achieve,Shiha Fadlillah
-2026-10,Tanpa Request On Hold,Sri Astuti Wulandari,New Joiner,28,1055,978,77,92.7,90,Achieve,Shiha Fadlillah
-2026-10,Tanpa Request On Hold,Sri Trisnawati Djayusman,New Joiner,19,465,353,112,75.9,90,Tidak achieve,Endang Ana Winarsih
-2026-11,Semua kategori,Adi Saputra,Senior,20,513,401,112,78.2,95,Tidak achieve,Endang Ana Winarsih
-2026-11,Semua kategori,Adinda Ma’mun,Senior,21,696,560,136,80.5,95,Tidak achieve,Khasna Qurotul Aini
-2026-11,Semua kategori,Anisa Fatimah Zahra,Senior,20,738,605,133,82.0,95,Tidak achieve,Narisha Dwi Nova
-2026-11,Semua kategori,Fauzan Athalah,Senior,20,658,543,115,82.5,95,Tidak achieve,Theresia Novalina Siburian
-2026-11,Semua kategori,Fitri Novitasari,Senior,20,616,493,123,80.0,95,Tidak achieve,Elena Rahmawati
-2026-11,Semua kategori,M Ragil Syam Arasy,Senior,19,549,425,124,77.4,95,Tidak achieve,Andrian
-2026-11,Semua kategori,Nur Jihan Fauziah,Senior,20,796,644,152,80.9,95,Tidak achieve,Andrian
-2026-11,Semua kategori,Putri Wulan Sari,Senior,22,877,719,158,82.0,95,Tidak achieve,Khasna Qurotul Aini
-2026-11,Semua kategori,Rafiq Aufa Shodiq,Senior,22,767,600,167,78.2,95,Tidak achieve,Pita Roma Rumiris Situmorang
-2026-11,Semua kategori,Randi,Senior,17,639,510,129,79.8,95,Tidak achieve,Irdy Aridh Azzahri
-2026-11,Semua kategori,Rizki Ramdan Pradana,Senior,22,470,380,90,80.9,95,Tidak achieve,Narisha Dwi Nova
-2026-11,Semua kategori,Rizky Rahmadi Septian Wicaksono,Senior,21,891,720,171,80.8,95,Tidak achieve,Irdy Aridh Azzahri
-2026-11,Semua kategori,Salma Aulia Hanifah,Senior,22,900,732,168,81.3,95,Tidak achieve,Shiha Fadlillah
-2026-11,Semua kategori,Suherna,Senior,21,935,763,172,81.6,95,Tidak achieve,Elena Rahmawati
-2026-11,Semua kategori,Syukur Rahmat Eli Hia,Senior,21,700,556,144,79.4,95,Tidak achieve,Pita Roma Rumiris Situmorang
-2026-11,Semua kategori,Ahmad Ali hasbi,Junior,20,449,297,152,66.1,90,Tidak achieve,Narisha Dwi Nova
-2026-11,Semua kategori,Fadhilah Akbar,Junior,20,705,546,159,77.4,90,Tidak achieve,Theresia Novalina Siburian
-2026-11,Semua kategori,Faisal Akbar,Junior,21,413,280,133,67.8,90,Tidak achieve,Pita Roma Rumiris Situmorang
-2026-11,Semua kategori,Ghiska Maharani,Junior,21,662,513,149,77.5,90,Tidak achieve,Khasna Qurotul Aini
-2026-11,Semua kategori,Indah Dwi Inayah,Junior,21,696,541,155,77.7,90,Tidak achieve,Endang Ana Winarsih
-2026-11,Semua kategori,Islahuddin Akbar,Junior,20,488,375,113,76.8,90,Tidak achieve,Elena Rahmawati
-2026-11,Semua kategori,Olivia Anele,Junior,21,589,472,117,80.1,90,Tidak achieve,Irdy Aridh Azzahri
-2026-11,Semua kategori,Risty Wahyudi,Junior,18,619,485,134,78.4,90,Tidak achieve,Shiha Fadlillah
-2026-11,Semua kategori,Rizky Priya Pratama,Junior,21,649,480,169,74.0,90,Tidak achieve,Andrian
-2026-11,Semua kategori,Sri Astuti Wulandari,Junior,21,657,534,123,81.3,90,Tidak achieve,Shiha Fadlillah
-2026-11,Semua kategori,Amelia Wilnanda,New Joiner,17,510,301,209,59.0,90,Tidak achieve,Pita Roma Rumiris Situmorang
-2026-11,Semua kategori,M Robi Anggara,New Joiner,18,516,356,160,69.0,90,Tidak achieve,Narisha Dwi Nova
-2026-11,Semua kategori,Marchsanino Ridlotllah,New Joiner,18,469,362,107,77.2,90,Tidak achieve,Khasna Qurotul Aini
-2026-11,Semua kategori,Mochamad Haikal Alfarisi,New Joiner,15,425,222,203,52.2,90,Tidak achieve,Elena Rahmawati
-2026-11,Semua kategori,Sri Trisnawati Djayusman,New Joiner,18,574,438,136,76.3,90,Tidak achieve,Endang Ana Winarsih
-2026-11,Semua kategori,Tio Intan Meilani Butar-Butar,New Joiner,18,362,238,124,65.7,90,Tidak achieve,Theresia Novalina Siburian
-2026-11,Tanpa Request On Hold,Adi Saputra,Senior,20,404,401,3,99.3,95,Achieve,Endang Ana Winarsih
-2026-11,Tanpa Request On Hold,Adinda Ma’mun,Senior,21,565,560,5,99.1,95,Achieve,Khasna Qurotul Aini
-2026-11,Tanpa Request On Hold,Anisa Fatimah Zahra,Senior,20,609,605,4,99.3,95,Achieve,Narisha Dwi Nova
-2026-11,Tanpa Request On Hold,Fauzan Athalah,Senior,20,549,543,6,98.9,95,Achieve,Theresia Novalina Siburian
-2026-11,Tanpa Request On Hold,Fitri Novitasari,Senior,20,500,493,7,98.6,95,Achieve,Elena Rahmawati
-2026-11,Tanpa Request On Hold,M Ragil Syam Arasy,Senior,19,428,425,3,99.3,95,Achieve,Andrian
-2026-11,Tanpa Request On Hold,Nur Jihan Fauziah,Senior,20,647,644,3,99.5,95,Achieve,Andrian
-2026-11,Tanpa Request On Hold,Putri Wulan Sari,Senior,22,719,719,0,100.0,95,Achieve,Khasna Qurotul Aini
-2026-11,Tanpa Request On Hold,Rafiq Aufa Shodiq,Senior,22,617,600,17,97.2,95,Achieve,Pita Roma Rumiris Situmorang
-2026-11,Tanpa Request On Hold,Randi,Senior,17,532,510,22,95.9,95,Achieve,Irdy Aridh Azzahri
-2026-11,Tanpa Request On Hold,Rizki Ramdan Pradana,Senior,22,387,380,7,98.2,95,Achieve,Narisha Dwi Nova
-2026-11,Tanpa Request On Hold,Rizky Rahmadi Septian Wicaksono,Senior,21,725,720,5,99.3,95,Achieve,Irdy Aridh Azzahri
-2026-11,Tanpa Request On Hold,Salma Aulia Hanifah,Senior,22,732,732,0,100.0,95,Achieve,Shiha Fadlillah
-2026-11,Tanpa Request On Hold,Suherna,Senior,21,775,763,12,98.5,95,Achieve,Elena Rahmawati
-2026-11,Tanpa Request On Hold,Syukur Rahmat Eli Hia,Senior,21,566,556,10,98.2,95,Achieve,Pita Roma Rumiris Situmorang
-2026-11,Tanpa Request On Hold,Ahmad Ali hasbi,Junior,20,359,297,62,82.7,90,Tidak achieve,Narisha Dwi Nova
-2026-11,Tanpa Request On Hold,Fadhilah Akbar,Junior,19,572,546,26,95.5,90,Achieve,Theresia Novalina Siburian
-2026-11,Tanpa Request On Hold,Faisal Akbar,Junior,21,333,280,53,84.1,90,Tidak achieve,Pita Roma Rumiris Situmorang
-2026-11,Tanpa Request On Hold,Ghiska Maharani,Junior,21,518,513,5,99.0,90,Achieve,Khasna Qurotul Aini
-2026-11,Tanpa Request On Hold,Indah Dwi Inayah,Junior,20,571,541,30,94.7,90,Achieve,Endang Ana Winarsih
-2026-11,Tanpa Request On Hold,Islahuddin Akbar,Junior,20,401,375,26,93.5,90,Achieve,Elena Rahmawati
-2026-11,Tanpa Request On Hold,Olivia Anele,Junior,21,482,472,10,97.9,90,Achieve,Irdy Aridh Azzahri
-2026-11,Tanpa Request On Hold,Risty Wahyudi,Junior,18,486,485,1,99.8,90,Achieve,Shiha Fadlillah
-2026-11,Tanpa Request On Hold,Rizky Priya Pratama,Junior,21,541,480,61,88.7,90,Tidak achieve,Andrian
-2026-11,Tanpa Request On Hold,Sri Astuti Wulandari,Junior,21,544,534,10,98.2,90,Achieve,Shiha Fadlillah
-2026-11,Tanpa Request On Hold,Amelia Wilnanda,New Joiner,17,390,301,89,77.2,90,Tidak achieve,Pita Roma Rumiris Situmorang
-2026-11,Tanpa Request On Hold,M Robi Anggara,New Joiner,18,413,356,57,86.2,90,Tidak achieve,Narisha Dwi Nova
-2026-11,Tanpa Request On Hold,Marchsanino Ridlotllah,New Joiner,18,376,362,14,96.3,90,Achieve,Khasna Qurotul Aini
-2026-11,Tanpa Request On Hold,Mochamad Haikal Alfarisi,New Joiner,15,334,222,112,66.5,90,Tidak achieve,Elena Rahmawati
-2026-11,Tanpa Request On Hold,Sri Trisnawati Djayusman,New Joiner,18,463,438,25,94.6,90,Achieve,Endang Ana Winarsih
-2026-11,Tanpa Request On Hold,Tio Intan Meilani Butar-Butar,New Joiner,18,298,238,60,79.9,90,Tidak achieve,Theresia Novalina Siburian
+<script type="text/plain" id="csv-achieve">bulan,versi,agent,segmen,hari_aktif,resolved,under_1,over_1_menit,pct,target,status,shiftlead,under_5,under_10
+2026-01,Semua kategori,Adi Saputra,Senior,30,1544,1077,467,69.8,95,Tidak achieve,Endang Ana Winarsih,1365,1542
+2026-01,Semua kategori,Anggita Karunia,Senior,30,2347,1833,514,78.1,95,Tidak achieve,Tidak ada di huddle,2076,2347
+2026-01,Semua kategori,Devita Rizki Ramdani,Senior,29,2110,1579,531,74.8,95,Tidak achieve,Tidak ada di huddle,1865,2110
+2026-01,Semua kategori,Fitri Novitasari,Senior,30,2292,1722,570,75.1,95,Tidak achieve,Elena Rahmawati,2061,2292
+2026-01,Semua kategori,Islahuddin Akbar,Senior,30,901,415,486,46.1,95,Tidak achieve,Elena Rahmawati,775,899
+2026-01,Semua kategori,Narisha Dwi Nova,Senior,27,1305,934,371,71.6,95,Tidak achieve,Shiftlead,1147,1304
+2026-01,Semua kategori,Neisya Niza,Senior,30,2162,1486,676,68.7,95,Tidak achieve,Andrian,1916,2162
+2026-01,Semua kategori,Pita Roma Rumiris Situmorang,Senior,26,2548,1924,624,75.5,95,Tidak achieve,Shiftlead,2336,2546
+2026-01,Semua kategori,Rizky Priya Pratama,Senior,31,1392,757,635,54.4,95,Tidak achieve,Andrian,1205,1392
+2026-01,Semua kategori,Adinda Ma’mun,Junior,15,225,115,110,51.1,90,Tidak achieve,Khasna Qurotul Aini,206,225
+2026-01,Semua kategori,Fauzan Athalah,Junior,14,207,87,120,42.0,90,Tidak achieve,Theresia Novalina Siburian,185,206
+2026-01,Semua kategori,Indah Dwi Inayah,Junior,17,508,308,200,60.6,90,Tidak achieve,Endang Ana Winarsih,433,508
+2026-01,Semua kategori,Nur Jihan Fauziah,Junior,27,2732,2201,531,80.6,90,Tidak achieve,Andrian,2452,2731
+2026-01,Semua kategori,Randi,Junior,26,1010,777,233,76.9,90,Tidak achieve,Irdy Aridh Azzahri,894,1010
+2026-01,Tanpa Request On Hold,Adi Saputra,Senior,30,1374,1077,297,78.4,95,Tidak achieve,Endang Ana Winarsih,1365,1372
+2026-01,Tanpa Request On Hold,Anggita Karunia,Senior,30,2084,1833,251,88.0,95,Tidak achieve,Tidak ada di huddle,2076,2084
+2026-01,Tanpa Request On Hold,Devita Rizki Ramdani,Senior,29,1871,1579,292,84.4,95,Tidak achieve,Tidak ada di huddle,1865,1871
+2026-01,Tanpa Request On Hold,Fitri Novitasari,Senior,30,2064,1722,342,83.4,95,Tidak achieve,Elena Rahmawati,2061,2064
+2026-01,Tanpa Request On Hold,Islahuddin Akbar,Senior,30,808,415,393,51.4,95,Tidak achieve,Elena Rahmawati,775,806
+2026-01,Tanpa Request On Hold,Narisha Dwi Nova,Senior,27,1160,934,226,80.5,95,Tidak achieve,Shiftlead,1147,1159
+2026-01,Tanpa Request On Hold,Neisya Niza,Senior,30,1934,1486,448,76.8,95,Tidak achieve,Andrian,1916,1934
+2026-01,Tanpa Request On Hold,Pita Roma Rumiris Situmorang,Senior,26,2339,1924,415,82.3,95,Tidak achieve,Shiftlead,2336,2337
+2026-01,Tanpa Request On Hold,Rizky Priya Pratama,Senior,31,1229,757,472,61.6,95,Tidak achieve,Andrian,1205,1229
+2026-01,Tanpa Request On Hold,Adinda Ma’mun,Junior,14,208,115,93,55.3,90,Tidak achieve,Khasna Qurotul Aini,206,208
+2026-01,Tanpa Request On Hold,Fauzan Athalah,Junior,14,189,87,102,46.0,90,Tidak achieve,Theresia Novalina Siburian,185,188
+2026-01,Tanpa Request On Hold,Indah Dwi Inayah,Junior,17,435,308,127,70.8,90,Tidak achieve,Endang Ana Winarsih,433,435
+2026-01,Tanpa Request On Hold,Nur Jihan Fauziah,Junior,27,2455,2201,254,89.7,90,Tidak achieve,Andrian,2452,2454
+2026-01,Tanpa Request On Hold,Randi,Junior,26,897,777,120,86.6,90,Tidak achieve,Irdy Aridh Azzahri,894,897
+2026-02,Semua kategori,Adi Saputra,Senior,28,1476,1071,405,72.6,95,Tidak achieve,Endang Ana Winarsih,1278,1470
+2026-02,Semua kategori,Anggita Karunia,Senior,26,1602,1297,305,81.0,95,Tidak achieve,Tidak ada di huddle,1412,1602
+2026-02,Semua kategori,Devita Rizki Ramdani,Senior,26,1937,1499,438,77.4,95,Tidak achieve,Tidak ada di huddle,1690,1933
+2026-02,Semua kategori,Fitri Novitasari,Senior,26,1874,1509,365,80.5,95,Tidak achieve,Elena Rahmawati,1633,1867
+2026-02,Semua kategori,Islahuddin Akbar,Senior,26,881,612,269,69.5,95,Tidak achieve,Elena Rahmawati,782,880
+2026-02,Semua kategori,Narisha Dwi Nova,Senior,28,2029,1649,380,81.3,95,Tidak achieve,Shiftlead,1809,2027
+2026-02,Semua kategori,Neisya Niza,Senior,27,1741,1204,537,69.2,95,Tidak achieve,Andrian,1542,1741
+2026-02,Semua kategori,Rizky Priya Pratama,Senior,27,1468,869,599,59.2,95,Tidak achieve,Andrian,1274,1467
+2026-02,Semua kategori,Adinda Ma’mun,Junior,26,1537,1102,435,71.7,90,Tidak achieve,Khasna Qurotul Aini,1331,1532
+2026-02,Semua kategori,Fauzan Athalah,Junior,26,498,304,194,61.0,90,Tidak achieve,Theresia Novalina Siburian,424,497
+2026-02,Semua kategori,Indah Dwi Inayah,Junior,26,1020,724,296,71.0,90,Tidak achieve,Endang Ana Winarsih,900,1020
+2026-02,Semua kategori,Nur Jihan Fauziah,Junior,24,2308,1780,528,77.1,90,Tidak achieve,Andrian,2029,2308
+2026-02,Semua kategori,Rafiq Aufa Shodiq,Junior,19,770,556,214,72.2,90,Tidak achieve,Pita Roma Rumiris Situmorang,692,770
+2026-02,Semua kategori,Randi,Junior,25,859,691,168,80.4,90,Tidak achieve,Irdy Aridh Azzahri,780,859
+2026-02,Tanpa Request On Hold,Adi Saputra,Senior,28,1300,1071,229,82.4,95,Tidak achieve,Endang Ana Winarsih,1278,1294
+2026-02,Tanpa Request On Hold,Anggita Karunia,Senior,26,1412,1297,115,91.9,95,Tidak achieve,Tidak ada di huddle,1412,1412
+2026-02,Tanpa Request On Hold,Devita Rizki Ramdani,Senior,26,1696,1499,197,88.4,95,Tidak achieve,Tidak ada di huddle,1690,1692
+2026-02,Tanpa Request On Hold,Fitri Novitasari,Senior,26,1646,1509,137,91.7,95,Tidak achieve,Elena Rahmawati,1633,1639
+2026-02,Tanpa Request On Hold,Islahuddin Akbar,Senior,26,793,612,181,77.2,95,Tidak achieve,Elena Rahmawati,782,792
+2026-02,Tanpa Request On Hold,Narisha Dwi Nova,Senior,28,1814,1649,165,90.9,95,Tidak achieve,Shiftlead,1809,1812
+2026-02,Tanpa Request On Hold,Neisya Niza,Senior,27,1548,1204,344,77.8,95,Tidak achieve,Andrian,1542,1548
+2026-02,Tanpa Request On Hold,Rizky Priya Pratama,Senior,27,1284,869,415,67.7,95,Tidak achieve,Andrian,1274,1283
+2026-02,Tanpa Request On Hold,Adinda Ma’mun,Junior,26,1348,1102,246,81.8,90,Tidak achieve,Khasna Qurotul Aini,1331,1343
+2026-02,Tanpa Request On Hold,Fauzan Athalah,Junior,26,436,304,132,69.7,90,Tidak achieve,Theresia Novalina Siburian,424,435
+2026-02,Tanpa Request On Hold,Indah Dwi Inayah,Junior,26,911,724,187,79.5,90,Tidak achieve,Endang Ana Winarsih,900,911
+2026-02,Tanpa Request On Hold,Nur Jihan Fauziah,Junior,24,2030,1780,250,87.7,90,Tidak achieve,Andrian,2029,2030
+2026-02,Tanpa Request On Hold,Rafiq Aufa Shodiq,Junior,19,697,556,141,79.8,90,Tidak achieve,Pita Roma Rumiris Situmorang,692,697
+2026-02,Tanpa Request On Hold,Randi,Junior,25,785,691,94,88.0,90,Tidak achieve,Irdy Aridh Azzahri,780,785
+2026-03,Semua kategori,Adi Saputra,Senior,27,1149,782,367,68.1,95,Tidak achieve,Endang Ana Winarsih,935,1149
+2026-03,Semua kategori,Anggita Karunia,Senior,30,2384,1659,725,69.6,95,Tidak achieve,Tidak ada di huddle,1946,2384
+2026-03,Semua kategori,Devita Rizki Ramdani,Senior,28,2541,1768,773,69.6,95,Tidak achieve,Tidak ada di huddle,2049,2541
+2026-03,Semua kategori,Fitri Novitasari,Senior,28,2173,1489,684,68.5,95,Tidak achieve,Elena Rahmawati,1734,2172
+2026-03,Semua kategori,Islahuddin Akbar,Senior,26,1138,622,516,54.7,95,Tidak achieve,Elena Rahmawati,932,1138
+2026-03,Semua kategori,Narisha Dwi Nova,Senior,31,2176,1480,696,68.0,95,Tidak achieve,Shiftlead,1720,2174
+2026-03,Semua kategori,Neisya Niza,Senior,29,2038,1193,845,58.5,95,Tidak achieve,Andrian,1644,2037
+2026-03,Semua kategori,Rizky Priya Pratama,Senior,30,1257,666,591,53.0,95,Tidak achieve,Andrian,982,1255
+2026-03,Semua kategori,Adinda Ma’mun,Junior,31,1675,1124,551,67.1,90,Tidak achieve,Khasna Qurotul Aini,1318,1674
+2026-03,Semua kategori,Anisa Fatimah Zahra,Junior,12,766,412,354,53.8,90,Tidak achieve,Narisha Dwi Nova,539,766
+2026-03,Semua kategori,Eva Lestari Dolok Saribu,Junior,13,595,386,209,64.9,90,Tidak achieve,Tidak ada di huddle,544,595
+2026-03,Semua kategori,Fauzan Athalah,Junior,30,1124,707,417,62.9,90,Tidak achieve,Theresia Novalina Siburian,942,1124
+2026-03,Semua kategori,Indah Dwi Inayah,Junior,29,1305,859,446,65.8,90,Tidak achieve,Endang Ana Winarsih,1104,1305
+2026-03,Semua kategori,Nur Jihan Fauziah,Junior,25,2472,1723,749,69.7,90,Tidak achieve,Andrian,2026,2472
+2026-03,Semua kategori,Rafiq Aufa Shodiq,Junior,28,790,446,344,56.5,90,Tidak achieve,Pita Roma Rumiris Situmorang,605,790
+2026-03,Semua kategori,Randi,Junior,27,1208,825,383,68.3,90,Tidak achieve,Irdy Aridh Azzahri,1007,1207
+2026-03,Semua kategori,Salma Aulia Hanifah,Junior,13,516,400,116,77.5,90,Tidak achieve,Shiha Fadlillah,485,516
+2026-03,Tanpa Request On Hold,Adi Saputra,Senior,27,942,782,160,83.0,95,Tidak achieve,Endang Ana Winarsih,935,942
+2026-03,Tanpa Request On Hold,Anggita Karunia,Senior,30,1947,1659,288,85.2,95,Tidak achieve,Tidak ada di huddle,1946,1947
+2026-03,Tanpa Request On Hold,Devita Rizki Ramdani,Senior,28,2062,1768,294,85.7,95,Tidak achieve,Tidak ada di huddle,2049,2062
+2026-03,Tanpa Request On Hold,Fitri Novitasari,Senior,28,1747,1489,258,85.2,95,Tidak achieve,Elena Rahmawati,1734,1746
+2026-03,Tanpa Request On Hold,Islahuddin Akbar,Senior,26,946,622,324,65.8,95,Tidak achieve,Elena Rahmawati,932,946
+2026-03,Tanpa Request On Hold,Narisha Dwi Nova,Senior,31,1736,1480,256,85.3,95,Tidak achieve,Shiftlead,1720,1734
+2026-03,Tanpa Request On Hold,Neisya Niza,Senior,29,1664,1193,471,71.7,95,Tidak achieve,Andrian,1644,1663
+2026-03,Tanpa Request On Hold,Rizky Priya Pratama,Senior,30,1001,666,335,66.5,95,Tidak achieve,Andrian,982,999
+2026-03,Tanpa Request On Hold,Adinda Ma’mun,Junior,31,1329,1124,205,84.6,90,Tidak achieve,Khasna Qurotul Aini,1318,1328
+2026-03,Tanpa Request On Hold,Anisa Fatimah Zahra,Junior,12,540,412,128,76.3,90,Tidak achieve,Narisha Dwi Nova,539,540
+2026-03,Tanpa Request On Hold,Eva Lestari Dolok Saribu,Junior,13,544,386,158,71.0,90,Tidak achieve,Tidak ada di huddle,544,544
+2026-03,Tanpa Request On Hold,Fauzan Athalah,Junior,30,961,707,254,73.6,90,Tidak achieve,Theresia Novalina Siburian,942,961
+2026-03,Tanpa Request On Hold,Indah Dwi Inayah,Junior,29,1120,859,261,76.7,90,Tidak achieve,Endang Ana Winarsih,1104,1120
+2026-03,Tanpa Request On Hold,Nur Jihan Fauziah,Junior,25,2030,1723,307,84.9,90,Tidak achieve,Andrian,2026,2030
+2026-03,Tanpa Request On Hold,Rafiq Aufa Shodiq,Junior,28,607,446,161,73.5,90,Tidak achieve,Pita Roma Rumiris Situmorang,605,607
+2026-03,Tanpa Request On Hold,Randi,Junior,27,1012,825,187,81.5,90,Tidak achieve,Irdy Aridh Azzahri,1007,1011
+2026-03,Tanpa Request On Hold,Salma Aulia Hanifah,Junior,13,485,400,85,82.5,90,Tidak achieve,Shiha Fadlillah,485,485
+2026-04,Semua kategori,Adi Saputra,Senior,29,706,571,135,80.9,95,Tidak achieve,Endang Ana Winarsih,689,704
+2026-04,Semua kategori,Anggita Karunia,Senior,30,1969,1599,370,81.2,95,Tidak achieve,Tidak ada di huddle,1942,1968
+2026-04,Semua kategori,Devita Rizki Ramdani,Senior,26,1687,1475,212,87.4,95,Tidak achieve,Tidak ada di huddle,1681,1687
+2026-04,Semua kategori,Fitri Novitasari,Senior,28,1872,1663,209,88.8,95,Tidak achieve,Elena Rahmawati,1866,1871
+2026-04,Semua kategori,Islahuddin Akbar,Senior,25,725,521,204,71.9,95,Tidak achieve,Elena Rahmawati,719,725
+2026-04,Semua kategori,Narisha Dwi Nova,Senior,25,1295,1116,179,86.2,95,Tidak achieve,Shiftlead,1285,1295
+2026-04,Semua kategori,Neisya Niza,Senior,26,1315,1041,274,79.2,95,Tidak achieve,Andrian,1288,1305
+2026-04,Semua kategori,Adinda Ma’mun,Junior,28,1360,1035,325,76.1,90,Tidak achieve,Khasna Qurotul Aini,1324,1358
+2026-04,Semua kategori,Anisa Fatimah Zahra,Junior,23,860,699,161,81.3,90,Tidak achieve,Narisha Dwi Nova,849,860
+2026-04,Semua kategori,Eva Lestari Dolok Saribu,Junior,24,919,769,150,83.7,90,Tidak achieve,Tidak ada di huddle,918,919
+2026-04,Semua kategori,Fauzan Athalah,Junior,30,747,642,105,85.9,90,Tidak achieve,Theresia Novalina Siburian,743,747
+2026-04,Semua kategori,Febrian Abraham Kaluku,Junior,23,689,524,165,76.1,90,Tidak achieve,Tidak ada di huddle,678,689
+2026-04,Semua kategori,Nur Jihan Fauziah,Junior,30,2263,1944,319,85.9,90,Tidak achieve,Andrian,2243,2263
+2026-04,Semua kategori,Olivia Anele,Junior,18,753,643,110,85.4,90,Tidak achieve,Irdy Aridh Azzahri,751,753
+2026-04,Semua kategori,Rafiq Aufa Shodiq,Junior,29,1311,1037,274,79.1,90,Tidak achieve,Pita Roma Rumiris Situmorang,1295,1311
+2026-04,Semua kategori,Randi,Junior,27,945,719,226,76.1,90,Tidak achieve,Irdy Aridh Azzahri,929,944
+2026-04,Semua kategori,Salma Aulia Hanifah,Junior,22,731,596,135,81.5,90,Tidak achieve,Shiha Fadlillah,724,731
+2026-04,Tanpa Request On Hold,Adi Saputra,Senior,29,706,571,135,80.9,95,Tidak achieve,Endang Ana Winarsih,689,704
+2026-04,Tanpa Request On Hold,Anggita Karunia,Senior,30,1948,1599,349,82.1,95,Tidak achieve,Tidak ada di huddle,1942,1947
+2026-04,Tanpa Request On Hold,Devita Rizki Ramdani,Senior,26,1683,1475,208,87.6,95,Tidak achieve,Tidak ada di huddle,1681,1683
+2026-04,Tanpa Request On Hold,Fitri Novitasari,Senior,28,1871,1663,208,88.9,95,Tidak achieve,Elena Rahmawati,1866,1870
+2026-04,Tanpa Request On Hold,Islahuddin Akbar,Senior,25,723,521,202,72.1,95,Tidak achieve,Elena Rahmawati,719,723
+2026-04,Tanpa Request On Hold,Narisha Dwi Nova,Senior,25,1295,1116,179,86.2,95,Tidak achieve,Shiftlead,1285,1295
+2026-04,Tanpa Request On Hold,Neisya Niza,Senior,26,1312,1041,271,79.3,95,Tidak achieve,Andrian,1288,1302
+2026-04,Tanpa Request On Hold,Adinda Ma’mun,Junior,28,1338,1035,303,77.4,90,Tidak achieve,Khasna Qurotul Aini,1324,1336
+2026-04,Tanpa Request On Hold,Anisa Fatimah Zahra,Junior,23,852,699,153,82.0,90,Tidak achieve,Narisha Dwi Nova,849,852
+2026-04,Tanpa Request On Hold,Eva Lestari Dolok Saribu,Junior,24,918,769,149,83.8,90,Tidak achieve,Tidak ada di huddle,918,918
+2026-04,Tanpa Request On Hold,Fauzan Athalah,Junior,30,746,642,104,86.1,90,Tidak achieve,Theresia Novalina Siburian,743,746
+2026-04,Tanpa Request On Hold,Febrian Abraham Kaluku,Junior,23,684,524,160,76.6,90,Tidak achieve,Tidak ada di huddle,678,684
+2026-04,Tanpa Request On Hold,Nur Jihan Fauziah,Junior,30,2253,1944,309,86.3,90,Tidak achieve,Andrian,2243,2253
+2026-04,Tanpa Request On Hold,Olivia Anele,Junior,18,753,643,110,85.4,90,Tidak achieve,Irdy Aridh Azzahri,751,753
+2026-04,Tanpa Request On Hold,Rafiq Aufa Shodiq,Junior,29,1309,1037,272,79.2,90,Tidak achieve,Pita Roma Rumiris Situmorang,1295,1309
+2026-04,Tanpa Request On Hold,Randi,Junior,27,941,719,222,76.4,90,Tidak achieve,Irdy Aridh Azzahri,929,940
+2026-04,Tanpa Request On Hold,Salma Aulia Hanifah,Junior,22,731,596,135,81.5,90,Tidak achieve,Shiha Fadlillah,724,731
+2026-05,Semua kategori,Adi Saputra,Senior,30,1306,1174,132,89.9,95,Tidak achieve,Endang Ana Winarsih,1256,1306
+2026-05,Semua kategori,Anggita Karunia,Senior,30,1548,1417,131,91.5,95,Tidak achieve,Tidak ada di huddle,1478,1548
+2026-05,Semua kategori,Devita Rizki Ramdani,Senior,27,1491,1285,206,86.2,95,Tidak achieve,Tidak ada di huddle,1446,1491
+2026-05,Semua kategori,Fitri Novitasari,Senior,29,1511,1333,178,88.2,95,Tidak achieve,Elena Rahmawati,1447,1511
+2026-05,Semua kategori,Islahuddin Akbar,Senior,27,546,437,109,80.0,95,Tidak achieve,Elena Rahmawati,524,546
+2026-05,Semua kategori,Narisha Dwi Nova,Senior,28,1372,1236,136,90.1,95,Tidak achieve,Shiftlead,1330,1371
+2026-05,Semua kategori,Neisya Niza,Senior,30,1250,1105,145,88.4,95,Tidak achieve,Andrian,1192,1248
+2026-05,Semua kategori,Adinda Ma’mun,Junior,30,1094,931,163,85.1,90,Tidak achieve,Khasna Qurotul Aini,1054,1094
+2026-05,Semua kategori,Anisa Fatimah Zahra,Junior,29,1278,1154,124,90.3,90,Achieve,Narisha Dwi Nova,1220,1278
+2026-05,Semua kategori,Eva Lestari Dolok Saribu,Junior,31,1605,1396,209,87.0,90,Tidak achieve,Tidak ada di huddle,1554,1605
+2026-05,Semua kategori,Fauzan Athalah,Junior,28,843,744,99,88.3,90,Tidak achieve,Theresia Novalina Siburian,789,843
+2026-05,Semua kategori,Febrian Abraham Kaluku,Junior,24,583,485,98,83.2,90,Tidak achieve,Tidak ada di huddle,576,583
+2026-05,Semua kategori,Nur Jihan Fauziah,Junior,29,1878,1686,192,89.8,90,Tidak achieve,Andrian,1830,1878
+2026-05,Semua kategori,Olivia Anele,Junior,28,612,518,94,84.6,90,Tidak achieve,Irdy Aridh Azzahri,588,611
+2026-05,Semua kategori,Rafiq Aufa Shodiq,Junior,28,1177,1040,137,88.4,90,Tidak achieve,Pita Roma Rumiris Situmorang,1132,1177
+2026-05,Semua kategori,Randi,Junior,26,867,774,93,89.3,90,Tidak achieve,Irdy Aridh Azzahri,837,867
+2026-05,Semua kategori,Salma Aulia Hanifah,Junior,29,1371,1213,158,88.5,90,Tidak achieve,Shiha Fadlillah,1345,1371
+2026-05,Tanpa Request On Hold,Adi Saputra,Senior,30,1258,1174,84,93.3,95,Tidak achieve,Endang Ana Winarsih,1256,1258
+2026-05,Tanpa Request On Hold,Anggita Karunia,Senior,30,1478,1417,61,95.9,95,Achieve,Tidak ada di huddle,1478,1478
+2026-05,Tanpa Request On Hold,Devita Rizki Ramdani,Senior,27,1450,1285,165,88.6,95,Tidak achieve,Tidak ada di huddle,1446,1450
+2026-05,Tanpa Request On Hold,Fitri Novitasari,Senior,29,1452,1333,119,91.8,95,Tidak achieve,Elena Rahmawati,1447,1452
+2026-05,Tanpa Request On Hold,Islahuddin Akbar,Senior,27,528,437,91,82.8,95,Tidak achieve,Elena Rahmawati,524,528
+2026-05,Tanpa Request On Hold,Narisha Dwi Nova,Senior,28,1333,1236,97,92.7,95,Tidak achieve,Shiftlead,1330,1332
+2026-05,Tanpa Request On Hold,Neisya Niza,Senior,30,1194,1105,89,92.5,95,Tidak achieve,Andrian,1192,1192
+2026-05,Tanpa Request On Hold,Adinda Ma’mun,Junior,30,1060,931,129,87.8,90,Tidak achieve,Khasna Qurotul Aini,1054,1060
+2026-05,Tanpa Request On Hold,Anisa Fatimah Zahra,Junior,29,1225,1154,71,94.2,90,Achieve,Narisha Dwi Nova,1220,1225
+2026-05,Tanpa Request On Hold,Eva Lestari Dolok Saribu,Junior,31,1555,1396,159,89.8,90,Tidak achieve,Tidak ada di huddle,1554,1555
+2026-05,Tanpa Request On Hold,Fauzan Athalah,Junior,28,791,744,47,94.1,90,Achieve,Theresia Novalina Siburian,789,791
+2026-05,Tanpa Request On Hold,Febrian Abraham Kaluku,Junior,24,576,485,91,84.2,90,Tidak achieve,Tidak ada di huddle,576,576
+2026-05,Tanpa Request On Hold,Nur Jihan Fauziah,Junior,29,1832,1686,146,92.0,90,Achieve,Andrian,1830,1832
+2026-05,Tanpa Request On Hold,Olivia Anele,Junior,28,589,518,71,87.9,90,Tidak achieve,Irdy Aridh Azzahri,588,588
+2026-05,Tanpa Request On Hold,Rafiq Aufa Shodiq,Junior,28,1135,1040,95,91.6,90,Achieve,Pita Roma Rumiris Situmorang,1132,1135
+2026-05,Tanpa Request On Hold,Randi,Junior,26,839,774,65,92.3,90,Achieve,Irdy Aridh Azzahri,837,839
+2026-05,Tanpa Request On Hold,Salma Aulia Hanifah,Junior,29,1346,1213,133,90.1,90,Achieve,Shiha Fadlillah,1345,1346
+2026-06,Semua kategori,Adi Saputra,Senior,28,1411,981,430,69.5,95,Tidak achieve,Endang Ana Winarsih,1015,1411
+2026-06,Semua kategori,Anggita Karunia,Senior,24,1400,1009,391,72.1,95,Tidak achieve,Tidak ada di huddle,1074,1400
+2026-06,Semua kategori,Devita Rizki Ramdani,Senior,26,1730,1176,554,68.0,95,Tidak achieve,Tidak ada di huddle,1305,1730
+2026-06,Semua kategori,Fitri Novitasari,Senior,29,1961,1401,560,71.4,95,Tidak achieve,Elena Rahmawati,1479,1961
+2026-06,Semua kategori,Islahuddin Akbar,Senior,28,676,382,294,56.5,95,Tidak achieve,Elena Rahmawati,511,670
+2026-06,Semua kategori,Narisha Dwi Nova,Senior,27,1684,1162,522,69.0,95,Tidak achieve,Shiftlead,1270,1679
+2026-06,Semua kategori,Neisya Niza,Senior,27,1200,777,423,64.8,95,Tidak achieve,Andrian,923,1196
+2026-06,Semua kategori,Adinda Ma’mun,Junior,29,1354,852,502,62.9,90,Tidak achieve,Khasna Qurotul Aini,1021,1354
+2026-06,Semua kategori,Anisa Fatimah Zahra,Junior,27,1535,1124,411,73.2,90,Tidak achieve,Narisha Dwi Nova,1223,1534
+2026-06,Semua kategori,Eva Lestari Dolok Saribu,Junior,26,1319,869,450,65.9,90,Tidak achieve,Tidak ada di huddle,940,1319
+2026-06,Semua kategori,Fauzan Athalah,Junior,29,1460,1025,435,70.2,90,Tidak achieve,Theresia Novalina Siburian,1119,1458
+2026-06,Semua kategori,Febrian Abraham Kaluku,Junior,27,840,561,279,66.8,90,Tidak achieve,Tidak ada di huddle,651,840
+2026-06,Semua kategori,M Ragil Syam Arasy,Junior,25,754,462,292,61.3,90,Tidak achieve,Andrian,560,753
+2026-06,Semua kategori,Nur Jihan Fauziah,Junior,27,1926,1302,624,67.6,90,Tidak achieve,Andrian,1426,1926
+2026-06,Semua kategori,Olivia Anele,Junior,29,1070,668,402,62.4,90,Tidak achieve,Irdy Aridh Azzahri,798,1070
+2026-06,Semua kategori,Rafiq Aufa Shodiq,Junior,28,1363,971,392,71.2,90,Tidak achieve,Pita Roma Rumiris Situmorang,1032,1362
+2026-06,Semua kategori,Randi,Junior,27,977,649,328,66.4,90,Tidak achieve,Irdy Aridh Azzahri,775,976
+2026-06,Semua kategori,Salma Aulia Hanifah,Junior,28,1288,908,380,70.5,90,Tidak achieve,Shiha Fadlillah,1014,1288
+2026-06,Semua kategori,Suherna,Junior,22,650,423,227,65.1,90,Tidak achieve,Elena Rahmawati,521,650
+2026-06,Semua kategori,Ghiska Maharani,New Joiner,10,44,10,34,22.7,90,Tidak achieve,Khasna Qurotul Aini,21,44
+2026-06,Semua kategori,Nabilah Ulfah,New Joiner,10,139,65,74,46.8,90,Tidak achieve,Tidak ada di huddle,106,139
+2026-06,Semua kategori,Putri Wulan Sari,New Joiner,11,223,154,69,69.1,90,Tidak achieve,Khasna Qurotul Aini,180,223
+2026-06,Semua kategori,Rizky Rahmadi Septian Wicaksono,New Joiner,12,396,228,168,57.6,90,Tidak achieve,Irdy Aridh Azzahri,276,396
+2026-06,Semua kategori,Syukur Rahmat Eli Hia,New Joiner,12,604,386,218,63.9,90,Tidak achieve,Pita Roma Rumiris Situmorang,434,604
+2026-06,Tanpa Request On Hold,Adi Saputra,Senior,28,1017,981,36,96.5,95,Achieve,Endang Ana Winarsih,1015,1017
+2026-06,Tanpa Request On Hold,Anggita Karunia,Senior,24,1074,1009,65,93.9,95,Tidak achieve,Tidak ada di huddle,1074,1074
+2026-06,Tanpa Request On Hold,Devita Rizki Ramdani,Senior,26,1305,1176,129,90.1,95,Tidak achieve,Tidak ada di huddle,1305,1305
+2026-06,Tanpa Request On Hold,Fitri Novitasari,Senior,29,1498,1401,97,93.5,95,Tidak achieve,Elena Rahmawati,1479,1498
+2026-06,Tanpa Request On Hold,Islahuddin Akbar,Senior,28,528,382,146,72.3,95,Tidak achieve,Elena Rahmawati,511,522
+2026-06,Tanpa Request On Hold,Narisha Dwi Nova,Senior,27,1275,1162,113,91.1,95,Tidak achieve,Shiftlead,1270,1270
+2026-06,Tanpa Request On Hold,Neisya Niza,Senior,27,932,777,155,83.4,95,Tidak achieve,Andrian,923,928
+2026-06,Tanpa Request On Hold,Adinda Ma’mun,Junior,29,1027,852,175,83.0,90,Tidak achieve,Khasna Qurotul Aini,1021,1027
+2026-06,Tanpa Request On Hold,Anisa Fatimah Zahra,Junior,27,1227,1124,103,91.6,90,Achieve,Narisha Dwi Nova,1223,1226
+2026-06,Tanpa Request On Hold,Eva Lestari Dolok Saribu,Junior,26,944,869,75,92.1,90,Achieve,Tidak ada di huddle,940,944
+2026-06,Tanpa Request On Hold,Fauzan Athalah,Junior,29,1126,1025,101,91.0,90,Achieve,Theresia Novalina Siburian,1119,1124
+2026-06,Tanpa Request On Hold,Febrian Abraham Kaluku,Junior,27,657,561,96,85.4,90,Tidak achieve,Tidak ada di huddle,651,657
+2026-06,Tanpa Request On Hold,M Ragil Syam Arasy,Junior,25,565,462,103,81.8,90,Tidak achieve,Andrian,560,564
+2026-06,Tanpa Request On Hold,Nur Jihan Fauziah,Junior,27,1426,1302,124,91.3,90,Achieve,Andrian,1426,1426
+2026-06,Tanpa Request On Hold,Olivia Anele,Junior,29,801,668,133,83.4,90,Tidak achieve,Irdy Aridh Azzahri,798,801
+2026-06,Tanpa Request On Hold,Rafiq Aufa Shodiq,Junior,28,1036,971,65,93.7,90,Achieve,Pita Roma Rumiris Situmorang,1032,1035
+2026-06,Tanpa Request On Hold,Randi,Junior,27,781,649,132,83.1,90,Tidak achieve,Irdy Aridh Azzahri,775,780
+2026-06,Tanpa Request On Hold,Salma Aulia Hanifah,Junior,28,1021,908,113,88.9,90,Tidak achieve,Shiha Fadlillah,1014,1021
+2026-06,Tanpa Request On Hold,Suherna,Junior,22,521,423,98,81.2,90,Tidak achieve,Elena Rahmawati,521,521
+2026-06,Tanpa Request On Hold,Nabilah Ulfah,New Joiner,10,106,65,41,61.3,90,Tidak achieve,Tidak ada di huddle,106,106
+2026-06,Tanpa Request On Hold,Putri Wulan Sari,New Joiner,11,180,154,26,85.6,90,Tidak achieve,Khasna Qurotul Aini,180,180
+2026-06,Tanpa Request On Hold,Rizky Rahmadi Septian Wicaksono,New Joiner,12,279,228,51,81.7,90,Tidak achieve,Irdy Aridh Azzahri,276,279
+2026-06,Tanpa Request On Hold,Syukur Rahmat Eli Hia,New Joiner,12,434,386,48,88.9,90,Tidak achieve,Pita Roma Rumiris Situmorang,434,434
+2026-07,Semua kategori,Adi Saputra,Senior,30,1041,813,228,78.1,95,Tidak achieve,Endang Ana Winarsih,848,1041
+2026-07,Semua kategori,Anggita Karunia,Senior,31,1389,1043,346,75.1,95,Tidak achieve,Tidak ada di huddle,1106,1389
+2026-07,Semua kategori,Fitri Novitasari,Senior,28,1426,1078,348,75.6,95,Tidak achieve,Elena Rahmawati,1123,1426
+2026-07,Semua kategori,Islahuddin Akbar,Senior,28,891,594,297,66.7,95,Tidak achieve,Elena Rahmawati,737,891
+2026-07,Semua kategori,Narisha Dwi Nova,Senior,28,1375,1027,348,74.7,95,Tidak achieve,Shiftlead,1096,1372
+2026-07,Semua kategori,Rizky Priya Pratama,Senior,30,895,530,365,59.2,95,Tidak achieve,Andrian,697,894
+2026-07,Semua kategori,Adinda Ma’mun,Junior,31,1335,935,400,70.0,90,Tidak achieve,Khasna Qurotul Aini,1043,1335
+2026-07,Semua kategori,Anisa Fatimah Zahra,Junior,29,1177,901,276,76.6,90,Tidak achieve,Narisha Dwi Nova,961,1177
+2026-07,Semua kategori,Eva Lestari Dolok Saribu,Junior,1,18,17,1,94.4,90,Achieve,Tidak ada di huddle,17,18
+2026-07,Semua kategori,Fauzan Athalah,Junior,30,1018,747,271,73.4,90,Tidak achieve,Theresia Novalina Siburian,843,1018
+2026-07,Semua kategori,Febrian Abraham Kaluku,Junior,27,919,537,382,58.4,90,Tidak achieve,Tidak ada di huddle,712,916
+2026-07,Semua kategori,Indah Dwi Inayah,Junior,29,818,614,204,75.1,90,Tidak achieve,Endang Ana Winarsih,698,817
+2026-07,Semua kategori,M Ragil Syam Arasy,Junior,28,972,648,324,66.7,90,Tidak achieve,Andrian,772,972
+2026-07,Semua kategori,Nur Jihan Fauziah,Junior,28,1483,1113,370,75.1,90,Tidak achieve,Andrian,1193,1483
+2026-07,Semua kategori,Olivia Anele,Junior,30,881,633,248,71.9,90,Tidak achieve,Irdy Aridh Azzahri,703,881
+2026-07,Semua kategori,Rafiq Aufa Shodiq,Junior,29,1345,993,352,73.8,90,Tidak achieve,Pita Roma Rumiris Situmorang,1069,1345
+2026-07,Semua kategori,Randi,Junior,28,939,684,255,72.8,90,Tidak achieve,Irdy Aridh Azzahri,787,939
+2026-07,Semua kategori,Salma Aulia Hanifah,Junior,29,1550,1113,437,71.8,90,Tidak achieve,Shiha Fadlillah,1239,1550
+2026-07,Semua kategori,Suherna,Junior,31,1095,700,395,63.9,90,Tidak achieve,Elena Rahmawati,905,1092
+2026-07,Semua kategori,Ahmad Ali hasbi,New Joiner,26,558,239,319,42.8,90,Tidak achieve,Narisha Dwi Nova,439,558
+2026-07,Semua kategori,Ghiska Maharani,New Joiner,25,486,246,240,50.6,90,Tidak achieve,Khasna Qurotul Aini,382,485
+2026-07,Semua kategori,Muhamad Farhan Rizaldi,New Joiner,26,701,393,308,56.1,90,Tidak achieve,Tidak ada di huddle,557,701
+2026-07,Semua kategori,Nabilah Ulfah,New Joiner,26,517,268,249,51.8,90,Tidak achieve,Tidak ada di huddle,429,515
+2026-07,Semua kategori,Putri Wulan Sari,New Joiner,26,885,645,240,72.9,90,Tidak achieve,Khasna Qurotul Aini,722,885
+2026-07,Semua kategori,Rizki Ramdan Pradana,New Joiner,25,1012,494,518,48.8,90,Tidak achieve,Narisha Dwi Nova,778,1011
+2026-07,Semua kategori,Rizky Rahmadi Septian Wicaksono,New Joiner,26,1445,978,467,67.7,90,Tidak achieve,Irdy Aridh Azzahri,1175,1445
+2026-07,Semua kategori,Syukur Rahmat Eli Hia,New Joiner,27,1203,668,535,55.5,90,Tidak achieve,Pita Roma Rumiris Situmorang,959,1202
+2026-07,Tanpa Request On Hold,Adi Saputra,Senior,30,853,813,40,95.3,95,Achieve,Endang Ana Winarsih,848,853
+2026-07,Tanpa Request On Hold,Anggita Karunia,Senior,31,1106,1043,63,94.3,95,Tidak achieve,Tidak ada di huddle,1106,1106
+2026-07,Tanpa Request On Hold,Fitri Novitasari,Senior,28,1126,1078,48,95.7,95,Achieve,Elena Rahmawati,1123,1126
+2026-07,Tanpa Request On Hold,Islahuddin Akbar,Senior,28,744,594,150,79.8,95,Tidak achieve,Elena Rahmawati,737,744
+2026-07,Tanpa Request On Hold,Narisha Dwi Nova,Senior,28,1111,1027,84,92.4,95,Tidak achieve,Shiftlead,1096,1108
+2026-07,Tanpa Request On Hold,Rizky Priya Pratama,Senior,30,699,530,169,75.8,95,Tidak achieve,Andrian,697,698
+2026-07,Tanpa Request On Hold,Adinda Ma’mun,Junior,31,1047,935,112,89.3,90,Tidak achieve,Khasna Qurotul Aini,1043,1047
+2026-07,Tanpa Request On Hold,Anisa Fatimah Zahra,Junior,29,962,901,61,93.7,90,Achieve,Narisha Dwi Nova,961,962
+2026-07,Tanpa Request On Hold,Eva Lestari Dolok Saribu,Junior,1,17,17,0,100.0,90,Achieve,Tidak ada di huddle,17,17
+2026-07,Tanpa Request On Hold,Fauzan Athalah,Junior,30,844,747,97,88.5,90,Tidak achieve,Theresia Novalina Siburian,843,844
+2026-07,Tanpa Request On Hold,Febrian Abraham Kaluku,Junior,27,738,537,201,72.8,90,Tidak achieve,Tidak ada di huddle,712,735
+2026-07,Tanpa Request On Hold,Indah Dwi Inayah,Junior,29,705,614,91,87.1,90,Tidak achieve,Endang Ana Winarsih,698,704
+2026-07,Tanpa Request On Hold,M Ragil Syam Arasy,Junior,28,775,648,127,83.6,90,Tidak achieve,Andrian,772,775
+2026-07,Tanpa Request On Hold,Nur Jihan Fauziah,Junior,28,1194,1113,81,93.2,90,Achieve,Andrian,1193,1194
+2026-07,Tanpa Request On Hold,Olivia Anele,Junior,30,706,633,73,89.7,90,Tidak achieve,Irdy Aridh Azzahri,703,706
+2026-07,Tanpa Request On Hold,Rafiq Aufa Shodiq,Junior,29,1074,993,81,92.5,90,Achieve,Pita Roma Rumiris Situmorang,1069,1074
+2026-07,Tanpa Request On Hold,Randi,Junior,28,792,684,108,86.4,90,Tidak achieve,Irdy Aridh Azzahri,787,792
+2026-07,Tanpa Request On Hold,Salma Aulia Hanifah,Junior,29,1241,1113,128,89.7,90,Tidak achieve,Shiha Fadlillah,1239,1241
+2026-07,Tanpa Request On Hold,Suherna,Junior,31,916,700,216,76.4,90,Tidak achieve,Elena Rahmawati,905,913
+2026-07,Tanpa Request On Hold,Ahmad Ali hasbi,New Joiner,26,449,239,210,53.2,90,Tidak achieve,Narisha Dwi Nova,439,449
+2026-07,Tanpa Request On Hold,Ghiska Maharani,New Joiner,25,386,246,140,63.7,90,Tidak achieve,Khasna Qurotul Aini,382,385
+2026-07,Tanpa Request On Hold,Muhamad Farhan Rizaldi,New Joiner,26,567,393,174,69.3,90,Tidak achieve,Tidak ada di huddle,557,567
+2026-07,Tanpa Request On Hold,Nabilah Ulfah,New Joiner,26,436,268,168,61.5,90,Tidak achieve,Tidak ada di huddle,429,434
+2026-07,Tanpa Request On Hold,Putri Wulan Sari,New Joiner,26,726,645,81,88.8,90,Tidak achieve,Khasna Qurotul Aini,722,726
+2026-07,Tanpa Request On Hold,Rizki Ramdan Pradana,New Joiner,25,791,494,297,62.5,90,Tidak achieve,Narisha Dwi Nova,778,790
+2026-07,Tanpa Request On Hold,Rizky Rahmadi Septian Wicaksono,New Joiner,26,1183,978,205,82.7,90,Tidak achieve,Irdy Aridh Azzahri,1175,1183
+2026-07,Tanpa Request On Hold,Syukur Rahmat Eli Hia,New Joiner,27,967,668,299,69.1,90,Tidak achieve,Pita Roma Rumiris Situmorang,959,966
+2026-08,Semua kategori,Adi Saputra,Senior,26,1015,775,240,76.4,95,Tidak achieve,Endang Ana Winarsih,831,1015
+2026-08,Semua kategori,Adinda Ma’mun,Senior,29,2187,1795,392,82.1,95,Tidak achieve,Khasna Qurotul Aini,1852,2187
+2026-08,Semua kategori,Anggita Karunia,Senior,31,1681,1385,296,82.4,95,Tidak achieve,Tidak ada di huddle,1396,1681
+2026-08,Semua kategori,Febrian Abraham Kaluku,Senior,14,719,529,190,73.6,95,Tidak achieve,Tidak ada di huddle,607,719
+2026-08,Semua kategori,Islahuddin Akbar,Senior,25,1207,666,541,55.2,95,Tidak achieve,Elena Rahmawati,964,1206
+2026-08,Semua kategori,Narisha Dwi Nova,Senior,27,1366,1105,261,80.9,95,Tidak achieve,Shiftlead,1148,1366
+2026-08,Semua kategori,Randi,Senior,23,942,699,243,74.2,95,Tidak achieve,Irdy Aridh Azzahri,768,942
+2026-08,Semua kategori,Rizky Priya Pratama,Senior,27,1008,615,393,61.0,95,Tidak achieve,Andrian,846,1008
+2026-08,Semua kategori,Salma Aulia Hanifah,Senior,29,1295,1058,237,81.7,95,Tidak achieve,Shiha Fadlillah,1090,1295
+2026-08,Semua kategori,Ahmad Ali hasbi,Junior,27,894,406,488,45.4,90,Tidak achieve,Narisha Dwi Nova,725,893
+2026-08,Semua kategori,Anisa Fatimah Zahra,Junior,30,1426,1106,320,77.6,90,Tidak achieve,Narisha Dwi Nova,1175,1426
+2026-08,Semua kategori,Fauzan Athalah,Junior,31,1137,758,379,66.7,90,Tidak achieve,Theresia Novalina Siburian,950,1135
+2026-08,Semua kategori,Ghiska Maharani,Junior,29,889,584,305,65.7,90,Tidak achieve,Khasna Qurotul Aini,727,889
+2026-08,Semua kategori,Indah Dwi Inayah,Junior,29,1258,812,446,64.5,90,Tidak achieve,Endang Ana Winarsih,1092,1257
+2026-08,Semua kategori,M Ragil Syam Arasy,Junior,28,1334,958,376,71.8,90,Tidak achieve,Andrian,1093,1334
+2026-08,Semua kategori,Muhamad Farhan Rizaldi,Junior,27,1015,711,304,70.0,90,Tidak achieve,Tidak ada di huddle,858,1015
+2026-08,Semua kategori,Nabilah Ulfah,Junior,26,685,430,255,62.8,90,Tidak achieve,Tidak ada di huddle,587,685
+2026-08,Semua kategori,Nur Jihan Fauziah,Junior,30,1935,1541,394,79.6,90,Tidak achieve,Andrian,1620,1935
+2026-08,Semua kategori,Olivia Anele,Junior,29,1219,910,309,74.7,90,Tidak achieve,Irdy Aridh Azzahri,1007,1219
+2026-08,Semua kategori,Putri Wulan Sari,Junior,30,1490,1157,333,77.7,90,Tidak achieve,Khasna Qurotul Aini,1258,1490
+2026-08,Semua kategori,Rafiq Aufa Shodiq,Junior,25,1117,878,239,78.6,90,Tidak achieve,Pita Roma Rumiris Situmorang,918,1117
+2026-08,Semua kategori,Rizki Ramdan Pradana,Junior,31,1063,644,419,60.6,90,Tidak achieve,Narisha Dwi Nova,874,1063
+2026-08,Semua kategori,Rizky Rahmadi Septian Wicaksono,Junior,29,1447,1086,361,75.1,90,Tidak achieve,Irdy Aridh Azzahri,1184,1444
+2026-08,Semua kategori,Suherna,Junior,28,1066,674,392,63.2,90,Tidak achieve,Elena Rahmawati,893,1065
+2026-08,Semua kategori,Syukur Rahmat Eli Hia,Junior,29,1334,855,479,64.1,90,Tidak achieve,Pita Roma Rumiris Situmorang,1086,1334
+2026-08,Tanpa Request On Hold,Adi Saputra,Senior,26,831,775,56,93.3,95,Tidak achieve,Endang Ana Winarsih,831,831
+2026-08,Tanpa Request On Hold,Adinda Ma’mun,Senior,29,1852,1795,57,96.9,95,Achieve,Khasna Qurotul Aini,1852,1852
+2026-08,Tanpa Request On Hold,Anggita Karunia,Senior,31,1396,1385,11,99.2,95,Achieve,Tidak ada di huddle,1396,1396
+2026-08,Tanpa Request On Hold,Febrian Abraham Kaluku,Senior,14,611,529,82,86.6,95,Tidak achieve,Tidak ada di huddle,607,611
+2026-08,Tanpa Request On Hold,Islahuddin Akbar,Senior,25,985,666,319,67.6,95,Tidak achieve,Elena Rahmawati,964,984
+2026-08,Tanpa Request On Hold,Narisha Dwi Nova,Senior,27,1148,1105,43,96.3,95,Achieve,Shiftlead,1148,1148
+2026-08,Tanpa Request On Hold,Randi,Senior,23,768,699,69,91.0,95,Tidak achieve,Irdy Aridh Azzahri,768,768
+2026-08,Tanpa Request On Hold,Rizky Priya Pratama,Senior,27,851,615,236,72.3,95,Tidak achieve,Andrian,846,851
+2026-08,Tanpa Request On Hold,Salma Aulia Hanifah,Senior,29,1090,1058,32,97.1,95,Achieve,Shiha Fadlillah,1090,1090
+2026-08,Tanpa Request On Hold,Ahmad Ali hasbi,Junior,25,738,406,332,55.0,90,Tidak achieve,Narisha Dwi Nova,725,737
+2026-08,Tanpa Request On Hold,Anisa Fatimah Zahra,Junior,30,1178,1106,72,93.9,90,Achieve,Narisha Dwi Nova,1175,1178
+2026-08,Tanpa Request On Hold,Fauzan Athalah,Junior,31,959,758,201,79.0,90,Tidak achieve,Theresia Novalina Siburian,950,957
+2026-08,Tanpa Request On Hold,Ghiska Maharani,Junior,29,727,584,143,80.3,90,Tidak achieve,Khasna Qurotul Aini,727,727
+2026-08,Tanpa Request On Hold,Indah Dwi Inayah,Junior,29,1102,812,290,73.7,90,Tidak achieve,Endang Ana Winarsih,1092,1101
+2026-08,Tanpa Request On Hold,M Ragil Syam Arasy,Junior,28,1097,958,139,87.3,90,Tidak achieve,Andrian,1093,1097
+2026-08,Tanpa Request On Hold,Muhamad Farhan Rizaldi,Junior,27,860,711,149,82.7,90,Tidak achieve,Tidak ada di huddle,858,860
+2026-08,Tanpa Request On Hold,Nabilah Ulfah,Junior,26,589,430,159,73.0,90,Tidak achieve,Tidak ada di huddle,587,589
+2026-08,Tanpa Request On Hold,Nur Jihan Fauziah,Junior,30,1622,1541,81,95.0,90,Achieve,Andrian,1620,1622
+2026-08,Tanpa Request On Hold,Olivia Anele,Junior,29,1007,910,97,90.4,90,Achieve,Irdy Aridh Azzahri,1007,1007
+2026-08,Tanpa Request On Hold,Putri Wulan Sari,Junior,30,1267,1157,110,91.3,90,Achieve,Khasna Qurotul Aini,1258,1267
+2026-08,Tanpa Request On Hold,Rafiq Aufa Shodiq,Junior,25,918,878,40,95.6,90,Achieve,Pita Roma Rumiris Situmorang,918,918
+2026-08,Tanpa Request On Hold,Rizki Ramdan Pradana,Junior,31,879,644,235,73.3,90,Tidak achieve,Narisha Dwi Nova,874,879
+2026-08,Tanpa Request On Hold,Rizky Rahmadi Septian Wicaksono,Junior,29,1191,1086,105,91.2,90,Achieve,Irdy Aridh Azzahri,1184,1188
+2026-08,Tanpa Request On Hold,Suherna,Junior,28,897,674,223,75.1,90,Tidak achieve,Elena Rahmawati,893,896
+2026-08,Tanpa Request On Hold,Syukur Rahmat Eli Hia,Junior,29,1102,855,247,77.6,90,Tidak achieve,Pita Roma Rumiris Situmorang,1086,1102
+2026-09,Semua kategori,Adi Saputra,Senior,23,913,709,204,77.7,95,Tidak achieve,Endang Ana Winarsih,751,913
+2026-09,Semua kategori,Adinda Ma’mun,Senior,28,2210,1825,385,82.6,95,Tidak achieve,Khasna Qurotul Aini,1841,2208
+2026-09,Semua kategori,Anggita Karunia,Senior,29,1604,1311,293,81.7,95,Tidak achieve,Tidak ada di huddle,1313,1602
+2026-09,Semua kategori,Islahuddin Akbar,Senior,24,954,657,297,68.9,95,Tidak achieve,Elena Rahmawati,774,953
+2026-09,Semua kategori,Narisha Dwi Nova,Senior,30,1531,1175,356,76.7,95,Tidak achieve,Shiftlead,1253,1531
+2026-09,Semua kategori,Randi,Senior,24,997,722,275,72.4,95,Tidak achieve,Irdy Aridh Azzahri,814,995
+2026-09,Semua kategori,Rizky Priya Pratama,Senior,25,675,470,205,69.6,95,Tidak achieve,Andrian,549,675
+2026-09,Semua kategori,Salma Aulia Hanifah,Senior,29,1866,1555,311,83.3,95,Tidak achieve,Shiha Fadlillah,1574,1866
+2026-09,Semua kategori,Ahmad Ali hasbi,Junior,28,607,303,304,49.9,90,Tidak achieve,Narisha Dwi Nova,499,606
+2026-09,Semua kategori,Anisa Fatimah Zahra,Junior,28,1348,1070,278,79.4,90,Tidak achieve,Narisha Dwi Nova,1134,1347
+2026-09,Semua kategori,Fauzan Athalah,Junior,27,1072,761,311,71.0,90,Tidak achieve,Theresia Novalina Siburian,908,1071
+2026-09,Semua kategori,Ghiska Maharani,Junior,25,961,731,230,76.1,90,Tidak achieve,Khasna Qurotul Aini,796,961
+2026-09,Semua kategori,Indah Dwi Inayah,Junior,27,934,673,261,72.1,90,Tidak achieve,Endang Ana Winarsih,768,934
+2026-09,Semua kategori,M Ragil Syam Arasy,Junior,27,1081,793,288,73.4,90,Tidak achieve,Andrian,869,1081
+2026-09,Semua kategori,Muhamad Farhan Rizaldi,Junior,24,772,541,231,70.1,90,Tidak achieve,Tidak ada di huddle,634,772
+2026-09,Semua kategori,Nabilah Ulfah,Junior,11,422,255,167,60.4,90,Tidak achieve,Tidak ada di huddle,349,416
+2026-09,Semua kategori,Nur Jihan Fauziah,Junior,28,1492,1167,325,78.2,90,Tidak achieve,Andrian,1221,1491
+2026-09,Semua kategori,Olivia Anele,Junior,29,1057,759,298,71.8,90,Tidak achieve,Irdy Aridh Azzahri,864,1057
+2026-09,Semua kategori,Putri Wulan Sari,Junior,26,1260,1068,192,84.8,90,Tidak achieve,Khasna Qurotul Aini,1081,1258
+2026-09,Semua kategori,Rafiq Aufa Shodiq,Junior,28,1253,979,274,78.1,90,Tidak achieve,Pita Roma Rumiris Situmorang,1037,1250
+2026-09,Semua kategori,Rizki Ramdan Pradana,Junior,29,1165,853,312,73.2,90,Tidak achieve,Narisha Dwi Nova,961,1165
+2026-09,Semua kategori,Rizky Rahmadi Septian Wicaksono,Junior,27,1452,1099,353,75.7,90,Tidak achieve,Irdy Aridh Azzahri,1179,1451
+2026-09,Semua kategori,Suherna,Junior,28,1050,698,352,66.5,90,Tidak achieve,Elena Rahmawati,888,1050
+2026-09,Semua kategori,Syukur Rahmat Eli Hia,Junior,28,1155,793,362,68.7,90,Tidak achieve,Pita Roma Rumiris Situmorang,959,1155
+2026-09,Semua kategori,Fadhilah Akbar,New Joiner,17,230,146,84,63.5,90,Tidak achieve,Theresia Novalina Siburian,202,230
+2026-09,Semua kategori,Faisal Akbar,New Joiner,23,975,496,479,50.9,90,Tidak achieve,Pita Roma Rumiris Situmorang,771,965
+2026-09,Semua kategori,Risty Wahyudi,New Joiner,17,491,320,171,65.2,90,Tidak achieve,Shiha Fadlillah,435,491
+2026-09,Semua kategori,Sri Astuti Wulandari,New Joiner,26,1231,780,451,63.4,90,Tidak achieve,Shiha Fadlillah,1046,1231
+2026-09,Tanpa Request On Hold,Adi Saputra,Senior,23,754,709,45,94.0,95,Tidak achieve,Endang Ana Winarsih,751,754
+2026-09,Tanpa Request On Hold,Adinda Ma’mun,Senior,28,1845,1825,20,98.9,95,Achieve,Khasna Qurotul Aini,1841,1843
+2026-09,Tanpa Request On Hold,Anggita Karunia,Senior,29,1315,1311,4,99.7,95,Achieve,Tidak ada di huddle,1313,1313
+2026-09,Tanpa Request On Hold,Islahuddin Akbar,Senior,24,778,657,121,84.4,95,Tidak achieve,Elena Rahmawati,774,777
+2026-09,Tanpa Request On Hold,Narisha Dwi Nova,Senior,30,1257,1175,82,93.5,95,Tidak achieve,Shiftlead,1253,1257
+2026-09,Tanpa Request On Hold,Randi,Senior,23,820,722,98,88.0,95,Tidak achieve,Irdy Aridh Azzahri,814,818
+2026-09,Tanpa Request On Hold,Rizky Priya Pratama,Senior,25,549,470,79,85.6,95,Tidak achieve,Andrian,549,549
+2026-09,Tanpa Request On Hold,Salma Aulia Hanifah,Senior,29,1574,1555,19,98.8,95,Achieve,Shiha Fadlillah,1574,1574
+2026-09,Tanpa Request On Hold,Ahmad Ali hasbi,Junior,28,505,303,202,60.0,90,Tidak achieve,Narisha Dwi Nova,499,504
+2026-09,Tanpa Request On Hold,Anisa Fatimah Zahra,Junior,28,1136,1070,66,94.2,90,Achieve,Narisha Dwi Nova,1134,1135
+2026-09,Tanpa Request On Hold,Fauzan Athalah,Junior,27,918,761,157,82.9,90,Tidak achieve,Theresia Novalina Siburian,908,917
+2026-09,Tanpa Request On Hold,Ghiska Maharani,Junior,25,798,731,67,91.6,90,Achieve,Khasna Qurotul Aini,796,798
+2026-09,Tanpa Request On Hold,Indah Dwi Inayah,Junior,27,769,673,96,87.5,90,Tidak achieve,Endang Ana Winarsih,768,769
+2026-09,Tanpa Request On Hold,M Ragil Syam Arasy,Junior,27,871,793,78,91.0,90,Achieve,Andrian,869,871
+2026-09,Tanpa Request On Hold,Muhamad Farhan Rizaldi,Junior,24,639,541,98,84.7,90,Tidak achieve,Tidak ada di huddle,634,639
+2026-09,Tanpa Request On Hold,Nabilah Ulfah,Junior,11,363,255,108,70.2,90,Tidak achieve,Tidak ada di huddle,349,357
+2026-09,Tanpa Request On Hold,Nur Jihan Fauziah,Junior,28,1222,1167,55,95.5,90,Achieve,Andrian,1221,1221
+2026-09,Tanpa Request On Hold,Olivia Anele,Junior,29,867,759,108,87.5,90,Tidak achieve,Irdy Aridh Azzahri,864,867
+2026-09,Tanpa Request On Hold,Putri Wulan Sari,Junior,26,1083,1068,15,98.6,90,Achieve,Khasna Qurotul Aini,1081,1081
+2026-09,Tanpa Request On Hold,Rafiq Aufa Shodiq,Junior,28,1046,979,67,93.6,90,Achieve,Pita Roma Rumiris Situmorang,1037,1043
+2026-09,Tanpa Request On Hold,Rizki Ramdan Pradana,Junior,28,962,853,109,88.7,90,Tidak achieve,Narisha Dwi Nova,961,962
+2026-09,Tanpa Request On Hold,Rizky Rahmadi Septian Wicaksono,Junior,27,1181,1099,82,93.1,90,Achieve,Irdy Aridh Azzahri,1179,1180
+2026-09,Tanpa Request On Hold,Suherna,Junior,28,891,698,193,78.3,90,Tidak achieve,Elena Rahmawati,888,891
+2026-09,Tanpa Request On Hold,Syukur Rahmat Eli Hia,Junior,28,962,793,169,82.4,90,Tidak achieve,Pita Roma Rumiris Situmorang,959,962
+2026-09,Tanpa Request On Hold,Fadhilah Akbar,New Joiner,17,204,146,58,71.6,90,Tidak achieve,Theresia Novalina Siburian,202,204
+2026-09,Tanpa Request On Hold,Faisal Akbar,New Joiner,23,816,496,320,60.8,90,Tidak achieve,Pita Roma Rumiris Situmorang,771,806
+2026-09,Tanpa Request On Hold,Risty Wahyudi,New Joiner,17,435,320,115,73.6,90,Tidak achieve,Shiha Fadlillah,435,435
+2026-09,Tanpa Request On Hold,Sri Astuti Wulandari,New Joiner,26,1046,780,266,74.6,90,Tidak achieve,Shiha Fadlillah,1046,1046
+2026-10,Semua kategori,Adi Saputra,Senior,29,1094,865,229,79.1,95,Tidak achieve,Endang Ana Winarsih,880,1094
+2026-10,Semua kategori,Adinda Ma’mun,Senior,27,1748,1488,260,85.1,95,Tidak achieve,Khasna Qurotul Aini,1495,1748
+2026-10,Semua kategori,Anggita Karunia,Senior,28,1266,1053,213,83.2,95,Tidak achieve,Tidak ada di huddle,1059,1265
+2026-10,Semua kategori,Fauzan Athalah,Senior,30,1077,886,191,82.3,95,Tidak achieve,Theresia Novalina Siburian,920,1077
+2026-10,Semua kategori,Islahuddin Akbar,Senior,24,772,615,157,79.7,95,Tidak achieve,Elena Rahmawati,655,772
+2026-10,Semua kategori,Narisha Dwi Nova,Senior,29,1345,1128,217,83.9,95,Tidak achieve,Shiftlead,1145,1345
+2026-10,Semua kategori,Rafiq Aufa Shodiq,Senior,30,1203,999,204,83.0,95,Tidak achieve,Pita Roma Rumiris Situmorang,1016,1203
+2026-10,Semua kategori,Randi,Senior,26,930,766,164,82.4,95,Tidak achieve,Irdy Aridh Azzahri,793,930
+2026-10,Semua kategori,Rizky Priya Pratama,Senior,31,1019,737,282,72.3,95,Tidak achieve,Andrian,844,1019
+2026-10,Semua kategori,Salma Aulia Hanifah,Senior,29,1594,1373,221,86.1,95,Tidak achieve,Shiha Fadlillah,1374,1594
+2026-10,Semua kategori,Ahmad Ali hasbi,Junior,28,719,380,339,52.9,90,Tidak achieve,Narisha Dwi Nova,581,716
+2026-10,Semua kategori,Anisa Fatimah Zahra,Junior,31,1512,1295,217,85.6,90,Tidak achieve,Narisha Dwi Nova,1313,1512
+2026-10,Semua kategori,Ghiska Maharani,Junior,29,968,798,170,82.4,90,Tidak achieve,Khasna Qurotul Aini,828,968
+2026-10,Semua kategori,Indah Dwi Inayah,Junior,30,1116,891,225,79.8,90,Tidak achieve,Endang Ana Winarsih,946,1114
+2026-10,Semua kategori,M Ragil Syam Arasy,Junior,27,1111,926,185,83.3,90,Tidak achieve,Andrian,953,1110
+2026-10,Semua kategori,Nur Jihan Fauziah,Junior,27,1367,1114,253,81.5,90,Tidak achieve,Andrian,1134,1367
+2026-10,Semua kategori,Olivia Anele,Junior,29,1158,921,237,79.5,90,Tidak achieve,Irdy Aridh Azzahri,972,1158
+2026-10,Semua kategori,Putri Wulan Sari,Junior,31,1617,1402,215,86.7,90,Tidak achieve,Khasna Qurotul Aini,1409,1617
+2026-10,Semua kategori,Rizki Ramdan Pradana,Junior,30,869,676,193,77.8,90,Tidak achieve,Narisha Dwi Nova,728,868
+2026-10,Semua kategori,Rizky Rahmadi Septian Wicaksono,Junior,27,1336,1097,239,82.1,90,Tidak achieve,Irdy Aridh Azzahri,1134,1336
+2026-10,Semua kategori,Suherna,Junior,26,1030,834,196,81.0,90,Tidak achieve,Elena Rahmawati,870,1030
+2026-10,Semua kategori,Syukur Rahmat Eli Hia,Junior,27,1239,980,259,79.1,90,Tidak achieve,Pita Roma Rumiris Situmorang,1058,1239
+2026-10,Semua kategori,Amelia Wilnanda,New Joiner,13,469,248,221,52.9,90,Tidak achieve,Pita Roma Rumiris Situmorang,407,468
+2026-10,Semua kategori,Fadhilah Akbar,New Joiner,27,1092,818,274,74.9,90,Tidak achieve,Theresia Novalina Siburian,945,1092
+2026-10,Semua kategori,Faisal Akbar,New Joiner,25,862,461,401,53.5,90,Tidak achieve,Pita Roma Rumiris Situmorang,701,862
+2026-10,Semua kategori,M Robi Anggara,New Joiner,17,311,212,99,68.2,90,Tidak achieve,Narisha Dwi Nova,275,311
+2026-10,Semua kategori,Marchsanino Ridlotllah,New Joiner,17,427,346,81,81.0,90,Tidak achieve,Khasna Qurotul Aini,378,427
+2026-10,Semua kategori,Muttaqin Ahmad,New Joiner,10,196,92,104,46.9,90,Tidak achieve,Tidak ada di huddle,157,196
+2026-10,Semua kategori,Risty Wahyudi,New Joiner,25,1181,918,263,77.7,90,Tidak achieve,Shiha Fadlillah,1000,1181
+2026-10,Semua kategori,Sri Astuti Wulandari,New Joiner,28,1253,978,275,78.1,90,Tidak achieve,Shiha Fadlillah,1051,1251
+2026-10,Semua kategori,Sri Trisnawati Djayusman,New Joiner,19,523,353,170,67.5,90,Tidak achieve,Endang Ana Winarsih,465,523
+2026-10,Tanpa Request On Hold,Adi Saputra,Senior,29,880,865,15,98.3,95,Achieve,Endang Ana Winarsih,880,880
+2026-10,Tanpa Request On Hold,Adinda Ma’mun,Senior,27,1496,1488,8,99.5,95,Achieve,Khasna Qurotul Aini,1495,1496
+2026-10,Tanpa Request On Hold,Anggita Karunia,Senior,28,1060,1053,7,99.3,95,Achieve,Tidak ada di huddle,1059,1059
+2026-10,Tanpa Request On Hold,Fauzan Athalah,Senior,29,920,886,34,96.3,95,Achieve,Theresia Novalina Siburian,920,920
+2026-10,Tanpa Request On Hold,Islahuddin Akbar,Senior,24,657,615,42,93.6,95,Tidak achieve,Elena Rahmawati,655,657
+2026-10,Tanpa Request On Hold,Narisha Dwi Nova,Senior,29,1145,1128,17,98.5,95,Achieve,Shiftlead,1145,1145
+2026-10,Tanpa Request On Hold,Rafiq Aufa Shodiq,Senior,30,1018,999,19,98.1,95,Achieve,Pita Roma Rumiris Situmorang,1016,1018
+2026-10,Tanpa Request On Hold,Randi,Senior,26,802,766,36,95.5,95,Achieve,Irdy Aridh Azzahri,793,802
+2026-10,Tanpa Request On Hold,Rizky Priya Pratama,Senior,31,844,737,107,87.3,95,Tidak achieve,Andrian,844,844
+2026-10,Tanpa Request On Hold,Salma Aulia Hanifah,Senior,29,1374,1373,1,99.9,95,Achieve,Shiha Fadlillah,1374,1374
+2026-10,Tanpa Request On Hold,Ahmad Ali hasbi,Junior,28,590,380,210,64.4,90,Tidak achieve,Narisha Dwi Nova,581,587
+2026-10,Tanpa Request On Hold,Anisa Fatimah Zahra,Junior,31,1313,1295,18,98.6,90,Achieve,Narisha Dwi Nova,1313,1313
+2026-10,Tanpa Request On Hold,Ghiska Maharani,Junior,29,829,798,31,96.3,90,Achieve,Khasna Qurotul Aini,828,829
+2026-10,Tanpa Request On Hold,Indah Dwi Inayah,Junior,30,949,891,58,93.9,90,Achieve,Endang Ana Winarsih,946,947
+2026-10,Tanpa Request On Hold,M Ragil Syam Arasy,Junior,27,955,926,29,97.0,90,Achieve,Andrian,953,954
+2026-10,Tanpa Request On Hold,Nur Jihan Fauziah,Junior,27,1136,1114,22,98.1,90,Achieve,Andrian,1134,1136
+2026-10,Tanpa Request On Hold,Olivia Anele,Junior,29,972,921,51,94.8,90,Achieve,Irdy Aridh Azzahri,972,972
+2026-10,Tanpa Request On Hold,Putri Wulan Sari,Junior,31,1410,1402,8,99.4,90,Achieve,Khasna Qurotul Aini,1409,1410
+2026-10,Tanpa Request On Hold,Rizki Ramdan Pradana,Junior,30,731,676,55,92.5,90,Achieve,Narisha Dwi Nova,728,730
+2026-10,Tanpa Request On Hold,Rizky Rahmadi Septian Wicaksono,Junior,27,1134,1097,37,96.7,90,Achieve,Irdy Aridh Azzahri,1134,1134
+2026-10,Tanpa Request On Hold,Suherna,Junior,26,870,834,36,95.9,90,Achieve,Elena Rahmawati,870,870
+2026-10,Tanpa Request On Hold,Syukur Rahmat Eli Hia,Junior,27,1058,980,78,92.6,90,Achieve,Pita Roma Rumiris Situmorang,1058,1058
+2026-10,Tanpa Request On Hold,Amelia Wilnanda,New Joiner,13,409,248,161,60.6,90,Tidak achieve,Pita Roma Rumiris Situmorang,407,408
+2026-10,Tanpa Request On Hold,Fadhilah Akbar,New Joiner,27,946,818,128,86.5,90,Tidak achieve,Theresia Novalina Siburian,945,946
+2026-10,Tanpa Request On Hold,Faisal Akbar,New Joiner,25,705,461,244,65.4,90,Tidak achieve,Pita Roma Rumiris Situmorang,701,705
+2026-10,Tanpa Request On Hold,M Robi Anggara,New Joiner,17,277,212,65,76.5,90,Tidak achieve,Narisha Dwi Nova,275,277
+2026-10,Tanpa Request On Hold,Marchsanino Ridlotllah,New Joiner,17,378,346,32,91.5,90,Achieve,Khasna Qurotul Aini,378,378
+2026-10,Tanpa Request On Hold,Muttaqin Ahmad,New Joiner,10,157,92,65,58.6,90,Tidak achieve,Tidak ada di huddle,157,157
+2026-10,Tanpa Request On Hold,Risty Wahyudi,New Joiner,25,1003,918,85,91.5,90,Achieve,Shiha Fadlillah,1000,1003
+2026-10,Tanpa Request On Hold,Sri Astuti Wulandari,New Joiner,28,1055,978,77,92.7,90,Achieve,Shiha Fadlillah,1051,1053
+2026-10,Tanpa Request On Hold,Sri Trisnawati Djayusman,New Joiner,19,465,353,112,75.9,90,Tidak achieve,Endang Ana Winarsih,465,465
+2026-11,Semua kategori,Adi Saputra,Senior,20,513,401,112,78.2,95,Tidak achieve,Endang Ana Winarsih,404,513
+2026-11,Semua kategori,Adinda Ma’mun,Senior,21,696,560,136,80.5,95,Tidak achieve,Khasna Qurotul Aini,565,696
+2026-11,Semua kategori,Anisa Fatimah Zahra,Senior,20,738,605,133,82.0,95,Tidak achieve,Narisha Dwi Nova,609,738
+2026-11,Semua kategori,Fauzan Athalah,Senior,20,658,543,115,82.5,95,Tidak achieve,Theresia Novalina Siburian,549,658
+2026-11,Semua kategori,Fitri Novitasari,Senior,20,616,493,123,80.0,95,Tidak achieve,Elena Rahmawati,500,616
+2026-11,Semua kategori,M Ragil Syam Arasy,Senior,19,549,425,124,77.4,95,Tidak achieve,Andrian,428,549
+2026-11,Semua kategori,Nur Jihan Fauziah,Senior,20,796,644,152,80.9,95,Tidak achieve,Andrian,647,796
+2026-11,Semua kategori,Putri Wulan Sari,Senior,22,877,719,158,82.0,95,Tidak achieve,Khasna Qurotul Aini,719,877
+2026-11,Semua kategori,Rafiq Aufa Shodiq,Senior,22,767,600,167,78.2,95,Tidak achieve,Pita Roma Rumiris Situmorang,617,767
+2026-11,Semua kategori,Randi,Senior,17,639,510,129,79.8,95,Tidak achieve,Irdy Aridh Azzahri,532,639
+2026-11,Semua kategori,Rizki Ramdan Pradana,Senior,22,470,380,90,80.9,95,Tidak achieve,Narisha Dwi Nova,386,470
+2026-11,Semua kategori,Rizky Rahmadi Septian Wicaksono,Senior,21,891,720,171,80.8,95,Tidak achieve,Irdy Aridh Azzahri,725,891
+2026-11,Semua kategori,Salma Aulia Hanifah,Senior,22,900,732,168,81.3,95,Tidak achieve,Shiha Fadlillah,732,900
+2026-11,Semua kategori,Suherna,Senior,21,935,763,172,81.6,95,Tidak achieve,Elena Rahmawati,775,935
+2026-11,Semua kategori,Syukur Rahmat Eli Hia,Senior,21,700,556,144,79.4,95,Tidak achieve,Pita Roma Rumiris Situmorang,565,700
+2026-11,Semua kategori,Ahmad Ali hasbi,Junior,20,449,297,152,66.1,90,Tidak achieve,Narisha Dwi Nova,358,449
+2026-11,Semua kategori,Fadhilah Akbar,Junior,20,705,546,159,77.4,90,Tidak achieve,Theresia Novalina Siburian,572,705
+2026-11,Semua kategori,Faisal Akbar,Junior,21,413,280,133,67.8,90,Tidak achieve,Pita Roma Rumiris Situmorang,333,413
+2026-11,Semua kategori,Ghiska Maharani,Junior,21,662,513,149,77.5,90,Tidak achieve,Khasna Qurotul Aini,518,662
+2026-11,Semua kategori,Indah Dwi Inayah,Junior,21,696,541,155,77.7,90,Tidak achieve,Endang Ana Winarsih,571,696
+2026-11,Semua kategori,Islahuddin Akbar,Junior,20,488,375,113,76.8,90,Tidak achieve,Elena Rahmawati,401,488
+2026-11,Semua kategori,Olivia Anele,Junior,21,589,472,117,80.1,90,Tidak achieve,Irdy Aridh Azzahri,482,589
+2026-11,Semua kategori,Risty Wahyudi,Junior,18,619,485,134,78.4,90,Tidak achieve,Shiha Fadlillah,486,619
+2026-11,Semua kategori,Rizky Priya Pratama,Junior,21,649,480,169,74.0,90,Tidak achieve,Andrian,540,649
+2026-11,Semua kategori,Sri Astuti Wulandari,Junior,21,657,534,123,81.3,90,Tidak achieve,Shiha Fadlillah,544,657
+2026-11,Semua kategori,Amelia Wilnanda,New Joiner,17,510,301,209,59.0,90,Tidak achieve,Pita Roma Rumiris Situmorang,390,510
+2026-11,Semua kategori,M Robi Anggara,New Joiner,18,516,356,160,69.0,90,Tidak achieve,Narisha Dwi Nova,413,516
+2026-11,Semua kategori,Marchsanino Ridlotllah,New Joiner,18,469,362,107,77.2,90,Tidak achieve,Khasna Qurotul Aini,376,469
+2026-11,Semua kategori,Mochamad Haikal Alfarisi,New Joiner,15,425,222,203,52.2,90,Tidak achieve,Elena Rahmawati,334,425
+2026-11,Semua kategori,Sri Trisnawati Djayusman,New Joiner,18,574,438,136,76.3,90,Tidak achieve,Endang Ana Winarsih,463,574
+2026-11,Semua kategori,Tio Intan Meilani Butar-Butar,New Joiner,18,362,238,124,65.7,90,Tidak achieve,Theresia Novalina Siburian,298,362
+2026-11,Tanpa Request On Hold,Adi Saputra,Senior,20,404,401,3,99.3,95,Achieve,Endang Ana Winarsih,404,404
+2026-11,Tanpa Request On Hold,Adinda Ma’mun,Senior,21,565,560,5,99.1,95,Achieve,Khasna Qurotul Aini,565,565
+2026-11,Tanpa Request On Hold,Anisa Fatimah Zahra,Senior,20,609,605,4,99.3,95,Achieve,Narisha Dwi Nova,609,609
+2026-11,Tanpa Request On Hold,Fauzan Athalah,Senior,20,549,543,6,98.9,95,Achieve,Theresia Novalina Siburian,549,549
+2026-11,Tanpa Request On Hold,Fitri Novitasari,Senior,20,500,493,7,98.6,95,Achieve,Elena Rahmawati,500,500
+2026-11,Tanpa Request On Hold,M Ragil Syam Arasy,Senior,19,428,425,3,99.3,95,Achieve,Andrian,428,428
+2026-11,Tanpa Request On Hold,Nur Jihan Fauziah,Senior,20,647,644,3,99.5,95,Achieve,Andrian,647,647
+2026-11,Tanpa Request On Hold,Putri Wulan Sari,Senior,22,719,719,0,100.0,95,Achieve,Khasna Qurotul Aini,719,719
+2026-11,Tanpa Request On Hold,Rafiq Aufa Shodiq,Senior,22,617,600,17,97.2,95,Achieve,Pita Roma Rumiris Situmorang,617,617
+2026-11,Tanpa Request On Hold,Randi,Senior,17,532,510,22,95.9,95,Achieve,Irdy Aridh Azzahri,532,532
+2026-11,Tanpa Request On Hold,Rizki Ramdan Pradana,Senior,22,387,380,7,98.2,95,Achieve,Narisha Dwi Nova,386,387
+2026-11,Tanpa Request On Hold,Rizky Rahmadi Septian Wicaksono,Senior,21,725,720,5,99.3,95,Achieve,Irdy Aridh Azzahri,725,725
+2026-11,Tanpa Request On Hold,Salma Aulia Hanifah,Senior,22,732,732,0,100.0,95,Achieve,Shiha Fadlillah,732,732
+2026-11,Tanpa Request On Hold,Suherna,Senior,21,775,763,12,98.5,95,Achieve,Elena Rahmawati,775,775
+2026-11,Tanpa Request On Hold,Syukur Rahmat Eli Hia,Senior,21,566,556,10,98.2,95,Achieve,Pita Roma Rumiris Situmorang,565,566
+2026-11,Tanpa Request On Hold,Ahmad Ali hasbi,Junior,20,359,297,62,82.7,90,Tidak achieve,Narisha Dwi Nova,358,359
+2026-11,Tanpa Request On Hold,Fadhilah Akbar,Junior,19,572,546,26,95.5,90,Achieve,Theresia Novalina Siburian,572,572
+2026-11,Tanpa Request On Hold,Faisal Akbar,Junior,21,333,280,53,84.1,90,Tidak achieve,Pita Roma Rumiris Situmorang,333,333
+2026-11,Tanpa Request On Hold,Ghiska Maharani,Junior,21,518,513,5,99.0,90,Achieve,Khasna Qurotul Aini,518,518
+2026-11,Tanpa Request On Hold,Indah Dwi Inayah,Junior,20,571,541,30,94.7,90,Achieve,Endang Ana Winarsih,571,571
+2026-11,Tanpa Request On Hold,Islahuddin Akbar,Junior,20,401,375,26,93.5,90,Achieve,Elena Rahmawati,401,401
+2026-11,Tanpa Request On Hold,Olivia Anele,Junior,21,482,472,10,97.9,90,Achieve,Irdy Aridh Azzahri,482,482
+2026-11,Tanpa Request On Hold,Risty Wahyudi,Junior,18,486,485,1,99.8,90,Achieve,Shiha Fadlillah,486,486
+2026-11,Tanpa Request On Hold,Rizky Priya Pratama,Junior,21,541,480,61,88.7,90,Tidak achieve,Andrian,540,541
+2026-11,Tanpa Request On Hold,Sri Astuti Wulandari,Junior,21,544,534,10,98.2,90,Achieve,Shiha Fadlillah,544,544
+2026-11,Tanpa Request On Hold,Amelia Wilnanda,New Joiner,17,390,301,89,77.2,90,Tidak achieve,Pita Roma Rumiris Situmorang,390,390
+2026-11,Tanpa Request On Hold,M Robi Anggara,New Joiner,18,413,356,57,86.2,90,Tidak achieve,Narisha Dwi Nova,413,413
+2026-11,Tanpa Request On Hold,Marchsanino Ridlotllah,New Joiner,18,376,362,14,96.3,90,Achieve,Khasna Qurotul Aini,376,376
+2026-11,Tanpa Request On Hold,Mochamad Haikal Alfarisi,New Joiner,15,334,222,112,66.5,90,Tidak achieve,Elena Rahmawati,334,334
+2026-11,Tanpa Request On Hold,Sri Trisnawati Djayusman,New Joiner,18,463,438,25,94.6,90,Achieve,Endang Ana Winarsih,463,463
+2026-11,Tanpa Request On Hold,Tio Intan Meilani Butar-Butar,New Joiner,18,298,238,60,79.9,90,Tidak achieve,Theresia Novalina Siburian,298,298
 </script>
 
 <script>
@@ -308030,11 +308032,14 @@ Sri Astuti Wulandari,Shiha Fadlillah,Junior
   function parse(data) {
     return data.map((r) => {
       const resolved = Number(r.resolved) || 0, under = Number(r.under_1) || 0;
+      const under5 = Number(r.under_5) || 0, under10 = Number(r.under_10) || 0;
       const pctV = resolved ? under / resolved * 100 : 0, target = Number(r.target) || 0;
       return {
         bulan: String(r.bulan), versi: String(r.versi), agent: String(r.agent), seg: String(r.segmen), sl: String(r.shiftlead || 'Tidak ada di huddle'),
         hari: (r.hari_aktif === null || r.hari_aktif === '') ? null : Number(r.hari_aktif),
-        resolved, under, over: resolved - under, pct: pctV, target, ok: pctV >= target
+        resolved, under, over: resolved - under, under5, under10,
+        pct: pctV, pct5: resolved ? under5 / resolved * 100 : 0, pct10: resolved ? under10 / resolved * 100 : 0,
+        target, ok: pctV >= target
       };
     });
   }
@@ -308048,6 +308053,7 @@ Sri Astuti Wulandari,Shiha Fadlillah,Junior
     const ach = R.filter((r) => r.ok);
     const sA = S.filter((r) => r.ok).length, jA = J.filter((r) => r.ok).length;
     const resT = R.reduce((a, r) => a + r.resolved, 0), underT = R.reduce((a, r) => a + r.under, 0);
+    const under5T = R.reduce((a, r) => a + r.under5, 0), under10T = R.reduce((a, r) => a + r.under10, 0);
 
     $('#ac-take').textContent = R.length
       ? mLabel(month) + ' (' + ver + '): ' + ach.length + ' dari ' + R.length + ' agent achieve.'
@@ -308060,6 +308066,10 @@ Sri Astuti Wulandari,Shiha Fadlillah,Junior
     $('#ac-k-res-n').textContent = R.length ? R.length + ' agent' : '';
     $('#ac-k-pct').textContent = resT ? fmtP(underT / resT * 100) : '—';
     $('#ac-k-pct-n').textContent = resT ? fmt(underT) + ' tiket < 1 menit' : '';
+    $('#ac-k-pct5').textContent = resT ? fmtP(under5T / resT * 100) : '—';
+    $('#ac-k-pct5-n').textContent = resT ? fmt(under5T) + ' tiket < 5 menit' : '';
+    $('#ac-k-pct10').textContent = resT ? fmtP(under10T / resT * 100) : '—';
+    $('#ac-k-pct10-n').textContent = resT ? fmt(under10T) + ' tiket < 10 menit' : '';
 
     const achRows = ach.map((r) => '<tr><th class="l">' + esc(r.agent) + '</th><td class="l">' + segSpan(r.seg) + '</td><td class="l">' + esc(r.sl) + '</td><td>' + fmt(r.resolved) + '</td><td>' + fmt(r.under) + '</td><td>' + fmtP(r.pct) + '</td></tr>').join('');
     $('#ac-ach').innerHTML = '<thead><tr><th class="l">Nama Agent</th><th class="l">Segmentasi</th><th class="l">Shiftlead</th><th># Ticket resolver</th><th># Ticket achieve</th><th>% Achieve</th></tr></thead><tbody>' +
@@ -308068,12 +308078,12 @@ Sri Astuti Wulandari,Shiha Fadlillah,Junior
     const detRows = R.map((r) => {
       const o = OTH.get(r.agent);
       return '<tr><td class="l">' + segSpan(r.seg) + '</td><th class="l">' + esc(r.agent) + '</th><td class="l">' + esc(r.sl) + '</td><td>' + (r.hari === null ? '–' : r.hari) +
-        '</td><td>' + fmt(r.resolved) + '</td><td>' + fmt(r.under) + '</td><td>' + fmt(r.over) + '</td><td>' + fmtP(r.pct) + '</td><td>' + r.target + '%</td><td>' +
+        '</td><td>' + fmt(r.resolved) + '</td><td>' + fmt(r.under) + '</td><td>' + fmt(r.over) + '</td><td>' + fmtP(r.pct) + '</td><td>' + fmtP(r.pct5) + '</td><td>' + fmtP(r.pct10) + '</td><td>' + r.target + '%</td><td>' +
         (o ? fmtP(o.pct) + (o.ok ? ' <span class="ok">✓</span>' : ' <span class="no">✗</span>') : '–') + '</td><td class="l">' +
         (r.ok ? '<span class="ok">✓ Achieve</span>' : '<span class="no">✗ Tidak achieve</span>') + '</td></tr>';
     }).join('');
-    $('#ac-det').innerHTML = '<thead><tr><th class="l">Segmen</th><th class="l">Agent</th><th class="l">Shiftlead</th><th>Hari aktif</th><th>Resolved</th><th>&lt; 1 menit</th><th>&gt; 1 menit</th><th>% &lt; 1 menit</th><th>Target</th><th>% di versi lain</th><th class="l">Status</th></tr></thead><tbody>' +
-      (detRows || '<tr><td colspan="11" class="l">Tidak ada data.</td></tr>') + '</tbody>';
+    $('#ac-det').innerHTML = '<thead><tr><th class="l">Segmen</th><th class="l">Agent</th><th class="l">Shiftlead</th><th>Hari aktif</th><th>Resolved</th><th>&lt; 1 menit</th><th>&gt; 1 menit</th><th>% &lt; 1 menit</th><th>% &lt; 5 menit</th><th>% &lt; 10 menit</th><th>Target</th><th>% di versi lain</th><th class="l">Status</th></tr></thead><tbody>' +
+      (detRows || '<tr><td colspan="13" class="l">Tidak ada data.</td></tr>') + '</tbody>';
 
     const nm = (arr) => arr.length ? arr.map((r) => esc(r.agent)).join(', ') : '–';
     const resRows = months.map((b) => {
@@ -308109,7 +308119,7 @@ Sri Astuti Wulandari,Shiha Fadlillah,Junior
       const sls = [...new Set(rowsA.map((r) => r.sl))].sort((a, b) => a.localeCompare(b));
       if (!sls.includes(slSel) && slSel !== 'all') slSel = 'all';
       $('#ac-sl').innerHTML = '<option value="all">Semua shiftlead</option>' + sls.map((x) => '<option value="' + esc(x) + '"' + (x === slSel ? ' selected' : '') + '>' + esc(x) + '</option>').join('');
-      $('#ac-foot').textContent = 'Data: Januari–November 2026 (November s/d 22 Nov), per agent per bulan. Segmen mengikuti data tiap bulan; untuk November, Fauzan Athalah dan Rafiq Aufa Shodiq dihitung sebagai Senior sesuai daftar terbaru. Versi Semua kategori menghitung Request On Hold (Konfirmasi Redelivery) 5 menit sebagai estimasi resolved, versi Tanpa Request On Hold membuangnya dari perhitungan. Agent dengan kurang dari 10 hari aktif di bulan itu tidak dihitung, kecuali Eva Lestari Dolok Saribu di Juli (dihitung agar total Juli 27 agent). Mei sama dengan rekap Mei yang dilampirkan. Shiftlead dari file CX Weekly Huddle - New Teams; agent yang tidak ada di file itu ditandai Tidak ada di huddle, dan Narisha Dwi Nova serta Pita Roma Rumiris Situmorang ditandai Shiftlead karena sekarang tercatat sebagai shiftlead.';
+      $('#ac-foot').textContent = 'Data: Januari–November 2026 (November s/d 22 Nov), per agent per bulan. Segmen mengikuti data tiap bulan; untuk November, Fauzan Athalah dan Rafiq Aufa Shodiq dihitung sebagai Senior sesuai daftar terbaru. Versi Semua kategori menghitung Request On Hold (Konfirmasi Redelivery) 5 menit sebagai estimasi resolved, versi Tanpa Request On Hold membuangnya dari perhitungan. Persentase < 5 menit dan < 10 menit memakai ambang yang sama dengan < 1 menit; di versi Semua kategori, Request On Hold yang dihitung 5 menit masuk < 10 menit tetapi tidak masuk < 5 menit. Agent dengan kurang dari 10 hari aktif di bulan itu tidak dihitung, kecuali Eva Lestari Dolok Saribu di Juli (dihitung agar total Juli 27 agent). Mei sama dengan rekap Mei yang dilampirkan. Shiftlead dari file CX Weekly Huddle - New Teams; agent yang tidak ada di file itu ditandai Tidak ada di huddle, dan Narisha Dwi Nova serta Pita Roma Rumiris Situmorang ditandai Shiftlead karena sekarang tercatat sebagai shiftlead.';
     }
     render();
   });
